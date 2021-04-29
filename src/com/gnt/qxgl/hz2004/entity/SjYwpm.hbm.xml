@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.SjYwpm" table="SJ_YWPM" dynamic-insert="true">
+		<id name="id" type="java.lang.String">
+			<column name="ID" length="32" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="dsdm" type="java.lang.String">
+			<column name="DSDM" />
+		</property>
+		<property name="dsmc" type="java.lang.String">
+			<column name="DSMC" />
+		</property>
+		<property name="pcsdm" type="java.lang.String">
+			<column name="PCSDM" />
+		</property>
+		<property name="pcsmc" type="java.lang.String">
+			<column name="PCSMC" />
+		</property>
+		<property name="ywsl" type="java.lang.Long">
+			<column name="YWSL" />
+		</property>
+		<property name="ywfl" type="java.lang.String">
+			<column name="YWFL" />
+		</property>
+		<property name="tjsj" type="java.util.Date">
+			<column name="TJSJ" />
+		</property>
+		<property name="xq" type="java.lang.String">
+			<column name="XQ" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoZJYW_FFJSXXB"
+        table="ZJYW_FFJSXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="ffjsid"  column="FFJSID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="slh" column="SLH"/>
+        <property name="slzt" column="SLZT"/>
+        <property name="xm" column="XM"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="yxqxqsrq" column="YXQXQSRQ"/>
+        <property name="yxqxjzrq" column="YXQXJZRQ"/>
+        <property name="czsj" column="CZSJ"/>
+        <property name="czrid" column="CZRID"/>
+        <property name="czrip" column="CZRIP"/>
+        <property name="czrdw" column="CZRDW"/>
+        <property name="bz" column="BZ"/>
+        <property name="fjpch" column="FJPCH"/>
+        <property name="ryid" column="RYID"/>
+        <property name="rynbid" column="RYNBID"/>
+        <property name="mlpnbid" column="MLPNBID"/>
+        <property name="ssxq" column="SSXQ"/>
+        <property name="jlx" column="JLX"/>
+        <property name="mlph" column="MLPH"/>
+        <property name="mlxz" column="MLXZ"/>
+        <property name="pcs" column="PCS"/>
+        <property name="zrq" column="ZRQ"/>
+        <property name="xzjd" column="XZJD"/>
+        <property name="jcwh" column="JCWH"/>
+        <property name="pxh" column="PXH"/>
+        <property name="cxbz" column="CXBZ"/>
+
+    </class>
+
+</hibernate-mapping>

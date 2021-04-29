@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.gnt.qxgl.hz2004.entity.HJXX_CXSXBGB"
+        table="HJXX_CXSXBGB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+		<id  name="logid"  type="com.gnt.qxgl.common.LongToString" column="LOGID"  >
+			<generator class="assigned"></generator>
+		</id>
+
+        <property name="rynbid" type="com.gnt.qxgl.common.LongToString" column="RYNBID"/>
+        <property name="hjywid" type="com.gnt.qxgl.common.LongToString" column="HJYWID"/>
+        <property name="ywlb" column="YWLB"/>
+        <property name="cjsj" column="CJSJ"/>
+        <property name="bgqcxsx" column="BGQCXSX"/>
+        <property name="bghcxsx" column="BGHCXSX"/>
+        <property name="bgyy" column="BGYY"/>
+        <property name="sldw" column="SLDW"/>
+        <property name="bz" column="BZ"/>
+        <property name="bgqdw" column="BGQDW"/>
+        <property name="rkbj" column="RKBJ"/>
+        <property name="ssxq" column="SSXQ"/>
+        <property name="jwhdw" column="JWHDM"/>
+        <property name="rysl" type="com.gnt.qxgl.common.LongToString" column="RYSL"/>
+        <property name="nyzyrklhczyydm" column="NYZYRKLHCZYYDM"/>
+    </class>
+
+</hibernate-mapping>

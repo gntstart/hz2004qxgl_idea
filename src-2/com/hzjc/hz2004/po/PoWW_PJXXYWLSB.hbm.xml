@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoWW_PJXXYWLSB"
+        table="WW_PJXXYWLSB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+       <id  name="pjywid"  column="PJYWID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="pjid" column="PJID"/>
+        <property name="hjywid" column="HJYWID"/>
+        <property name="ywbz" column="YWBZ"/>
+        <property name="ywlx" column="YWLX"/>
+        <property name="czsm" column="CZSM"/>
+		<property name="sbsj" column="SBSJ"/>
+		<property name="sbryxm" column="SBRYXM"/>
+		<property name="sbrgmsfhm" column="SBRGMSFHM"/>
+        <property name="slsj" column="SLSJ"/>
+        <property name="sldw" column="SLDW"/>
+        <property name="slrid" column="SLRID"/>
+		<property name="pjjg" column="PJJG"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtDw" table="XT_DW" dynamic-insert="true">
+		<id name="dwdmId" type="com.gnt.qxgl.common.LongToString">
+			<column name="DWDMID" length="12" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="dwdm" type="com.gnt.qxgl.common.LongToString">
+			<column name="DWDM" length="9" not-null="true" />
+		</property>
+		<property name="dwmc" type="java.lang.String">
+			<column name="DWMC" length="50" not-null="true" />
+		</property>
+		<property name="zwpy" type="java.lang.String">
+			<column name="ZWPY" length="50" />
+		</property>
+		<property name="qhdm" type="com.gnt.qxgl.common.LongToString">
+			<column name="QHDM" length="6" not-null="true" />
+		</property>
+		<property name="dwjgdm" type="com.gnt.qxgl.common.LongToString">
+			<column name="DWJGDM" length="12" />
+		</property>
+		<property name="dwjb" type="com.gnt.qxgl.common.LongToString">
+			<column name="DWJB" length="1" not-null="true" />
+		</property>
+		<property name="qybz" type="com.gnt.qxgl.common.LongToString">
+			<column name="QYBZ" length="1" not-null="true" />
+		</property>
+		<property name="bdsj" type="com.gnt.qxgl.common.LongToString">
+			<column name="BDSJ" length="14" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

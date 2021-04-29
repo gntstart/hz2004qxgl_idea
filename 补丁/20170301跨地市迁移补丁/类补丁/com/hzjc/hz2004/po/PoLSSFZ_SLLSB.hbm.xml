@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoLSSFZ_SLLSB"
+        table="LSSFZ_SLLSB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="lssllsbid"  column="LSSLLSBID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="lsslid" column="LSSLID"/>
+        <property name="ryid" column="RYID"/>
+        <property name="bgqkh" column="BGQKH"/>
+        <property name="bghkh" column="BGHKH"/>
+        <property name="czyid" column="CZYID"/>
+        <property name="czsj" column="CZSJ"/>
+        <property name="czyip" column="CZYIP"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XT_ZQZ_QYZ_XLH"  table="XT_ZQZ_QYZ_XLH" dynamic-insert="true">
+		<id name="logid" type="java.lang.String">
+			<column name="logid"  />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="dqbm" column="dqbm" />
+		<property name="zjyear" column="zjyear" />
+		<property name="zjlx" column="zjlx" />
+		<property name="zjbh" column="zjbh" />
+	</class>
+</hibernate-mapping>

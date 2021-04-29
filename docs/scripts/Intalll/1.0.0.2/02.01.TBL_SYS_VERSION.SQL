@@ -1,0 +1,7 @@
+
+prompt Loading TBL_SYS_VERSION...
+
+insert into TBL_SYS_VERSION (MODULENAME,VERSION,INSTALLFLAG) 
+values('QXGL','1.0.0.2','I');
+COMMIT;
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 登录服务 -->
+	<bean id="loginService"
+		class="com.gnt.qxgl.service.impl.LoginServiceImpl" autowire="byName" />	
+		
+	<!-- 警员管理 -->
+	<bean id="zzjyManagerService"
+		class="com.gnt.qxgl.service.impl.ZzjyManagerServiceImpl" autowire="byName" />
+		
+	<!-- 授权管理 -->
+	<bean id="sqService"
+		class="com.gnt.qxgl.service.impl.SqServiceImpl" autowire="byName" />
+</beans>

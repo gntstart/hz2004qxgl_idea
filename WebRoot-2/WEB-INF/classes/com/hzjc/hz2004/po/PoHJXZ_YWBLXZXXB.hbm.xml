@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoHJXZ_YWBLXZXXB"
+        table="HJXZ_YWBLXZXXB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="xzxxid"  column="XZXXID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="xzmc" column="XZMC"/>
+        <property name="xzywlx" column="XZYWLX"/>
+        <property name="xzbds" column="XZBDS"/>
+        <property name="cjrid" column="CJRID"/>
+        <property name="cjsj" column="CJSJ"/>
+        <property name="xgrid" column="XGRID"/>
+        <property name="xgsj" column="XGSJ"/>
+        <property name="xzzt" column="XZZT"/>
+        <property name="qybz" column="QYBZ"/>
+        <property name="spmbid" column="SPMBID"/>
+    </class>
+
+</hibernate-mapping>

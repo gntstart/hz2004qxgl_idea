@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoV_IN_CHRYB"
+        table="V_IN_CHRYB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+       <id  name="chryid"  column="CHRYID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+<!--
+        <property name="chryid" column="CHRYID"/>
+-->
+        <property name="bchrszpcs" column="BCHRSZPCS"/>
+        <property name="chrszpcs" column="CHRSZPCS"/>
+    </class>
+
+</hibernate-mapping>

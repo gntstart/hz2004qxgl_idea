@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoZJXX_JMSFZXXB"
+        table="ZJXX_JMSFZXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="nbsfzid"  column="NBSFZID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="ryid" column="RYID"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="xb" column="XB"/>
+        <property name="mz" column="MZ"/>
+        <property name="csrq" column="CSRQ"/>
+        <property name="qfjg" column="QFJG"/>
+        <property name="yxqxqsrq" column="YXQXQSRQ"/>
+        <property name="yxqxjzrq" column="YXQXJZRQ"/>
+        <property name="slyy" column="SLYY"/>
+        <property name="bzyy" column="BZYY"/>
+        <property name="sjyy" column="SJYY"/>
+        <property name="zz" column="ZZ"/>
+        <property name="zz1" column="ZZ1"/>
+        <property name="zz2" column="ZZ2"/>
+        <property name="zz3" column="ZZ3"/>
+        <property name="zz4" column="ZZ4"/>
+        <property name="ktglh" column="KTGLH"/>
+        <property name="zjlb" column="ZJLB"/>
+        <property name="zjzt" column="ZJZT"/>
+	<property name="slh" column="SLH"/>
+        <property name="zjsj" column="ZJSJ"/>
+	<property name="zjlx" column="ZJLX"/>
+    </class>
+
+</hibernate-mapping>

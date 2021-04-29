@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoXT_PYFHB"
+        table="XT_PYFHB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="fhid"  column="FHID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="hz" column="HZ"/>
+        <property name="py" column="PY"/>
+        <property name="nm" column="NM"/>
+    </class>
+
+</hibernate-mapping>

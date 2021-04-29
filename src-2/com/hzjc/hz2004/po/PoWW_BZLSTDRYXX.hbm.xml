@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoWW_BZLSTDRYXX"
+        table="WW_BZLSTDRYXX"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="id"  column="ID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+		<property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="rkrq" column="RKRQ"/>
+    </class>
+
+</hibernate-mapping>

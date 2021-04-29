@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoXT_JSXXB"
+        table="XT_JSXXB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="jsid"  column="JSID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="jsmc" column="JSMC"/>
+        <property name="ms" column="MS"/>
+    </class>
+
+</hibernate-mapping>

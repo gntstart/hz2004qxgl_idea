@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoHJXX_CXSXBGB"
+        table="HJXX_CXSXBGB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="logid"  column="LOGID"  >
+          <generator class="uuid.hex">
+         </generator>
+        </id>
+
+        <property name="hjywid" column="HJYWID"/>
+        <property name="rynbid" column="RYNBID"/>
+        <property name="ywlb" column="YWLB"/>
+        <property name="cjsj" column="CJSJ"/>
+        <property name="bgqcxsx" column="BGQCXSX" />
+        <property name="bghcxsx" column="BGHCXSX" />
+        <property name="bgyy" column="BGYY"/>
+        <property name="sldw" column="SLDW"/>
+        <property name="bz" column="BZ"/>
+        <property name="bgqdw" column="BGQDW"/>
+        <property name="rkbj" column="RKBJ"/>
+        <property name="ssxq" column="SSXQ"/>
+        <property name="jwhdm" column="JWHDM"/>
+        <property name="rysl" column="RYSL"/>
+        <property name="nyzyrklhczyydm" column="nyzyrklhczyydm"/>
+    </class>
+
+</hibernate-mapping>

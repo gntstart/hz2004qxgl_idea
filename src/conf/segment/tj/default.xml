@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql>
+	
+	<!-- 57表年末总人口-合计 -->
+	<A357>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.ryzt = '0' and r.cxbz = '0'
+						and (:endDate >= r.qysj and :endDate < r.jssj)
+	    ]]>
+	</A357>
+	
+	<!-- 57表年末总人口-城镇 -->
+	<A457>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.ryzt = '0' and r.cxbz = '0'
+						and (:endDate >= r.qysj and :endDate < r.jssj)
+						and jwh.cxfldm in ('100','110','111','112','120','121','122','123')
+	    ]]>
+	</A457>
+	
+	<!-- 57表年末总人口-乡村 -->
+	<A557>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.ryzt = '0' and r.cxbz = '0'
+						and (:endDate >= r.qysj and :endDate < r.jssj)
+						and jwh.cxfldm in ('200','210','201','220')
+	    ]]>
+	</A557>
+	
+	<!-- 57表年末总人口-性别-男 -->
+	<A657>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.ryzt = '0' and r.cxbz = '0'
+						and (:endDate >= r.qysj and :endDate < r.jssj)
+						and r.xb = '1'
+	    ]]>
+	</A657>
+	
+	<!-- 57表年末总人口-性别-女 -->
+	<A757>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.ryzt = '0' and r.cxbz = '0'
+						and (:endDate >= r.qysj and :endDate < r.jssj)
+						and r.xb = '2'
+	    ]]>
+	</A757>
+	
+	<!-- 57表年末总人口-年龄-18岁以下 -->
+	<A857>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.ryzt = '0' and r.cxbz = '0'
+						and (:endDate >= r.qysj and :endDate < r.jssj)
+						and (r.csrq > ((:endDate||'') - 180000)) 
+	    ]]>
+	</A857>
+	
+	<!-- 57表年末总人口-年龄-18~34岁 -->
+	<A957>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.ryzt = '0' and r.cxbz = '0'
+						and (:endDate >= r.qysj and :endDate < r.jssj)
+						and (r.csrq > ((:endDate||'') - 350000)) and (r.csrq <= ((:endDate||'') - 180000))
+	    ]]>
+	</A957>
+	
+	<!-- 57表年末总人口-年龄-35~59岁-->
+	<A1057>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.ryzt = '0' and r.cxbz = '0'
+						and (:endDate >= r.qysj and :endDate < r.jssj)
+						and (r.csrq > ((:endDate||'') - 600000)) and (r.csrq <= ((:endDate||'') - 350000))
+	    ]]>
+	</A1057>
+	
+	<!-- 57表年末总人口-年龄-60岁及以上-->
+	<A1157>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.ryzt = '0' and r.cxbz = '0'
+						and (:endDate >= r.qysj and :endDate < r.jssj)
+						and (r.csrq <= ((:endDate||'') - 600000))
+	    ]]>
+	</A1157>
+	
+	<!-- 57表本年度人口变动-出生-合计-->
+	<A1257>
+		<![CDATA[
+			select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+				from SJ_HJYW_CSDJXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+					where r.cxbz = '0'
+						and r.slsj >= :startDate 
+						and r.slsj <= :endDate 
+	    ]]>
+	</A1257>
+	
+	<!-- 57表本年度人口变动-出生-男-->
+	<A1357>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJYW_CSDJXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and r.slsj >= :startDate 
+							and r.slsj <= :endDate 
+							and r.xb = '1'
+	    ]]>
+	</A1357>
+	
+	<!-- 57表本年度人口变动-出生-女-->
+	<A1457>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJYW_CSDJXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and r.slsj >= :startDate 
+							and r.slsj <= :endDate 
+							and r.xb = '2'
+	    ]]>
+	</A1457>
+	
+	<!-- 57表本年度人口变动-死亡-合计-->
+	<A1557>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJYW_SWZXXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and r.slsj >= :startDate 
+							and r.slsj <= :endDate 
+	    ]]>
+	</A1557>
+	
+	<!-- 57表本年度人口变动-死亡-男-->
+	<A1657>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJYW_SWZXXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and r.slsj >= :startDate 
+							and r.slsj <= :endDate 
+							and r.xb = '1'
+	    ]]>
+	</A1657>
+	
+	<!-- 57表本年度人口变动-死亡-女-->
+	<A1757>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJYW_SWZXXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and r.slsj >= :startDate 
+							and r.slsj <= :endDate 
+							and r.xb = '2'
+	    ]]>
+	</A1757>
+	
+	<!-- 57表本年度人口变动-迁入-省内迁入-->
+	<A1857>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJYW_QRDJXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and r.slsj >= :startDate 
+							and r.slsj <= :endDate 
+							and (r.ywlx > '3' or r.ywlx < '3')
+							and r.bdfw >= '33'
+							and r.bdfw <= '43'
+	    ]]>
+	</A1857>
+	
+	<!-- 57表本年度人口变动-迁入-省内迁入-再从住址变动表中统计省内迁入人数（如对上城来说，富阳到上城算省内迁入，但是他做住址变动） -  -->
+	<B57>
+		<![CDATA[
+				select c.ssxq, COUNT (*) 
+					from SJ_HJYW_ZZBDXXB c
+						where c.cxbz = '0'
+							and c.slsj >= sstartdate 
+							and c.slsj <= senddate
+							and c.ywlx != '3' 
+							and c.bdfw BETWEEN '33' and '43'
+	    ]]>
+	</B57>
+	
+	<!-- 57表本年度人口变动-迁入-省外迁入-->
+	<A1957>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJYW_QRDJXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and r.slsj >= :startDate 
+							and r.slsj <= :endDate 
+							and (r.ywlx > '3' or r.ywlx < '3')
+							and r.bdfw >= '50'
+	    ]]>
+	</A1957>
+	
+	<!-- 57表本年度人口变动-迁出-迁往省内-->
+	<A2057>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJYW_QCZXXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and r.slsj >= :startDate 
+							and r.slsj <= :endDate 
+							and (r.ywlx > '3' or r.ywlx < '3')
+							and r.bdfw >= '33'
+							and r.bdfw <= '43'
+	    ]]>
+	</A2057>
+	
+	<!-- 57表本年度人口变动-迁出-迁往省外-->
+	<A2157>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJYW_QCZXXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and r.slsj >= :startDate 
+							and r.slsj <= :endDate 
+							and (r.ywlx > '3' or r.ywlx < '3')
+							and r.bdfw >= '50'
+	    ]]>
+	</A2157>
+	
+	<whereSql>
+		<![CDATA[
+			and r.jcwh = jwh.dm
+			and r.pcs = dw.dm
+			and r.ssxq = xzqh.dm
+			and r.mlpnbid = mlp.mlpnbid
+			#if(0 == $fw)
+				#if(999999999 != $dsdm)
+					and r.ssxq = :dsdm
+				#else
+					and substr(r.ssxq, 1, 2) like substr(:dqdm, 1, 2)
+				#end
+		    #end
+			#if(1 == $fw)
+				#if(!$ut.isns($tjfw))
+					#if(1 == $tjfw)
+						and substr(r.ssxq , 1, 2) = substr(:dsdm , 1, 2)
+				    #end
+					#if(2 == $tjfw)
+						#if($ut.isns($dsFlag))
+							and substr(r.ssxq, 1, 4) = substr(:dsdm, 1, 4)
+							and r.ssxq <= (substr(:dsdm, 1, 4)||'20')
+						#else
+							and substr(r.ssxq , 1, 4) = substr(:dsdm , 1, 4)
+						#end
+				    #end
+					#if(3 == $tjfw)
+						and r.pcs like :dsdm ||'%'
+				    #end
+				#else
+					#if(999999999 != $dsdm)
+						and substr(r.ssxq, 1, 6) = :dsdm
+					#else
+						and substr(r.ssxq, 1, 4) like substr(:dqdm, 1, 4)
+				    #end
+				#end
+		    #end
+			#if(2 == $fw)
+				#if(999999999 != $dsdm)
+					and r.pcs = :dsdm
+				#else
+					and substr(r.ssxq, 1, 6) = :dqdm
+				#end
+		    #end
+			#if(3 == $fw)
+				#if(999999999 != $dsdm)
+					and jwh.dm = :dsdm
+				#else
+					and r.pcs = :pcsdm
+				#end
+		    #end
+			#if(4 == $fw)
+				
+		   	#end
+	    ]]>
+	</whereSql>
+	
+	
+	<!-- 58表年末城镇人口总数-->
+	<A158>
+		<![CDATA[
+			#if(0 == $fw)
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and (:endDate >= r.qysj and :endDate < r.jssj)
+							and b.cxfldm in ('111', '112', '121', '122', '123')
+							and r.jcwh=b.dm 
+							and r.ryzt = '0'
+	                 		and r.cxbz = '0'
+							and r.jcwh=b.dm
+							and r.pcs = dw.dm
+							and r.ssxq = xzqh.dm
+							and r.mlpnbid = mlp.mlpnbid
+	                 
+							#if(!$ut.isns($tjfw))
+								#if(1 == $tjfw)
+									and r.ssxq like substr(:dsdm, 1, 2)||'%'
+							    #end
+								#if(2 == $tjfw)
+									and r.ssxq >= (substr(:dsdm, 1, 4)||'00')
+									and r.ssxq <= (substr(:dsdm, 1, 4)||'20')
+							    #end
+								#if(3 == $tjfw)
+									and r.ssxq = :dsdm
+							    #end
+							#else
+								#if(99999999 != $dsdm)
+									and r.ssxq = :dsdm
+								#else
+									and r.ssxq like substr(:dqdm, 1, 4)||'%'
+							    #end
+						    #end
+		    #end
+			#if(1 == $fw)
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and (:endDate >= r.qysj and :endDate < r.jssj)
+							and b.cxfldm in ('111', '112', '121', '122', '123')
+							and r.jcwh=b.dm 
+							and r.ryzt = '0'
+	                 		and r.cxbz = '0'
+							and r.jcwh=b.dm
+							and r.pcs = dw.dm
+							and r.ssxq = xzqh.dm
+							and r.mlpnbid = mlp.mlpnbid
+							
+							#if(!$ut.isns($tjfw))
+								#if(1 == $tjfw)
+									and r.ssxq like substr(:dsdm , 1, 2)||'%'
+							    #end
+								#if(2 == $tjfw)
+									and r.pcs like substr(:dsdm , 1, 4)||'%'
+							    #end
+								#if(3 == $tjfw)
+									and r.pcs like :dsdm ||'%'
+							    #end
+							#else
+								#if(99999999 != $dsdm)
+									and r.pcs = :dsdm
+								#else
+									and r.pcs like substr(:dqdm, 1, 6)||'%'
+							    #end
+						    #end
+		    #end
+			#if(2 == $fw)
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+								and (:endDate >= r.qysj and :endDate < r.jssj)
+								and b.cxfldm in ('111', '112', '121', '122', '123')
+								and r.jcwh=b.dm 
+								and r.ryzt = '0'
+		                 		and r.cxbz = '0'
+								and r.jcwh=b.dm
+								and r.pcs = dw.dm
+								and r.ssxq = xzqh.dm
+								and r.mlpnbid = mlp.mlpnbid
+							
+							#if(!$ut.isns($tjfw))
+								#if(1 == $tjfw)
+									and r.ssxq like substr(:dsdm , 1, 2)||'%'
+							    #end
+								#if(2 == $tjfw)
+									and r.pcs like substr(:dsdm , 1, 4)||'%'
+							    #end
+								#if(3 == $tjfw)
+									and r.pcs like :dsdm ||'%'
+							    #end
+							#else
+								#if(99999999 != $dsdm)
+									and r.jcwh = :dsdm
+								#else
+									and r.pcs = :pcsdm
+							    #end
+						    #end
+		    #end
+			#if(3 == $fw)
+				from SJ_HJYW_QCZXXXB b
+		    #end
+	    ]]>
+	</A158>
+	
+	<!-- 58表增加情况-年末城镇人口数 -->
+	<A258>
+		<![CDATA[
+			#if(0 == $fw)
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and (:endDate >= r.qysj and :endDate < r.jssj)
+							and b.cxfldm in ('111', '112', '121', '122', '123')
+							and r.jcwh=b.dm 
+							and r.ryzt = '0'
+	                 		and r.cxbz = '0'
+							and r.pcs = dw.dm
+							and r.ssxq = xzqh.dm
+							and r.mlpnbid = mlp.mlpnbid
+	                 
+							#if(!$ut.isns($tjfw))
+								#if(1 == $tjfw)
+									and r.ssxq like substr(:dsdm, 1, 2)||'%'
+							    #end
+								#if(2 == $tjfw)
+									and r.ssxq >= (substr(:dsdm, 1, 4)||'00')
+									and r.ssxq <= (substr(:dsdm, 1, 4)||'20')
+							    #end
+								#if(3 == $tjfw)
+									and r.ssxq = :dsdm
+							    #end
+							#else
+								#if(99999999 != $dsdm)
+									and r.ssxq = :dsdm
+								#else
+									and r.ssxq like substr(:dqdm, 1, 4)||'%'
+							    #end
+						    #end
+		    #end
+			#if(1 == $fw)
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+							and (:endDate >= r.qysj and :endDate < r.jssj)
+							and b.cxfldm in ('111', '112', '121', '122', '123')
+							and r.jcwh=b.dm 
+							and r.ryzt = '0'
+	                 		and r.cxbz = '0'
+							and r.pcs = dw.dm
+							and r.ssxq = xzqh.dm
+							and r.mlpnbid = mlp.mlpnbid
+							
+							#if(!$ut.isns($tjfw))
+								#if(1 == $tjfw)
+									and r.ssxq like substr(:dsdm , 1, 2)||'%'
+							    #end
+								#if(2 == $tjfw)
+									and r.pcs like substr(:dsdm , 1, 4)||'%'
+							    #end
+								#if(3 == $tjfw)
+									and r.pcs like :dsdm ||'%'
+							    #end
+							#else
+								#if(99999999 != $dsdm)
+									and r.pcs = :dsdm
+								#else
+									and r.pcs like substr(:dqdm, 1, 6)||'%'
+							    #end
+						    #end
+		    #end
+			#if(2 == $fw)
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where r.cxbz = '0'
+								and (:endDate >= r.qysj and :endDate < r.jssj)
+								and b.cxfldm in ('111', '112', '121', '122', '123')
+								and r.jcwh=b.dm 
+								and r.ryzt = '0'
+		                 		and r.cxbz = '0'
+								and r.pcs = dw.dm
+								and r.ssxq = xzqh.dm
+								and r.mlpnbid = mlp.mlpnbid
+							
+							#if(!$ut.isns($tjfw))
+								#if(1 == $tjfw)
+									and r.ssxq like substr(:dsdm , 1, 2)||'%'
+							    #end
+								#if(2 == $tjfw)
+									and r.pcs like substr(:dsdm , 1, 4)||'%'
+							    #end
+								#if(3 == $tjfw)
+									and r.pcs like :dsdm ||'%'
+							    #end
+							#else
+								#if(99999999 != $dsdm)
+									and r.jcwh = :dsdm
+								#else
+									and r.pcs = :pcsdm
+							    #end
+						    #end
+		    #end
+			#if(3 == $fw)
+				from SJ_HJYW_QCZXXXB b
+		    #end
+	    ]]>
+	</A258>
+	
+	<!-- 58表增加情况-合计 -->
+	<A358>
+		<![CDATA[
+			#if(0 == $fw)
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CXSXBGB c,SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where c.rkbj = '1'
+							and c.cjsj >= :startDate
+							and c.cjsj <= :endDate
+							and c.bghcxsx in ('111', '112', '121', '122', '123')
+							and r.jcwh=c.jwhdm
+							and r.jcwh=b.dm 
+							and r.pcs = dw.dm
+							and r.ssxq = xzqh.dm
+							and r.mlpnbid = mlp.mlpnbid
+	                 
+							#if(!$ut.isns($tjfw))
+								#if(1 == $tjfw)
+									and r.ssxq like substr(:dsdm, 1, 2)||'%'
+							    #end
+								#if(2 == $tjfw)
+									and r.ssxq >= (substr(:dsdm, 1, 4)||'00')
+									and r.ssxq <= (substr(:dsdm, 1, 4)||'20')
+							    #end
+								#if(3 == $tjfw)
+									and r.ssxq = :dsdm
+							    #end
+							#else
+								#if(99999999 != $dsdm)
+									and r.ssxq = :dsdm
+								#else
+									and r.ssxq like substr(:dqdm, 1, 4)||'%'
+							    #end
+						    #end
+		    #end
+			#if(1 == $fw)
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CXSXBGB c,SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where c.rkbj = '1'
+							and c.cjsj >= :startDate
+							and c.cjsj <= :endDate
+							and c.bghcxsx in ('111', '112', '121', '122', '123')
+							
+							and (r.rynbid = c.rynbid or r.jcwh=c.jwhdw)
+							
+							and r.jcwh=b.dm 
+							and r.pcs = dw.dm
+							and r.ssxq = xzqh.dm
+							and r.mlpnbid = mlp.mlpnbid
+							
+							#if(!$ut.isns($tjfw))
+								#if(1 == $tjfw)
+									and r.ssxq like substr(:dsdm , 1, 2)||'%'
+							    #end
+								#if(2 == $tjfw)
+									and r.pcs like substr(:dsdm , 1, 4)||'%'
+							    #end
+								#if(3 == $tjfw)
+									and r.pcs like :dsdm ||'%'
+							    #end
+							#else
+								#if(99999999 != $dsdm)
+									and r.pcs = :dsdm
+								#else
+									and r.pcs like substr(:dqdm, 1, 6)||'%'
+							    #end
+						    #end
+		    #end
+			#if(2 == $fw)
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CXSXBGB c,SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where c.rkbj = '1'
+							and c.cjsj >= :startDate
+							and c.cjsj <= :endDate
+							and c.bghcxsx in ('111', '112', '121', '122', '123')
+							and r.rynbid = c.rynbid
+							and r.jcwh=b.dm
+							and r.pcs = dw.dm
+							and r.ssxq = xzqh.dm
+							and r.mlpnbid = mlp.mlpnbid
+							
+							#if(!$ut.isns($tjfw))
+								#if(1 == $tjfw)
+									and r.ssxq like substr(:dsdm , 1, 2)||'%'
+							    #end
+								#if(2 == $tjfw)
+									and r.pcs like substr(:dsdm , 1, 4)||'%'
+							    #end
+								#if(3 == $tjfw)
+									and r.pcs like :dsdm ||'%'
+							    #end
+							#else
+								#if(99999999 != $dsdm)
+									and r.jcwh = :dsdm
+								#else
+									and r.pcs = :pcsdm
+							    #end
+						    #end
+		    #end
+			#if(3 == $fw)
+				from SJ_HJYW_QCZXXXB b
+		    #end
+	    ]]>
+	</A358>
+	
+	<!-- 58表增加情况-出生 -->
+	<A458>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CXSXBGB c,SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where c.ywlb='cssb'
+							and c.cjsj >= :startDate
+							and c.cjsj <= :endDate
+							and c.bghcxsx in ('111', '112', '121', '122', '123')
+							and r.rynbid = c.rynbid
+	    ]]>
+	</A458>
+	
+	<!-- 58表增加情况-退出现役 -->
+	<A558>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CXSXBGB c,SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where c.rkbj = '1'
+							and c.ywlb in ('snbd','tsql') 
+							and c.bgyy in ( '0344','0345','0346','0347','0371','0544','0545','0546','0547','0571')
+							and c.cjsj >= :startDate
+							and c.cjsj <= :endDate
+							and c.bghcxsx in ('111', '112', '121', '122', '123')
+							and r.rynbid = c.rynbid
+	    ]]>
+	</A558>
+	
+	<!-- 58表增加情况-港澳台人员和华侨回内地（回国）定居及外国人、无国籍人入籍 -->
+	<A658>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CXSXBGB c,SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where c.rkbj = '1'
+							and c.ywlb in ('snbd','tsql') 
+							and c.bgyy in ('0372','0373','0374','0375','0376','0572','0573','0574','0575','0576')
+							and c.cjsj >= :startDate
+							and c.cjsj <= :endDate
+							and c.bghcxsx in ('111', '112', '121', '122', '123')
+							and r.rynbid = c.rynbid
+	    ]]>
+	</A658>
+	
+	<!-- 58表增加情况-城镇人口迁入-省内迁入 -->
+	<A758>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CXSXBGB c,SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where c.rkbj = '1'
+							and c.ywlb in ('snbd','tsql') 
+							and c.bgyy NOT in ('0344','0345','0346','0347','0371'
+							,'0372','0373','0374','0375','0376','0544','0545'
+							,'0546','0547','0571','0572','0573','0574','0575','0576')
+							and c.cjsj >= :startDate
+							and c.cjsj <= :endDate
+							and c.bghcxsx in ('111', '112', '121', '122', '123')
+							and c.bgqdw like '34%' 
+							and substr(c.bgqdw ,1,4)!=substr(c.ssxq ,1,4)
+							and r.rynbid = c.rynbid
+	    ]]>
+	</A758>
+	
+	<!-- 58表增加情况-城镇人口迁入-省外迁入 -->
+	<A858>
+		<![CDATA[
+				select new com.gnt.qxgl.hz2004.entity.TjbVo(r,xzqh,mlp,jwh,dw) 
+					from SJ_HJXX_CXSXBGB c,SJ_HJXX_CZRKJBXXB r,XT_XZQHB xzqh,SJ_HJXX_MLPXXXXB mlp,SJ_XT_JWHXXB jwh,XtDwxxb dw
+						where c.rkbj = '1'
+							and c.ywlb in ('tsql') 
+							and c.bgyy not in ('0344','0345','0346','0347','0371'
+							,'0372','0373','0374','0375','0376','0544','0545','0546'
+							,'0547','0571','0572','0573','0574','0575','0576')
+							and c.cjsj >= :startDate
+							and c.cjsj <= :endDate
+							and c.bghcxsx in ('111', '112', '121', '122', '123')
+							and c.bgqdw not like '34%'
+							and r.rynbid = c.rynbid
+	    ]]>
+	</A858>
+	
+</sql>

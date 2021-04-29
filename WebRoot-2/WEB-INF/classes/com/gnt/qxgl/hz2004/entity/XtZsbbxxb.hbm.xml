@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtZsbbxxb" table="XT_ZSBBXXB" dynamic-insert="true">
+		<id name="zsbbid" type="java.lang.Long">
+			<column name="ZSBBID" length="19" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="zsbbmbid" type="java.lang.Long">
+			<column name="ZSBBMBID" length="19" not-null="true" />
+		</property>
+		<property name="bbmc" type="java.lang.String">
+			<column name="BBMC" length="200" not-null="true" />
+		</property>
+		<property name="bbsjmb" type="java.lang.String">
+			<column name="BBSJMB" length="0" />
+		</property>
+		<property name="jlsj" type="java.lang.String">
+			<column name="JLSJ" length="14" not-null="true" />
+		</property>
+		<property name="scrid" type="java.lang.Long">
+			<column name="SCRID" length="19" not-null="true" />
+		</property>
+		<property name="xgsj" type="java.lang.String">
+			<column name="XGSJ" length="14" />
+		</property>
+		<property name="xgrid" type="java.lang.Long">
+			<column name="XGRID" length="19" />
+		</property>
+	</class>
+</hibernate-mapping>

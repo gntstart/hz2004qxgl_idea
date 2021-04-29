@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.ViewZw"
+        table="VIEW_ZW"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="jmsfzslh"  column="jmsfzslh"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="xm" column="XM"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+    </class>
+</hibernate-mapping>

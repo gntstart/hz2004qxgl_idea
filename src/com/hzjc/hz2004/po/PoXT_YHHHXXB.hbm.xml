@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoXT_YHHHXXB"
+        table="XT_YHHHXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="yhhhid"  column="YHHHID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="hhid" column="HHID"/>
+        <property name="yhip" column="YHIP"/>
+        <property name="khdbb" column="KHDBB"/>
+        <property name="yhid" column="YHID"/>
+    </class>
+
+</hibernate-mapping>

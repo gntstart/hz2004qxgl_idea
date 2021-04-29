@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.YWLOG" table="YWLOG" dynamic-insert="true">
+		<id name="logid" type="java.lang.Long">
+			<column name="logid" length="19" />
+			<generator class="uuid"></generator>
+		</id>
+		<property name="dqbm" type="java.lang.String">
+			<column name="dqbm"  />
+		</property>
+		<property name="dqmc" type="java.lang.String">
+			<column name="dqmc"  />
+		</property>
+		<property name="dlyh" type="java.lang.String">
+			<column name="dlyh"  />
+		</property>
+		<property name="sfzh" type="java.lang.String">
+			<column name="sfzh"  />
+		</property>
+		<property name="xm" type="java.lang.String">
+			<column name="xm"  />
+		</property>
+		<property name="ywlx" type="java.lang.String">
+			<column name="ywlx"  />
+		</property>
+		<property name="cljg" type="java.lang.String">
+			<column name="cljg"  />
+		</property>
+		<property name="ywlxmc" type="java.lang.String">
+			<column name="ywlxmc"  />
+		</property>
+		<property name="czsj" type="java.util.Date">
+	            <column name="czsj" ></column>
+	        </property>
+	        <property name="params" type="java.lang.String">
+	            <column name="params" ></column>
+	        </property>
+	        <property name="cwyy" type="java.lang.String">
+	            <column name="cwyy" ></column>
+	        </property>
+		<property name="hs" type="java.lang.Long">
+			<column name="hs"  />
+		</property>
+	</class>
+</hibernate-mapping>

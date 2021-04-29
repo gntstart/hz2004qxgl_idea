@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.ViewZzst"
+        table="VIEW_ZZST"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="jmsfzslh"  column="jmsfzslh"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="xm" column="XM"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="mz" column="MZ"/>
+        <property name="sfzzz" column="sfzzz"/>
+        <property name="yxqjzrq" column="yxqjzrq"/>
+        <property name="qfjgmc" column="qfjgmc"/>
+        <property name="zjztdm" column="zjztdm"/>
+        <property name="slyy" column="slyy"/>
+        <property name="sdzpnr" column="sdzpnr"/>
+        <property name="yxqqsrq" column="yxqqsrq"/>
+        <property name="slrq" column="slrq"/>
+    </class>
+</hibernate-mapping>

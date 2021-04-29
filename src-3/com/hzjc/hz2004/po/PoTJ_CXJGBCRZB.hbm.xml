@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoTJ_CXJGBCRZB"
+        table="TJ_CXJGBCRZB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+       <id  name="cxrzid"  column="CXRZID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="gnbh" column="GNBH"/>
+        <property name="cxyj" column="CXYJ"/>
+        <property name="bcsj" column="BCSJ"/>
+        <property name="czrid" column="CZRID"/>
+        <property name="czrdw" column="CZRDW"/>
+
+    </class>
+
+</hibernate-mapping>

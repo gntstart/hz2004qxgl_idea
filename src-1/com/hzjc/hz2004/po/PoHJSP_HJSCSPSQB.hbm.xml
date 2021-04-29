@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoHJSP_HJSCSPSQB"
+        table="HJSP_HJSCSPSQB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="spywid"  column="SPYWID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="spmbid" column="SPMBID"/>
+        <property name="bscryid" column="BSCRYID"/>
+        <property name="csyy" column="CSYY"/>
+        <property name="xydzid" column="XYDZID"/>
+        <property name="spjg" column="SPJG"/>
+        <property name="lsbz" column="LSBZ"/>
+        <property name="hjywid" column="HJYWID"/>
+        <property name="sqsj" column="SQSJ"/>
+        <property name="sqyhid" column="SQYHID"/>
+	<property name="spsm" column="SPSM"/>
+        <property name="hjscsm" column="HJSCSM"/>
+    </class>
+
+</hibernate-mapping>

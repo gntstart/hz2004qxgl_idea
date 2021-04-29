@@ -1,0 +1,72 @@
+[PropertyInfo]
+bdfw,String,false,false, , ,true,<default>
+bz,String,false,false, , ,true,<default>
+csdssxq,String,false,false, , ,true,<default>
+csrq,String,false,false, , ,true,<default>
+cssj,String,false,false, , ,true,<default>
+cxbz,String,false,false, , ,true,<default>
+cxfldm,String,false,false, , ,true,<default>
+cxhjywid,Long,false,false, , ,true,<default>
+cxrid,Long,false,false, , ,true,<default>
+cxsj,String,false,false, , ,true,<default>
+czsm,Long,false,false, , ,true,<default>
+gmsfhm,String,false,false, , ,true,<default>
+hb,String,false,false, , ,true,<default>
+hhid,Long,false,false, , ,true,<default>
+hhnbid,Long,false,false, , ,true,<default>
+hjdz_cxfldm,String,false,false, , ,false,<default>
+hjywid,Long,false,false, , ,true,<default>
+hzgmsfhm,String,false,false, , ,true,<default>
+hzxm,String,false,false, , ,true,<default>
+jcwh,String,false,false, , ,true,<default>
+jjqx_pdbz,String,false,false, , ,false,<default>
+jlx,String,false,false, , ,true,<default>
+jndj_pdbz,String,false,false, , ,false,<default>
+mlph,String,false,false, , ,true,<default>
+mlpid,Long,false,false, , ,true,<default>
+mlpnbid,Long,false,false, , ,true,<default>
+mlxz,String,false,false, , ,true,<default>
+mz,String,false,false, , ,true,<default>
+ncjdzzyxbys_pdbz,String,false,false, , ,false,<default>
+ncjsbtcxy_pdbz,String,false,false, , ,false,<default>
+nyzyrklhczyydm,String,false,false, , ,false,<default>
+pcs,String,false,false, , ,true,<default>
+pxh,String,false,false, , ,true,<default>
+qclb,String,false,false, , ,true,<default>
+qcrq,String,false,false, , ,true,<default>
+qczxid,Long,false,false, , ,true,<default>
+qwdgjdq,String,false,false, , ,true,<default>
+qwdjlx,String,false,false, , ,true,<default>
+qwdjwh,String,false,false, , ,true,<default>
+qwdjwzrq,String,false,false, , ,true,<default>
+qwdmlph,String,false,false, , ,true,<default>
+qwdpcs,String,false,false, , ,true,<default>
+qwdssxq,String,false,false, , ,true,<default>
+qwdxz,String,false,false, , ,true,<default>
+qwdxzjd,String,false,false, , ,true,<default>
+qyzbh,String,false,false, , ,true,<default>
+ryid,String,false,false, , ,true,<default>
+rynbid,Long,false,false, , ,true,<default>
+sbrgmsfhm,String,false,false, , ,true,<default>
+sbrjtgx,String,false,false, , ,true,<default>
+sbryxm,String,false,false, , ,true,<default>
+sbsj,String,false,false, , ,true,<default>
+sldw,String,false,false, , ,true,<default>
+slrid,Long,false,false, , ,true,<default>
+slsj,String,false,false, , ,true,<default>
+ssxq,String,false,false, , ,true,<default>
+xb,String,false,false, , ,true,<default>
+xm,String,false,false, , ,true,<default>
+xzjd,String,false,false, , ,true,<default>
+yhzgx,String,false,false, , ,true,<default>
+ywlx,String,false,false, , ,true,<default>
+zczjyhjzwnys_pdbz,String,false,false, , ,false,<default>
+zqzbh,String,false,false, , ,true,<default>
+zqzhyxx,String,false,false, , ,true,<default>
+zrq,String,false,false, , ,true,<default>
+zyjszc_pdbz,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

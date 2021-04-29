@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtSpmbxxb" table="XT_SPMBXXB" dynamic-insert="true">
+		<id name="spmbid" type="java.lang.Long">
+			<column name="SPMBID" length="19" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="mbmc" type="java.lang.String">
+			<column name="MBMC" length="200" />
+		</property>
+		<property name="mbdj" type="java.lang.String">
+			<column name="MBDJ" length="20" not-null="true" />
+		</property>
+		<property name="cjrid" type="java.lang.Long">
+			<column name="CJRID" length="19" not-null="true" />
+		</property>
+		<property name="cjsj" type="java.lang.String">
+			<column name="CJSJ" length="14" not-null="true" />
+		</property>
+		<property name="xgrid" type="java.lang.Long">
+			<column name="XGRID" length="19" />
+		</property>
+		<property name="xgsj" type="java.lang.String">
+			<column name="XGSJ" length="14" />
+		</property>
+		<property name="qybz" type="java.lang.String">
+			<column name="QYBZ" length="1" not-null="true" />
+		</property>
+		<property name="dqsys" type="java.lang.String">
+			<column name="DQSYS" length="3" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+[PropertyInfo]
+bdlx,String,false,false, , ,true,<default>
+bdsj,String,false,false, , ,true,<default>
+bz,String,false,false, , ,true,<default>
+cxfldm,String,false,false, , ,true,<default>
+cxflmc,String,false,false, , ,true,<default>
+dm,String,false,false, , ,true,<default>
+dwdm,String,false,false, , ,true,<default>
+dzys,String,false,false, , ,false,<default>
+dzysmc,String,false,false, , ,false,<default>
+mc,String,false,false, , ,true,<default>
+qybz,String,false,false, , ,true,<default>
+tjdm,String,false,false, , ,true,<default>
+tjmc,String,false,false, , ,true,<default>
+wbpy,String,false,false, , ,true,<default>
+xdm,String,false,false, , ,false,<default>
+xzjddm,String,false,false, , ,true,<default>
+zwpy,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

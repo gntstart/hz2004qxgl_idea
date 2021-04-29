@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoSB_JMSFZXXB"
+        table="SB_JMSFZXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="nbsfzid"  column="NBSFZID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="ssxq" column="SSXQ"/>
+        <property name="slh" column="SLH"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="xb" column="XB"/>
+        <property name="csrq" column="CSRQ"/>
+        <property name="mz" column="MZ"/>
+        <property name="zz" column="ZZ"/>
+        <property name="zpid" column="ZPID"/>
+        <property name="qfjg" column="QFJG"/>
+        <property name="yxqxqsrq" column="YXQXQSRQ"/>
+        <property name="yxqxjzrq" column="YXQXJZRQ"/>
+        <property name="slyy" column="SLYY"/>
+        <property name="slsj" column="SLSJ"/>
+        <property name="ryid" column="RYID"/>
+        <property name="rynbid" column="RYNBID"/>
+        <property name="pcs" column="PCS"/>
+        <property name="ssxjjgjgdm" column="SSXJJGJGDM"/>
+        <property name="ssxjjgjgmc" column="SSXJJGJGMC"/>
+        <property name="sspcsjgdm" column="SSPCSJGDM"/>
+        <property name="sspcsmc" column="SSPCSMC"/>
+        <property name="tbbz" column="TBBZ"/>
+        <property name="bwbh" column="BWBH"/>
+	<property name="czsj" column="CZSJ"/>
+	<property name="czrid" column="CZRID"/>
+	<property name="czrdw" column="CZRDW"/>
+    </class>
+
+</hibernate-mapping>

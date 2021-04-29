@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql>
+    <!-- 功能点查询 -->
+    <queryFunc>
+        from SysFunctionInfo a where a.xmbm=:xmbm
+        #if(!$ut.isns($roleBm))
+        #if("$sqzt"=="1")
+        and exists(
+        select b.functionBm from SysFunctionInfoRole b
+        where b.functionBm=a.functionBm and b.xmbm=:xmbm and b.roleBm=:roleBm
+        )
+        #else
+        and not exists(
+        select b.functionBm from SysFunctionInfoRole b
+        where b.functionBm=a.functionBm and b.xmbm=:xmbm and b.roleBm=:roleBm
+        )
+        #end
+        #end
+        #if(!$ut.isns($queryKey))
+        and (a.functionName like :%queryKey% or a.functionBm like :%queryKey%)
+        #end
+        order by a.functionName
+    </queryFunc>
+
+    <!-- 角色查询 -->
+    <queryJs>
+        from SysRoleInfo a where 0=0
+        #if(!$ut.isns($xmbm))
+        and xmbm=:xmbm
+        #end
+        #if(!$ut.isns($loginName))
+        and exists(
+        select b.gxid from SysUserRole b
+        where b.roleBm=a.roleBm and b.xmbm=:xmbm and b.loginName=:loginName
+        )
+        #end
+    </queryJs>
+
+    <!-- 用户可分配角色查询 -->
+    <queryUserJsFP>
+        select b.gxid,b.roleBm,a.roleName from SysRoleInfo a,SysUserRoleFpqx b where b.roleBm=a.roleBm
+        #if(!$ut.isns($xmbm))
+        and a.xmbm=:xmbm and b.xmbm=:xmbm
+        #end
+        #if(!$ut.isns($loginName))
+        and b.loginName=:loginName
+        #end
+        order by b.roleBm
+    </queryUserJsFP>
+
+    <!-- 用户角色查询 -->
+    <queryUserJs>
+        select b.gxid,b.roleBm,a.roleName,b.zfpq from SysRoleInfo a,SysUserRole b where b.roleBm=a.roleBm
+        #if(!$ut.isns($xmbm))
+        and a.xmbm=:xmbm and b.xmbm=:xmbm
+        #end
+        #if(!$ut.isns($loginName))
+        and b.loginName=:loginName
+        #end
+        order by b.roleBm
+    </queryUserJs>
+
+    <!-- 机构查询 -->
+    <queryZzjg>
+        from SysOrganizeInfo a where 0=0
+        #if(!$ut.isns($orgid))
+        and orgid=:orgid
+        #end
+        #if(!$ut.isns($zxbz))
+        and a.zxbz = :zxbz
+        #else
+        and a.zxbz = '0'
+        #end
+        #if(!$ut.isns($key))
+        and (a.organizeBm=:key or a.organizePath like :%key%)
+        #end
+    </queryZzjg>
+
+    <!-- 警员查询 -->
+    <queryZzjy>
+        from XtYhxxb a where 0=0
+        #if(!$ut.isns($yhid))
+        and yhid=:yhid
+        #else
+        #if(!$ut.isns($jyh))
+        and jyh like :%jyh%
+        #end
+        #if(!$ut.isns($dwdm))
+        and dwdm=:dwdm
+        #end
+        #if($ut.isns($yhzt))
+        and yhzt='0'
+        #end
+        #if(!$ut.isns($ccm))
+        and dwdm like :ccm%
+        #end
+        #if(!$ut.isns($yhxm))
+        and a.yhxm like :%yhxm%
+        #end
+        #if(!$ut.isns($yhdlm))
+        and a.yhdlm like :%yhdlm%
+        #end
+        #if(!$ut.isns($gmsfhm))
+        and a.gmsfhm = :gmsfhm
+        #end
+        #if(!$ut.isns($roleBm))
+        #if("$sqzt"=="1")
+        and exists(
+        select b.gxid from SysUserRole b
+        where b.loginName=a.loginName and b.xmbm=:xmbm and roleBm=:roleBm
+        )
+        #else
+        and not exists(
+        select b.gxid from SysUserRole b
+        where b.loginName=a.loginName and b.xmbm=:xmbm and roleBm=:roleBm
+        )
+        #end
+        #end
+        #if(!$ut.isns($queryKey))
+        and (a.yhdlm like :%queryKey% or a.yhxm like :%queryKey% or a.jyh like :%queryKey%)
+        #end
+        #if(!$ut.isns($lxdh))
+        and lxdh = :lxdh
+        #end
+        #if(!$ut.isns($flag))
+        and flag = :flag
+        #end
+        #end
+        order by a.dwdm,a.yhdlm
+    </queryZzjy>
+
+    <!-- 旅馆综合查询 -->
+    <queryLgzhcs>
+        from Lg where 0=0
+        #if(!$ut.isns($lgbm))
+        and lgbm = :lgbm
+        #end
+        #if(!$ut.isns($lgdm))
+        and lgbm = :lgdm
+        #end
+        #if(!$ut.isns($lx))
+        and lx = :lx
+        #end
+        #if(!$ut.isns($zt))
+        and zt = :zt
+        #end
+        #if(!$ut.isns($xz))
+        and xz = :xz
+        #end
+        #if(!$ut.isns($xj))
+        and xj = :xj
+        #end
+        #if(!$ut.isns($dj))
+        and dj = :dj
+        #end
+        #if(!$ut.isns($dhsrbh))
+        and dhsrbh = :dhsrbh
+        #end
+        #if(!$ut.isns($tssblx))
+        and tssblx = :tssblx
+        #end
+        #if(!$ut.isns($pcs))
+        and pcs like :pcs%
+        #end
+        #if(!$ut.isns($mcpy))
+        and mcpy like '%$ut.toL($mcpy)%'
+        #end
+        #if(!$ut.isns($fzr))
+        and fzr like :%fzr%
+        #end
+        #if(!$ut.isns($lxdh))
+        and lxdh like :%lxdh%
+        #end
+        #if(!$ut.isns($fddbr))
+        and fddbr like :%fddbr%
+        #end
+        #if(!$ut.isns($dz))
+        and dz like :%dz%
+        #end
+        #if(!$ut.isns($babdh))
+        and babdh like :%babdh%
+        #end
+        #if(!$ut.isns($mc))
+        and mc like :%mc%
+        #end
+        order by pcs asc
+    </queryLgzhcs>
+
+    <!-- 项目查询 -->
+    <queryXm>
+        from SysProjectInfo a where 0=0
+        #if(!$ut.isns($xmbm))
+        and xmbm=:xmbm
+        #end
+    </queryXm>
+
+    <!-- 项目管理员查询 -->
+    <queryXmAdmin>
+        from SysProjectInfoAdmin a where 0=0
+        #if(!$ut.isns($xmbm))
+        and xmbm=:xmbm
+        #end
+    </queryXmAdmin>
+
+    <!-- 功能点查询 -->
+    <queryFn>
+        from SysFunctionInfo a where 0=0
+        #if(!$ut.isns($xmbm))
+        and xmbm=:xmbm
+        #end
+        #if(!$ut.isns($funid))
+        and funid=:funid
+        #end
+        #if(!$ut.isns($functionBm))
+        and functionBm like :%functionBm%
+        #end
+        #if(!$ut.isns($functionName))
+        and functionName like :%functionName%
+        #end
+        #if(!$ut.isns($functionUrl))
+        and functionUrl like :%functionUrl%
+        #end
+        order by a.functionOrder
+    </queryFn>
+
+    <!-- 功能点角色查询 -->
+    <queryFnRole>
+        from SysFunctionInfoRole a where 0=0
+        #if(!$ut.isns($xmbm))
+        and xmbm=:xmbm
+        #end
+        #if(!$ut.isns($functionBm))
+        and functionBm=:functionBm
+        #end
+        #if(!$ut.isns($roleBm))
+        and roleBm=:roleBm
+        #end
+    </queryFnRole>
+    <!-- 警员查询 -->
+    <queryZzjyHf>
+        from SysUserInfo a where 0=0
+        #if(!$ut.isns($usid))
+        and usid=:usid
+        #end
+        #if(!$ut.isns($xm))
+        and a.xm like :%xm%
+        #end
+        #if(!$ut.isns($loginName))
+        and a.loginName like :%loginName%
+        #end
+        #if(!$ut.isns($idcard))
+        and a.idcard = :idcard
+        #end
+        #if(!$ut.isns($jh))
+        and a.jh = :jh
+        #end
+        #if(!$ut.isns($zxbz))
+        and a.zxbz = :zxbz
+        #else
+        and a.zxbz = '0'
+        #end
+        #if(!$ut.isns($organizeBm))
+        and exists ( select b.organizeBm from SysOrganizeInfo b,SysOrganizeInfo c
+        where b.organizeBm=a.organizeBm and b.ccm like c.ccm||'%'
+        and c.organizeBm=:organizeBm)
+        #end
+        #if(!$ut.isns($ccm))
+        and exists ( select b.organizeBm from SysOrganizeInfo b
+        where b.organizeBm=a.organizeBm and b.ccm like :ccm% )
+        #end
+        order by a.organizeBm
+    </queryZzjyHf>
+
+    <!-- 机构查询 -->
+    <queryZzjgHf>
+        from SysOrganizeInfo a where 0=0
+        #if(!$ut.isns($orgid))
+        and orgid=:orgid
+        #end
+        #if(!$ut.isns($zxbz))
+        and a.zxbz = :zxbz
+        #else
+        and a.zxbz = '0'
+        #end
+        #if(!$ut.isns($organizeName))
+        and a.organizeName like :%organizeName%
+        #end
+        #if(!$ut.isns($organizeBm))
+        and exists ( select b.organizeBm from SysOrganizeInfo b,SysOrganizeInfo c
+        where b.organizeBm=a.organizeBm and b.ccm like c.ccm||'%'
+        and c.organizeBm=:organizeBm)
+        #end
+        #if(!$ut.isns($ccm))
+        and a.ccm like :ccm%
+        #end
+    </queryZzjgHf>
+
+    <!-- 查询考核结果 -->
+    <queryKhjg>
+        from XtYhksjg a where 0=0
+        #if(!$ut.isns($sfzh))
+        and a.sfzh = :sfzh
+        #end
+        #if(!$ut.isns($yhm))
+        and a.yhm = :yhm
+        #end
+        #if(!$ut.isns($jh))
+        and a.jh = :jh
+        #end
+        #if(!$ut.isns($newuserflag))
+        and not exists(select 1 from XtYhxxb b where b.gmsfhm=a.sfzh) and a.flag='0'
+        #end
+        #if(!$ut.isns($dwdm))
+        and a.dwdm like :dwdm%
+        #end
+    </queryKhjg>
+
+
+    <!--
+        2017.04.13
+        新增	刁杰
+        户政窗口
+     -->
+    <!-- 查询派出所 -->
+    <queryHzckPcs>
+        select zx.sl zxsl,zs.sl zs,zs.mc mc,zs.dsbm dsbm from
+        (
+        <!-- 总数 -->
+        select count(dm) sl,stdsmc mc,stdsbm dsbm
+        from prodb.XtDsDwxxb
+        where dwjb = 0
+        group by stdsmc,stdsbm
+        order by stdsbm
+        ) zs
+        ,
+        (
+        <!-- 在线 -->
+        select count(dm) sl,stdsmc mc,stdsbm dsbm
+        from prodb.XtDsDwxxb
+        where dwjb = 0
+        and qybz = 1
+        group by stdsmc,stdsbm
+        order by stdsbm
+        ) zx
+        where zx.dsbm = zs.dsbm
+        order by zs.dsbm
+    </queryHzckPcs>
+    <!-- 查询用户 -->
+    <queryHzckHb>
+        select zx.sl zxsl,zs.sl zs,zs.dqbm dqbm from
+        (
+        <!-- 总数 -->
+        select count(yhid) sl,dqbm dqbm
+        from xt_yhxxb
+        group by dqbm
+        order by dqbm
+        ) zs ,
+        (
+        <!-- 在线 -->
+        select count(yhid) sl,dqbm dqbm
+        from xt_yhxxb
+        where yhzt = 0
+        group by dqbm
+        order by dqbm
+        ) zx
+        <!-- ,xt_ds_yhhhxxb gl -->
+        where zx.dqbm = zs.dqbm
+        order by zs.dqbm
+    </queryHzckHb>
+    <!-- 查询省厅 -->
+    <queryHzck>
+        select hbdt.zs hzdtzs,hbdt.zxsl hzdtzx,pcs.zs pcszs,pcs.zxsl pcszx,pcs.dsbm dsbm,SUBSTR(xzqh.qhmc,4) dsmc from
+        (
+        <!-- 户办大厅 -->
+        select zs.sl zs,zx.sl zxsl,zs.dqbm dqbm,zs.dqbm || '00' qhdm
+        from
+        (
+        <!-- 总数 -->
+        select count(yhid) sl,dqbm dqbm
+        <!-- from Xt_Yhxxb -->
+        from XtYhxxb
+        group by dqbm
+        order by dqbm
+        ) zs
+        ,(
+        <!-- 在线 -->
+        select count(yhid) sl,dqbm dqbm
+        <!-- from Xt_Yhxxb -->
+        from XtYhxxb
+        where yhzt = 0
+        group by dqbm
+        order by dqbm
+        ) zx
+        where zx.dqbm = zs.dqbm
+        order by zs.dqbm
+        ) hbdt
+        ,(
+        <!-- 派出所 -->
+        select zs.sl zs,zx.sl zxsl,zs.dqbm dsbm from
+        (
+        <!-- 总数 -->
+        select sum(countdw.sl) sl,groupdw.dsdm dqbm
+        from
+        (
+        <!-- 单位分组 -->
+        select distinct(SUBSTR(qhdm,0,4)) dsdm,dw.qhdm qhdm
+        <!-- from prodb.Xt_Dwxxb dw -->
+        from prodb.XtDwxxb dw
+        where dwjb = 0
+        group by qhdm
+        order by qhdm
+        ) groupdw
+        ,(
+        <!-- 单位数量 -->
+        select count(dw.dm) sl,dw.qhdm qhdm
+        <!-- from prodb.Xt_Dwxxb dw -->
+        from prodb.XtDwxxb dw
+        where dwjb = 0
+        group by qhdm
+        order by qhdm
+        ) countdw
+        where groupdw.qhdm = countdw.qhdm
+        group by groupdw.dsdm
+        order by groupdw.dsdm
+        ) zs
+        ,(
+        <!-- 在线 -->
+        select sum(countdw.sl) sl,groupdw.dsdm dqbm
+        from
+        (
+        select distinct(SUBSTR(qhdm,0,4)) dsdm,dw.qhdm qhdm
+        <!-- from prodb.Xt_Dwxxb dw -->
+        from prodb.XtDwxxb dw
+        where dwjb = 0
+        and qybz = 1
+        group by qhdm
+        order by qhdm
+        ) groupdw
+        ,(
+        select count(dw.dm) sl,dw.qhdm qhdm
+        <!-- from prodb.Xt_Dwxxb dw -->
+        from prodb.XtDwxxb dw
+        where dwjb = 0
+        and qybz = 1
+        group by qhdm
+        order by qhdm
+        ) countdw
+        where groupdw.qhdm = countdw.qhdm
+        group by groupdw.dsdm
+        order by groupdw.dsdm
+        ) zx
+        where zx.dqbm = zs.dqbm
+        order by zs.dqbm
+        ) pcs
+        , XtXzqh xzqh
+        where hbdt.dqbm = pcs.dsbm
+        and hbdt.qhdm = xzqh.qhdm
+    </queryHzck>
+
+    <!-- 查询户政窗口视图 -->
+    <queryHzckView>
+        from XtHzck
+    </queryHzckView>
+
+    <!-- 查询用户信息 -->
+    <queryHzckYhxx>
+        from XtHzckMx mx
+        where 1 = 1
+        #if(!$ut.isns($dsdm))
+        and mx.dqbm = :dsdm
+        #end
+        #if(!$ut.isns($yhxm))
+        and mx.yhxm like :%yhxm%
+        #end
+        #if(!$ut.isns($yhdlm))
+        and mx.yhdlm like :%yhdlm%
+        #end
+        #if(!$ut.isns($szqx))
+        and mx.szqx like :%szqx%
+        #end
+        #if(!$ut.isns($dwmc))
+        <!-- and mx.dwmc like :%dwmc% -->
+        #end
+        #if(!$ut.isns($dwdm))
+        and mx.dwdm in ($ut.getInStr($dwdm))
+        #end
+        #if(!$ut.isns($gmsfhm))
+        and mx.gmsfhm like :%gmsfhm%
+        #end
+        #if(!$ut.isns($dlsj))
+        and mx.dlsj &gt;= to_date(:dlsj,'yyyyMMddhh24miss')
+        and mx.dlsj &lt;= to_date(:dlsj 23:59:59,'yyyyMMddhh24miss')
+        #end
+        #if(!$ut.isns($qhdm))
+        and mx.qhdm in ($ut.getInStr($qhdm))
+        #end
+        <!-- 用户状态 -->
+        #if(!$ut.isns($yhzt))
+        #if("$yhzt" == "0")
+        and mx.dlsj is not null
+        #else
+        #if("$yhzt" == "1")
+        and mx.dlsj is null
+        #end
+        #end
+        #end
+        #if(!$ut.isns($yhlx))
+        and mx.yhlx = :yhlx
+        #end
+        #if("$cxlx" == "1")
+        and mx.dwmc is not null
+        #end
+        order by mx.dlsj
+    </queryHzckYhxx>
+
+
+    <!-- 全省派出所户籍业务量排名查询 -->
+    <querySjYwpm>
+        select distinct(s.dsdm),t.dsmc,s.ywsl,to_char(q.tjsj,:datefomat)
+        from (
+        select r.dsdm as dsdm ,sum(ywsl) as ywsl
+        from sj_ywpm r
+        where r.tjsj &gt;= to_date(to_char(sysdate,:sysdatefomat),:sysdatefomat)
+        group by r.dsdm
+        ) s
+        ,(
+        select r.dsdm as dsdm ,max(r.tjsj) as tjsj
+        from sj_ywpm r
+        group by r.dsdm
+        ) q
+        ,sj_ywpm t
+        where t.dsdm = s.dsdm
+        and t.dsdm = q.dsdm
+        order by s.ywsl desc,dsdm asc
+    </querySjYwpm>
+
+    <!-- 全省派出所户籍业务量排名明细查询 -->
+    <querySjYwpmMx>
+        select distinct(s.pcsdm),t.pcsmc,t.dsdm,t.dsmc,s.ywsl,to_char(q.tjsj, :datefomat),t.xq
+        from (
+        select r.pcsdm as pcsdm ,sum(r.ywsl) as ywsl
+        from sj_ywpm r
+        where r.tjsj &gt;= to_date(to_char(sysdate,:sysdatefomat),:sysdatefomat)
+        group by r.pcsdm
+        ) s
+        ,(
+        select r.pcsdm as pcsdm ,max(tjsj) as tjsj
+        from sj_ywpm r
+        group by r.pcsdm
+        ) q
+        ,sj_ywpm t
+        where t.pcsdm = s.pcsdm
+        and t.pcsdm = q.pcsdm
+        and t.dsdm = :dsdm
+        order by s.ywsl desc,s.pcsdm asc
+    </querySjYwpmMx>
+
+    <!-- 全省派出所户籍业务量排名明细查询总数 -->
+    <querySjYwpmMxTotal>
+        select count(r.pcsdm)
+        from sj_ywpm r
+        where r.tjsj &gt;= to_date(to_char(sysdate,:sysdatefomat),:sysdatefomat)
+        and r.dsdm = :dsdm
+    </querySjYwpmMxTotal>
+
+    <!-- 全省派出所户籍业务量排名报表查询 -->
+    <querySjYwpmPr>
+        <!--
+            Q:一天插入多条数据?
+            A:不存在
+
+            Q:后续新增时间区间查询
+            A:有时间区间按时间区间查询,没有查询本月
+         -->
+        from SjYwpm t
+        where t.pcsdm = :pcsdm
+        #if(!$ut.isns($tjsjq))
+        and mx.dlsj is not null
+        #else
+        <!-- and t.tjsj &gt;= to_date(to_char(sysdate,:sysdatemonthfomat),:sysdatefomat)
+        and t.tjsj &lt;= to_date(to_char(sysdate,:sysdatemonthfomat),:sysdatefomat) -->
+        #end
+        order by t.tjsj desc,t.ywsl desc
+    </querySjYwpmPr>
+
+    <queryEchartsData>
+        <![CDATA[
+		from PoECHARTSDATA   where 1=1
+		#if(!$ut.isns($xzqhmc))
+   			and ssqhmc = '${xzqhmc}'
+ 		#end
+ 		order by ssqhdm
+         ]]>
+    </queryEchartsData>
+
+    <querySSXQQRSFFBB>
+        <![CDATA[
+			select qcdsdm,qcdsmc,sum(COUNT) from SSXQQRSFFBB  
+			 where 1=1
+			#if(!$ut.isns($qhdm))
+	   			and qhdm = '${qhdm}'
+	 		#end
+ 		group by qcdsdm,qcdsmc order by sum(COUNT) desc
+         ]]>
+    </querySSXQQRSFFBB>
+
+    <queryZqzXx>
+        from ZjywZqzxx
+        where 1=1
+        #if(!$ut.isns($ywlsh))
+        and ywlsh = :ywlsh
+        #end
+        #if(!$ut.isns($sqr_xm))
+        	and sqr_xm like :%sqr_xm%
+        #end
+        #if(!$ut.isns($isstatus))
+        	and isstatus = :isstatus
+        #end
+        #if(!$ut.isns($isstatuszx))
+            and isstatus != :isstatuszx
+        #end
+        #if(!$ut.isns($sfbj))
+        	and sfbj = :sfbj
+        #end
+        #if(!$ut.isns($sqr_gmsfhm))
+        	and sqr_gmsfhm = :sqr_gmsfhm
+        #end
+        #if(!$ut.isns($qcd_ssxqdm))SJ_HJSP_HJSPSQB
+        	and qcd_ssxqdm like :qcd_ssxqdm%
+        #end
+        #if(!$ut.isns($sjfw))
+        	#if(!$ut.isns($xzqh))
+        		and qcd_hkdjjg_gajgjgdm = :xzqh
+        	#end
+            #if(!$ut.isns($xzqh1))
+                and ${xzqh1}
+            #end
+            #if(!$ut.isns($dwdmStr1))
+                and ${dwdmStr1}
+            #end
+        	#if(!$ut.isns($dwdmStr))
+        		and ${dwdmStr}
+        	#end
+        #end       
+        order by slsj desc
+    </queryZqzXx>
+
+    <querySjHjspZqzxx>
+        select a from SJ_HJSP_ZQZXXB a,SJ_HJSP_HJSPSQB b
+        where 1=1
+        and a.spywid = b.spywid
+        and b.spjg !=2
+        #if(!$ut.isns($zqid))
+        and a.zqid = :zqid
+        #end
+        #if(!$ut.isns($sqrxm))
+        and a.sqrxm like :%sqrxm%
+        #end
+        #if(!$ut.isns($isstatus))
+        and a.isstatus = :isstatus
+        #end
+        #if(!$ut.isns($sfcsjtb))
+        and a.sfcsjtb = :sfcsjtb
+        #end
+        #if(!$ut.isns($sqrgmsfhm))
+        and a.sqrgmsfhm = :sqrgmsfhm
+        #end
+        #if(!$ut.isns($qcd_ssxqdm))
+        and a.qrd_ssxqdm like :qrd_ssxqdm%
+        #end
+        #if(!$ut.isns($sjfw))
+            #if(!$ut.isns($xzqh))
+            and a.qrdhkdjjg = :xzqh
+            #end
+            #if(!$ut.isns($dwdmStr))
+            and ${dwdmStr}
+            #end
+        #end
+        #if(!$ut.isns($sfqyz))
+        	and a.sfqyz = :sfqyz
+        #end
+        #if(!$ut.isns($sfbj))
+        	and a.sfbj = :sfbj
+        #end
+        #if(!$ut.isns($qyyy))
+            and a.qyyy = :qyyy
+        #end
+        order by a.dsgxsj desc
+    </querySjHjspZqzxx>
+
+    <queryQyzXx>
+        from ZjywQyzxx
+        where 1=1
+        #if(!$ut.isns($isstatus))
+        and isstatus = :isstatus
+        #end
+        #if(!$ut.isns($isstatuszx))
+            and isstatus != :isstatuszx
+        #end
+        #if(!$ut.isns($qwd_ssxqdm))
+        and qwd_ssxqdm like :qwd_ssxqdm%
+        #end
+        #if(!$ut.isns($czr_xm))
+        and czr_xm like :%czr_xm%
+        #end
+        #if(!$ut.isns($czr_gmsfhm))
+        and czr_gmsfhm = :czr_gmsfhm
+        #end
+        #if(!$ut.isns($hkdjpcs))
+        and hkdjpcs like :hkdjpcs%
+        #end
+        #if(!$ut.isns($sjfw))
+        	#if(!$ut.isns($xzqh))
+        		and hkdjpcs = :xzqh
+        	#end
+            #if(!$ut.isns($xzqh2))
+                and ${xzqh2}
+            #end
+        	#if(!$ut.isns($dwdmStr2))
+        		and ${dwdmStr2}
+        	#end
+        #end
+        #if(!$ut.isns($sfbj))
+        	#if(1 == $sfbj)
+        		and sfbj = '${sfbj}'
+        	#end
+        	#if(0 == $sfbj)
+        		and sfbj = '${sfbj}'
+        	#end
+        #end
+        #if(!$ut.isns($slsjStart))
+        	and slsj &gt;= '${slsjStart}000000'
+        #end
+        #if(!$ut.isns($slsjEnd))
+   			and slsj &lt;= '${slsjEnd}235959'
+ 		#end        
+        order by slsj desc,qfrq desc
+    </queryQyzXx>
+
+
+    <queryZqzQyrxx>
+        from ZjywZqzQyrxx
+        where 1=1
+        #if(!$ut.isns($ywlsh))
+        and ywlsh = :ywlsh
+        #end
+    </queryZqzQyrxx>
+
+    <SJ_HJSP_QYZXXB>
+        from SJ_HJSP_QYZXXB
+        where 1=1
+        #if(!$ut.isns($czrgmsfhm))
+        and czrgmsfhm = :czrgmsfhm
+        #end
+        #if(!$ut.isns($qyzbh))
+        and qyzbh = :qyzbh
+        #end
+        #if(!$ut.isns($yyzqsj))
+        	and dsgxsj >= :yyzqsj
+        #end 
+        and dsgxsj is not null
+        order by dsgxsj desc
+    </SJ_HJSP_QYZXXB>
+
+    <queryYwtbXx>
+        from YwtbXx a
+        where 1=1
+        #if(!$ut.isns($applyno))
+        and a.applyno = :applyno
+        #end
+        #if(!$ut.isns($username))
+        and a.username like :%username%
+        #end
+        #if(!$ut.isns($licenseno))
+        and a.licenseno = :licenseno
+        #end
+        #if(!$ut.isns($begintime))
+        and a.begintime &gt;= to_date('${begintime}','yyyy-MM-ddhh24miss')
+        #end
+        #if(!$ut.isns($endtime))
+        and a.begintime &lt;= to_date('${endtime} 235959','yyyy-MM-ddhh24miss')
+        #end
+        #if(!$ut.isns($isstatus))
+        and a.isstatus = :isstatus
+        #end
+        #if(!$ut.isns($bljg))
+        and a.bljg = :bljg
+        #end
+        #if(!$ut.isns($sldwcode))
+        and ${sldwcode}
+        #end
+        order by a.cjsj desc
+    </queryYwtbXx>
+
+    <queryYwtbXxJob>
+        from YwtbXx a
+        where 1=1
+        #if(!$ut.isns($isstatus))
+        and a.isstatus = :isstatus
+        #end
+        #if(!$ut.isns($gaisstatus))
+        and a.gaisstatus != :gaisstatus
+        #end
+        #if(!$ut.isns($bljg))
+        and a.bljg = :bljg
+        #end
+        order by a.cjsj desc
+    </queryYwtbXxJob>
+
+    <queryQgRkpcxx>
+        from QG_RKPC a
+        where 1=1
+        #if(!$ut.isns($gsdw))
+        and a.gsdw = :gsdw
+        #end
+        #if(!$ut.isns($begintime))
+        and a.rkpcCreateDate &gt;= to_date('${begintime}','yyyy-MM-ddhh24miss')
+        #end
+        #if(!$ut.isns($endtime))
+        and a.rkpcCreateDate &lt;= to_date('${endtime} 235959','yyyy-MM-ddhh24miss')
+        #end
+        order by a.rkpcCreateDate desc
+    </queryQgRkpcxx>
+
+    <queryXtYwbbmbxxb>
+        from PoXT_YWBBMBXXB a
+        where 1=1
+    </queryXtYwbbmbxxb>
+
+    <queryCzrkxx>
+        from HJXX_CZRKJBXXB a
+        where 1=1
+        #if(!$ut.isns($gmsfhm))
+        and a.gmsfhm = :gmsfhm
+        #end
+    </queryCzrkxx>
+
+    <postUpdateZp>
+        from PoHJXX_RYZPXXB a
+        where 1=1
+        #if(!$ut.isns($xm))
+        and a.xm = :xm
+        #end
+        #if(!$ut.isns($gmsfhm))
+        and a.gmsfhm = :gmsfhm
+        #end
+        order by lrrq
+    </postUpdateZp>
+
+    <queryZp>
+        from PoHJXX_RYZPXXB a
+        where 1=1
+        #if(!$ut.isns($xm))
+        and a.xm = :xm
+        #end
+        #if(!$ut.isns($gmsfhm))
+        and a.gmsfhm = :gmsfhm
+        #end
+        order by lrrq
+    </queryZp>
+
+    <queryBggzxxb>
+        from PoHJYW_BGGZXXB a
+        where 1=1
+        #if(!$ut.isns($gmsfhm))
+        and a.gmsfhm = :gmsfhm 
+        #end
+    </queryBggzxxb>
+
+    <querySwzxZm>
+        from PoHJYW_SWZXXXB a
+        where 1=1
+        #if(!$ut.isns($gmsfhm))
+        and a.gmsfhm = :gmsfhm
+        #end
+    </querySwzxZm>
+
+    <queryQczxZm>
+        from PoHJYW_QCZXXXB a
+        where 1=1
+        #if(!$ut.isns($gmsfhm))
+        and a.gmsfhm = :gmsfhm
+        #end
+    </queryQczxZm>
+
+    <queryYwtbFjcl>
+        from YwtbFjcl a
+        where 1=1
+        #if(!$ut.isns($id))
+        and a.id = :id
+        #end
+        #if(!$ut.isns($applyno))
+        and a.applyno = :applyno
+        #end
+    </queryYwtbFjcl>
+    <queryDzyxSjHjspZqzxx11>
+        select a from HJSP_ZQZXXB a
+        where 1=1
+        #if(!$ut.isns($zqid))
+            and a.zqid = :zqid
+        #end
+        #if(!$ut.isns($sqrxm))
+            and a.sqrxm like :%sqrxm%
+        #end
+        #if(!$ut.isns($isstatus))
+            and a.isstatus = :isstatus
+        #end
+        #if(!$ut.isns($sfcsjtb))
+            and a.sfcsjtb = :sfcsjtb
+        #end
+        #if(!$ut.isns($sqrgmsfhm))
+            and a.sqrgmsfhm = :sqrgmsfhm
+        #end
+        #if(!$ut.isns($qcd_ssxqdm))
+            and a.qrd_ssxqdm like :qrd_ssxqdm%
+        #end
+        #if(!$ut.isns($sjfw))
+        #if(!$ut.isns($xzqh))
+            and a.qrdhkdjjg = :xzqh
+        #end
+        #if(!$ut.isns($dwdmStr))
+            and ${dwdmStr}
+        #end
+        #end
+        #if(!$ut.isns($sfqyz))
+            and a.sfqyz = :sfqyz
+        #end
+        #if(!$ut.isns($sfbj))
+            and a.sfbj = :sfbj
+        #end
+        and (qyyy='124' or qyyy='125')
+        order by a.dsgxsj desc
+    </queryDzyxSjHjspZqzxx11>
+
+    <!-- 警员查询 -->
+    <queryZzjy>
+        from HJXX_CZRKJBXXB a
+        where a.ryzt = '0'
+        and a.cxbz = '0'
+        and a.jlbz = '1'
+        #if(!$ut.isns($xm))
+            and a.xm = :xm
+        #end
+        #if(!$ut.isns($gmsfhm))
+            and gmsfhm = :gmsfhm
+        #end
+        #if(!$ut.isns($hh))
+            and a.hh = '${hh}'
+        #end
+        #if(!$ut.isns($csrq))
+            and a.csrq = :csrq
+        #end
+    </queryZzjy>
+</sql>

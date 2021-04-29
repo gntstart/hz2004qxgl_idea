@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+	        <property name="hibernate.c3p0.max_size">20</property>
+	        <property name="hibernate.c3p0.min_size">5</property>
+	        <property name="hibernate.c3p0.timeout">120</property>
+	        <property name="automaticTestTable">Test</property>
+	        <property name="hibernate.c3p0.max_statements">100</property>
+	        <property name="hibernate.c3p0.idle_test_period">120</property>
+	        <property name="hibernate.c3p0.acquire_increment">1</property>
+	        <property name="c3p0.testConnectionOnCheckout">true</property>
+	        <property name="c3p0.idleConnectionTestPeriod">18000</property>
+	        <property name="c3p0.maxIdleTime">25000</property>
+	        <property name="c3p0.idle_test_period">120</property>
+	
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        	<property name="hibernate.connection.url">jdbc:oracle:thin:@192.168.0.33:1521:ORCL</property>
+        	<property name="hibernate.connection.username">hz2018</property>
+        	<property name="hibernate.connection.password">123456</property>
+		
+		<property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+		<property name="show_sql">false</property>
+		<property name="use_outer_join">false</property>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XT_SJPZB.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/HJXX_CZRKJBXXB.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XT_XTKZCSB.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XT_XZJDXXB.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XT_JLXXXB.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XT_JWHXXB.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XT_JLXJWHDZXXB.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtDwxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtJscdqxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtJsgnqxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtJsxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtJsywbbqxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtJszsbbqxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtJwhxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtSpdzb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtSpmbxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtXtcsb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtXtgnb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtXtgncdb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XT_XZQHB.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtYhdtqxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtYhdzqxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtYhipyxxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtYhjsxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtYhksjg.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtYhsjfwb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtYhxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtYwbbmbxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtZsbbmbxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtZsbbxxb.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/HZ_ZJ_SB.hbm.xml"/>
+		<mapping resource="com/gnt/qxgl/hz2004/entity/XtYhZpxxb.hbm.xml"/>
+		
+		<!-- HZ2004 PO -->
+		<mapping resource="com/hzjc/hz2004/po/PoHJLS_HJYWLSB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJXX_CZRKJBXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJXX_HXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJXX_MLPXXXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_XTKZCSB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_JWHXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJYW_CHCLXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJYW_GMSFHMSXMFPXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_LNWSDB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoZJYW_SLXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJYW_BGGZXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_XTCSB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_XZQHB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJYW_QCCLXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJYW_QCZXXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJXX_CXSXBGB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJTJ_HBDXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJXX_RHFLXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJYW_HCYBDXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJTJ_RYBDXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_DWXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_YHXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_JLXXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_JWZRQXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_XZJDXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJXZ_YWBLXZXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJSP_HJSPSQB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJSP_HJSPZB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJSP_HJSPFDCLB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJSP_ZQZXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJSP_HJSPLSB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJSP_QYZXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoPOST_KDQCFKB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoXT_YHHHXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJXZ_BGDYZDKZB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJYW_SWZXXXB.hbm.xml"/>
+		<mapping resource="com/hzjc/hz2004/po/PoHJXX_RYZPXXB.hbm.xml"/>
+		
+	</session-factory>
+</hibernate-configuration>

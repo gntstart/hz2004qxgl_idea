@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    	<!-- table="XT_DWXXB"  -->
+    <class 
+    	name="com.gnt.qxgl.hz2004.entity.XtDwxxb" 
+    	table="XT_DWXXB" 
+    	dynamic-insert="true">
+		<id name="dm" type="java.lang.String">
+			<column name="DM" length="9" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="mc" type="java.lang.String">
+			<column name="MC" length="200" not-null="true" />
+		</property>
+		<property name="zwpy" type="java.lang.String">
+			<column name="ZWPY" length="50" />
+		</property>
+		<property name="wbpy" type="java.lang.String">
+			<column name="WBPY" length="20" />
+		</property>
+		<property name="dwjgdm" type="java.lang.String">
+			<column name="DWJGDM" length="12" />
+		</property>
+		<property name="qhdm" type="java.lang.String">
+			<column name="QHDM" length="6" not-null="true" />
+		</property>
+		<property name="dwjb" type="java.lang.String">
+			<column name="DWJB" length="1" not-null="true" />
+		</property>
+		<property name="bz" type="java.lang.String">
+			<column name="BZ" length="200" />
+		</property>
+		<property name="qybz" type="java.lang.String">
+			<column name="QYBZ" length="1" not-null="true" />
+		</property>
+		<property name="bdlx" type="java.lang.String">
+			<column name="BDLX" length="1" />
+		</property>
+		<property name="bdsj" type="java.lang.String">
+			<column name="BDSJ" length="14" />
+		</property>
+		<property name="fjjgdm" type="java.lang.String">
+			<column name="FJJGDM" length="12" />
+		</property>
+		<property name="fjjgmc" type="java.lang.String">
+			<column name="FJJGMC" length="200" />
+		</property>
+		<property name="dhhm" type="java.lang.String">
+			<column name="DHHM" length="200" />
+		</property>
+
+	</class>
+</hibernate-mapping>

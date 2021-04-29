@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoHJXX_RHFLXXB"
+        table="HJXX_RHFLXXB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="rhflid"  column="RHFLID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="ryid" column="RYID"/>
+        <property name="rynbid" column="RYNBID"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+		<property name="xm" column="XM"/>
+		<property name="xb" column="XB"/>
+		<property name="csrq" column="CSRQ"/>
+		<property name="xzdfw" column="XZDFW"/>
+        <property name="rhfl_ssxq" column="RHFL_SSXQ"/>
+        <property name="rhfl_jlx" column="RHFL_JLX"/>
+        <property name="rhfl_mlph" column="RHFL_MLPH"/>
+        <property name="rhfl_mlxz" column="RHFL_MLXZ"/>
+        <property name="rhfl_pcs" column="RHFL_PCS"/>
+        <property name="rhfl_zrq" column="RHFL_ZRQ"/>
+        <property name="rhfl_xzjd" column="RHFL_XZJD"/>
+        <property name="rhfl_jcwh" column="RHFL_JCWH"/>
+		<property name="slsj" column="SLSJ"/>
+		<property name="sldw" column="SLDW"/>
+		<property name="slrid" column="SLRID"/>
+		<property name="zxsj" column="ZXSJ"/>
+		<property name="zxdw" column="ZXDW"/>
+		<property name="zxrid" column="ZXRID"/>
+		<property name="zxyy" column="ZXYY"/>
+		<property name="bz" column="BZ"/>
+        <property name="cjhjywid" column="CJHJYWID"/>
+        <property name="cchjywid" column="CCHJYWID"/>
+        <property name="rhflzt" column="RHFLZT"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtYhipyxxxb" table="XT_YHIPYXXXB" dynamic-insert="true">
+		<id name="ipyxid" type="com.gnt.qxgl.common.LongToString">
+			<column name="IPYXID" length="19" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="yhid" type="com.gnt.qxgl.common.LongToString">
+			<column name="YHID" length="19" />
+		</property>
+		<property name="ipdz" type="java.lang.String">
+			<column name="IPDZ" length="20" not-null="true" />
+		</property>
+		<property name="cjrid" type="com.gnt.qxgl.common.LongToString">
+			<column name="CJRID" length="19" not-null="true" />
+		</property>
+		<property name="cjsj" type="java.lang.String">
+			<column name="CJSJ" length="14" not-null="true" />
+		</property>
+		<property name="dqbm" type="java.lang.String">
+			<column name="dqbm" length="20" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>

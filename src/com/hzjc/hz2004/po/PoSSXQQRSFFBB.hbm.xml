@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoSSXQQRSFFBB"
+        table="SSXQQRSFFBB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+		<id  name="sffbbId"   column="SFFBBID"  >
+			<generator class="assigned"></generator>
+		</id>
+
+        <property name="qhdm"  column="QHDM" length="6" />
+        <property name="qcdsdm"  column="QCDSDM"/>
+        <property name="qcdsmc"  column="QCDSMC"/>
+        <property name="count"  column="COUNT"/>
+       
+    </class>
+
+</hibernate-mapping>

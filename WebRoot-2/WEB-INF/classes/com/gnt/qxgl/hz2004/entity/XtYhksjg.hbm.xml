@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtYhksjg" table="XT_YHKSJG" dynamic-insert="true">
+		<id name="id" type="java.lang.String">
+			<column name="ID" length="32" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="sfzh" type="java.lang.String">
+			<column name="SFZH" length="18" not-null="true" />
+		</property>
+		<property name="yhm" type="java.lang.String">
+			<column name="YHM" length="50" />
+		</property>
+		<property name="dwdm" type="java.lang.String">
+			<column name="DWDM" length="20" />
+		</property>
+		<property name="jh" type="java.lang.String">
+			<column name="JH" length="10" />
+		</property>
+		<property name="flag" type="java.lang.String">
+			<column name="FLAG" length="1" />
+		</property>
+		<property name="bz" type="java.lang.String">
+			<column name="BZ" length="200" />
+		</property>
+		<property name="fs" type="java.lang.Double">
+			<column name="FS" length="10" />
+		</property>
+	</class>
+</hibernate-mapping>

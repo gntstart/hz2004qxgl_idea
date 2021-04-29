@@ -1,0 +1,5 @@
+2012年3月9日孔庆涛增加了PKI登录功能，修改的文件如下： 
+ 1、根目录下calogin.jsp
+  2、新增加lib包middleobject.jar
+  3、修改了web_info\web.xml
+  4、修改了WEB-INF\classes\conf\system-conf.properties 

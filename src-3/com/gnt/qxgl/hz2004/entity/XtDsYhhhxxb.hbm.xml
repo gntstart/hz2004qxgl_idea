@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtDsYhhhxxb" table="XT_DS_YHHHXXB" dynamic-insert="false">
+		<id name="hhId" type="java.lang.Long">
+			<column name="HHID" length="50" />
+			<generator class="assigned"></generator>
+		</id>
+		
+		<property name="yhhhId" type="java.lang.String">
+			<column name="YHHHID" length="19" />
+		</property>
+		<property name="yhId" type="java.lang.Long" insert="false" update="false" >
+			<column name="YHID" length="19" />
+		</property>
+		<property name="yhIP" type="java.lang.String">
+			<column name="YHIP" length="20" />
+		</property>
+		<property name="khdbb" type="java.lang.String">
+			<column name="KHDBB" length="20" />
+		</property>
+		<property name="stId" type="java.lang.String">
+			<column name="STID" length="32" />
+		</property>
+		<property name="stdsbm" type="java.lang.String">
+			<column name="STDSBM" length="20" />
+		</property>
+		<property name="stdsmc" type="java.lang.String">
+			<column name="STDSMC" length="40" />
+		</property>
+		<property name="gxsj" type="java.util.Date">
+			<column name="GXSJ" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoECHARTSDATA"
+        table="ECHARTSDATA"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+		<id  name="qhdm"   column="QHDM"  >
+			<generator class="assigned"></generator>
+		</id>
+
+        <property name="qhmc"  column="QHMC"/>
+        <property name="ssqhdm"  column="SSQHDM"/>
+        <property name="ssqhmc"  column="SSQHMC"/>
+        <property name="zrks"  column="ZRKS"/>
+        <property name="zhs"  column="ZHS"/>    
+        <property name="nxrk"  column="NXRK"/>
+        <property name="nvrk"  column="NVRK"/>
+        <property name="cslr"  column="CSLR"/>
+        <property name="bllr"  column="BLLR"/>
+        <property name="qrlr"  column="QRLR"/>
+        <property name="swlc"  column="SWLC"/>
+        <property name="qclc"  column="QCLC"/>
+        <property name="sclc"  column="SCLC"/>
+        <property name="nl_level1"  column="NL_LEVEL1"/>
+        <property name="nl_level2"  column="NL_LEVEL2"/>
+        <property name="nl_level3"  column="NL_LEVEL3"/>
+        <property name="nl_level4"  column="NL_LEVEL4"/>
+        <property name="nl_level5"  column="NL_LEVEL5"/>
+        <property name="lrxl_level1"  column="LRXL_LEVEL1"/>
+        <property name="lrxl_level2"  column="LRXL_LEVEL2"/>
+        <property name="lrxl_level3"  column="LRXL_LEVEL3"/>
+        <property name="lrxl_level4"  column="LRXL_LEVEL4"/>
+        <property name="lrxl_level5"  column="LRXL_LEVEL5"/>
+        <property name="lrxl_level6"  column="LRXL_LEVEL6"/>
+        <property name="lrxl_level7"  column="LRXL_LEVEL7"/>
+        <property name="lrxl_level8"  column="LRXL_LEVEL8"/>
+        <property name="lrxl_level9"  column="LRXL_LEVEL9"/>
+        <property name="lrxl_level10"  column="LRXL_LEVEL10"/>
+    </class>
+
+</hibernate-mapping>

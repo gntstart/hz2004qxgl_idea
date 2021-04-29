@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sql>
+	<!-- 功能点查询 -->
+	<queryFunc>
+		from SysFunctionInfo a where a.xmbm=:xmbm
+		#if(!$ut.isns($roleBm))
+			#if("$sqzt"=="1")
+				and exists(
+					select b.functionBm from SysFunctionInfoRole b
+						where b.functionBm=a.functionBm and b.xmbm=:xmbm and b.roleBm=:roleBm
+				)
+			#else
+				and not exists(
+					select b.functionBm from SysFunctionInfoRole b
+						where b.functionBm=a.functionBm and b.xmbm=:xmbm and b.roleBm=:roleBm
+				)	
+			#end
+		#end
+		#if(!$ut.isns($queryKey))
+			and (a.functionName like :%queryKey% or a.functionBm like :%queryKey%)
+		#end
+		order by a.functionName
+	</queryFunc>
+	
+	<!-- 角色查询 -->
+	<queryJs>
+		from SysRoleInfo a where 0=0
+		#if(!$ut.isns($xmbm))
+			and xmbm=:xmbm
+		#end
+		#if(!$ut.isns($loginName))
+				and exists(
+					select b.gxid from SysUserRole b
+						where b.roleBm=a.roleBm and b.xmbm=:xmbm and b.loginName=:loginName 
+				)	
+		#end
+	</queryJs>
+	
+	<!-- 用户可分配角色查询 -->
+	<queryUserJsFP>
+		select b.gxid,b.roleBm,a.roleName  from SysRoleInfo a,SysUserRoleFpqx b where b.roleBm=a.roleBm 
+		#if(!$ut.isns($xmbm))
+			and a.xmbm=:xmbm and b.xmbm=:xmbm 
+		#end
+		#if(!$ut.isns($loginName))
+		    and b.loginName=:loginName
+		#end
+		order by b.roleBm
+	</queryUserJsFP>
+	
+	<!-- 用户角色查询 -->
+	<queryUserJs>
+		select b.gxid,b.roleBm,a.roleName,b.zfpq  from SysRoleInfo a,SysUserRole b where b.roleBm=a.roleBm 
+		#if(!$ut.isns($xmbm))
+			and a.xmbm=:xmbm and b.xmbm=:xmbm 
+		#end
+		#if(!$ut.isns($loginName))
+		    and b.loginName=:loginName
+		#end
+		order by b.roleBm
+	</queryUserJs>
+	
+	<!-- 机构查询 -->
+	<queryZzjg>
+		from SysOrganizeInfo a where 0=0
+		#if(!$ut.isns($orgid))
+			and orgid=:orgid
+		#end
+		#if(!$ut.isns($zxbz))
+			and a.zxbz = :zxbz
+		#else
+			and a.zxbz = '0'
+		#end
+		#if(!$ut.isns($key))
+			and (a.organizeBm=:key or a.organizePath like :%key%)
+		#end
+	</queryZzjg>
+	
+	<!-- 警员查询 -->
+	<queryZzjy>
+		from XtYhxxb a where 0=0
+		#if(!$ut.isns($yhid))
+			and yhid=:yhid
+		#else
+			#if(!$ut.isns($jyh))
+				and jyh like :%jyh%
+			#end
+			#if(!$ut.isns($dwdm))
+				and dwdm=:dwdm
+			#end
+			#if($ut.isns($yhzt))
+				and yhzt='0'
+			#end
+			#if(!$ut.isns($ccm))
+				and dwdm like :ccm%
+			#end
+			#if(!$ut.isns($yhxm))
+				and a.yhxm like :%yhxm%
+			#end
+			#if(!$ut.isns($yhdlm))
+				and a.yhdlm like :%yhdlm%
+			#end
+			#if(!$ut.isns($gmsfhm))
+				and a.gmsfhm = :gmsfhm
+			#end
+			#if(!$ut.isns($roleBm))
+				#if("$sqzt"=="1")
+					and exists(
+						select b.gxid from SysUserRole b
+							where b.loginName=a.loginName and b.xmbm=:xmbm and roleBm=:roleBm
+					)
+				#else
+					and not exists(
+						select b.gxid from SysUserRole b
+							where b.loginName=a.loginName and b.xmbm=:xmbm and roleBm=:roleBm
+					)	
+				#end
+			#end
+			#if(!$ut.isns($queryKey))
+				and (a.yhdlm like :%queryKey% or a.yhxm like :%queryKey% or a.jyh like :%queryKey%)
+			#end
+		#end
+		order by a.dwdm,a.yhdlm
+	</queryZzjy>
+	
+	<!-- 旅馆综合查询 -->	
+	<queryLgzhcs>
+		from Lg where 0=0 
+	    #if(!$ut.isns($lgbm))
+	      and lgbm = :lgbm
+	    #end
+	    #if(!$ut.isns($lgdm))
+	      and lgbm = :lgdm
+	    #end
+	    #if(!$ut.isns($lx))
+	      and lx = :lx
+	    #end
+	    #if(!$ut.isns($zt))
+	      and zt = :zt
+	    #end
+	    #if(!$ut.isns($xz))
+	      and xz = :xz
+	    #end
+	    #if(!$ut.isns($xj))
+	      and xj = :xj
+	    #end
+	    #if(!$ut.isns($dj))
+	      and dj = :dj
+	    #end
+	    #if(!$ut.isns($dhsrbh))
+	      and dhsrbh = :dhsrbh
+	    #end
+	    #if(!$ut.isns($tssblx))
+	      and tssblx = :tssblx
+	    #end
+	    #if(!$ut.isns($pcs))
+	      and pcs like :pcs%
+	    #end
+	    #if(!$ut.isns($mcpy))
+	      and mcpy like '%$ut.toL($mcpy)%'
+	    #end
+	    #if(!$ut.isns($fzr))
+	      and fzr like :%fzr%
+	    #end
+	    #if(!$ut.isns($lxdh))
+	      and lxdh like :%lxdh%
+	    #end
+	    #if(!$ut.isns($fddbr))
+	      and fddbr like :%fddbr%
+	    #end
+	    #if(!$ut.isns($dz))
+	      and dz like :%dz%
+	    #end
+	    #if(!$ut.isns($babdh))
+	      and babdh like :%babdh%
+	    #end
+	    #if(!$ut.isns($mc))
+	      and mc like :%mc%
+	    #end
+		order by pcs asc
+	</queryLgzhcs>
+	
+	<!-- 项目查询 -->
+	<queryXm>
+		from SysProjectInfo a where 0=0
+		#if(!$ut.isns($xmbm))
+			and xmbm=:xmbm
+		#end
+	</queryXm>
+	
+	<!-- 项目管理员查询 -->
+	<queryXmAdmin>
+		from SysProjectInfoAdmin a where 0=0
+		#if(!$ut.isns($xmbm))
+			and xmbm=:xmbm
+		#end
+	</queryXmAdmin>
+	
+	<!-- 功能点查询 -->
+	<queryFn>
+		from SysFunctionInfo a where 0=0
+		#if(!$ut.isns($xmbm))
+			and xmbm=:xmbm
+		#end
+		#if(!$ut.isns($funid))
+			and funid=:funid
+		#end
+		#if(!$ut.isns($functionBm))
+	      and functionBm like :%functionBm%
+	    #end
+		#if(!$ut.isns($functionName))
+	      and functionName like :%functionName%
+	    #end
+	    #if(!$ut.isns($functionUrl))
+	      and functionUrl like :%functionUrl%
+	    #end
+	    order by a.functionOrder
+	</queryFn>
+	
+	<!-- 功能点角色查询 -->
+	<queryFnRole>
+		from SysFunctionInfoRole a where 0=0
+		#if(!$ut.isns($xmbm))
+			and xmbm=:xmbm
+		#end
+		#if(!$ut.isns($functionBm))
+			and functionBm=:functionBm
+		#end
+		#if(!$ut.isns($roleBm))
+			and roleBm=:roleBm
+		#end
+	</queryFnRole>
+	<!-- 警员查询 -->
+	<queryZzjyHf>
+		from SysUserInfo a where 0=0
+		#if(!$ut.isns($usid))
+			and usid=:usid
+		#end
+		#if(!$ut.isns($xm))
+			and a.xm like :%xm%
+		#end
+		#if(!$ut.isns($loginName))
+			and a.loginName like :%loginName%
+		#end
+		#if(!$ut.isns($idcard))
+			and a.idcard = :idcard
+		#end
+		#if(!$ut.isns($jh))
+			and a.jh = :jh
+		#end
+		#if(!$ut.isns($zxbz))
+			and a.zxbz = :zxbz
+		#else
+			and a.zxbz = '0'
+		#end
+		#if(!$ut.isns($organizeBm))
+			and exists ( select b.organizeBm from SysOrganizeInfo b,SysOrganizeInfo c 
+			   where b.organizeBm=a.organizeBm and b.ccm like c.ccm||'%' 
+			   and c.organizeBm=:organizeBm)
+		#end
+		#if(!$ut.isns($ccm))
+			and exists ( select b.organizeBm from SysOrganizeInfo b 
+			   where b.organizeBm=a.organizeBm and b.ccm like :ccm% )
+		#end
+		order by a.organizeBm
+	</queryZzjyHf>
+	
+	<!-- 机构查询 -->
+	<queryZzjgHf>
+		from SysOrganizeInfo a where 0=0
+		#if(!$ut.isns($orgid))
+			and orgid=:orgid
+		#end
+		#if(!$ut.isns($zxbz))
+			and a.zxbz = :zxbz
+		#else
+			and a.zxbz = '0'
+		#end
+		#if(!$ut.isns($organizeName))
+			and a.organizeName like :%organizeName%
+		#end
+		#if(!$ut.isns($organizeBm))
+			and exists ( select b.organizeBm from SysOrganizeInfo b,SysOrganizeInfo c 
+			   where b.organizeBm=a.organizeBm and b.ccm like c.ccm||'%' 
+			   and c.organizeBm=:organizeBm)
+		#end
+		#if(!$ut.isns($ccm))
+			and a.ccm like :ccm% 
+		#end
+	</queryZzjgHf>
+	
+</sql>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XT_XTKZCSB" table="XT_XTKZCSB" dynamic-insert="true">
+		<id name="csid"  type="com.gnt.qxgl.common.LongToString">
+			<column name="csid"  />
+			<generator class="assigned" />
+		</id>
+		<property name="kzlb" column="kzlb" />
+		<property name="kzmc" column="kzmc" />
+		<property name="kzz" column="kzz" />
+		<property name="mrz" column="mrz" />
+		<property name="bz" column="bz" />
+		<property name="xgbz" column="xgbz" />
+		<property name="bdlx" column="bdlx" />
+		<property name="bdsj" column="bdsj" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+        <!-- table="HJXX_MLPXXXXB" -->
+    <class
+        name="com.gnt.qxgl.hz2004.entity.SJ_HJXX_MLPXXXXB"
+        table="SJ_HJXX_MLPXXXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+		<id  name="mlpnbid"  type="com.gnt.qxgl.common.LongToString" column="MLPNBID"  >
+			<generator class="assigned"></generator>
+		</id>
+
+        <property name="mlpid" type="com.gnt.qxgl.common.LongToString" column="MLPID"/>
+        <property name="ssxq" column="SSXQ"/>
+        <property name="jlx" column="JLX"/>
+        <property name="mlph" column="MLPH"/>
+        <property name="mlxz" column="MLXZ"/>
+        <property name="pcs" column="PCS"/>
+        <property name="zrq" column="ZRQ"/>
+        <property name="xzjd" column="XZJD"/>
+        <property name="jcwh" column="JCWH"/>
+        <property name="jdlb" column="JDLB"/>
+        <property name="cdlb" column="CDLB"/>
+        <property name="jdsj" column="JDSJ"/>
+        <property name="cdsj" column="CDSJ"/>
+        <property name="cjhjywid" column="CJHJYWID"/>
+        <property name="cchjywid" type="com.gnt.qxgl.common.LongToString" column="CCHJYWID"/>
+        <property name="mlpzt" column="MLPZT"/>
+        <property name="lxdbid" column="LXDBID"/>
+        <property name="jlbz" column="JLBZ"/>
+        <property name="qysj" column="QYSJ"/>
+        <property name="jssj" column="JSSJ"/>
+        <property name="pxh" type="com.gnt.qxgl.common.LongToString" column="PXH"/>
+        <property name="bzdz" column="BZDZ"/>
+        <property name="bzdzid" column="BZDZID"/>
+        <property name="bzdzx" column="BZDZX"/>
+        <property name="bzdzy" column="BZDZY"/>
+        <property name="bzdzst" column="BZDZST"/>
+    </class>
+
+</hibernate-mapping>

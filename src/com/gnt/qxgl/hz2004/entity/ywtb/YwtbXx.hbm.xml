@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+            name="com.gnt.qxgl.hz2004.entity.ywtb.YwtbXx"
+            table="YWTB_XX"
+            dynamic-insert="true"
+            dynamic-update="true"
+    >
+
+        <id name="applyno" column="APPLYNO">
+        </id>
+        <property name="username" column="USERNAME"/>
+        <property name="licenseno" column="LICENSENO"/>
+        <property name="mobile" column="MOBILE"/>
+        <property name="sldwcode" column="SLDWCODE"/>
+        <property name="sldwname" column="SLDWNAME"/>
+        <property name="content" column="CONTENT"/>
+        <property name="itemname" column="ITEMNAME"/>
+        <property name="begintime" type="java.util.Date" column="BEGINTIME"/>
+        <property name="kjfw" column="KJFW"/>
+        <property name="lqfs" column="LQFS"/>
+        <property name="sjrusername" column="SJRUSERNAME"/>
+        <property name="sjraddress" column="SJRADDRESS"/>
+        <property name="sjrmobile" column="SJRMOBILE"/>
+        <property name="isstatus" column="ISSTATUS"/>
+        <property name="cjsj" type="java.util.Date" column="CJSJ"/>
+        <property name="xgsj" type="java.util.Date" column="XGSJ"/>
+        <property name="bljg" column="BLJG"/>
+        <property name="blyj" column="BLYJ"/>
+        <property name="blFile" column="BL_FILE"/>
+        <property name="blBmcode" column="BL_BMCODE"/>
+        <property name="blBmName" column="BL_BMNAME"/>
+        <property name="gaisstatus" column="GAISSTATUS"/>
+        <property name="ywtbfjcl" column="YWTBFJCL"/>
+        <property name="btgsx_one" column="BTGSX_ONE"/>
+        <property name="btgsx_two" column="BTGSX_TWO"/>
+        <property name="btgsx_three" column="BTGSX_THREE"/>
+        <property name="btgsx_four" column="BTGSX_FOUR"/>
+        <property name="btgsx_three_info" column="BTGSX_THREE_INFO"/>
+    </class>
+
+</hibernate-mapping>

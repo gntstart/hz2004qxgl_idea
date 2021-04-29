@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.QG_RKPC" table="QG_RKPC" dynamic-insert="true">
+		<id name="rkpcId" column="RKPC_ID">
+			<generator class="uuid.hex"></generator>
+		</id>
+		<property name="rkpcZhs" column="RKPC_ZHS" />
+		<property name="rkpcZhsBz" column="RKPC_ZHS_BZ" />
+		<property name="rkpcZrs" column="RKPC_ZRS" />
+		<property name="rkpcZrsBz" column="RKPC_ZRS_BZ" />
+		<property name="rkpcXcrks" column="RKPC_XCRKS" />
+		<property name="rkpcXcrksBz" column="RKPC_XCRKS_BZ" />
+		<property name="rkpcRhfls" column="RKPC_RHFLS" />
+		<property name="rkpcRhflsBz" column="RKPC_RHFLS_BZ" />
+		<property name="rkpcCzwlf" column="RKPC_CZWLF" />
+		<property name="rkpcCzwlfBz" column="RKPC_CZWLF_BZ" />
+		<property name="rkpcCzwlfJjs" column="RKPC_CZWLF_JJS" />
+		<property name="rkpcCswbhk" column="RKPC_CSWBHK" />
+		<property name="rkpcCswbhkBz" column="RKPC_CSWBHK_BZ" />
+		<property name="rkpcCswbhkJjs" column="RKPC_CSWBHK_JJS" />
+		<property name="rkpcCzhkQt" column="RKPC_CZHK_QT" />
+		<property name="rkpcCzhkQtBz" column="RKPC_CZHK_QT_BZ" />
+		<property name="rkpcCzhkQtJjs" column="RKPC_CZHK_QT_JJS" />
+		<property name="rkpcZzrkJzbnys" column="RKPC_ZZRK_JZBNYS" />
+		<property name="rkpcZzrkJzbnysBz" column="RKPC_ZZRK_JZBNYS_BZ" />
+		<property name="rkpcZzrkXdzzrks" column="RKPC_ZZRK_XDZZRKS" />
+		<property name="rkpcZzrkXdzzrksBz" column="RKPC_ZZRK_XDZZRKS_BZ" />
+		<property name="rkpcHkdjCdhkrs" column="RKPC_HKDJ_CDHKRS" />
+		<property name="rkpcHkdjCdhkrsBz" column="RKPC_HKDJ_CDHKRS_BZ" />
+		<property name="rkpcHkdjYxwxhks" column="RKPC_HKDJ_YXWXHKS" />
+		<property name="rkpcHkdjYxwxhksBz" column="RKPC_HKDJ_YXWXHKS_BZ" />
+		<property name="rkpcHkdjSwwx" column="RKPC_HKDJ_SWWX" />
+		<property name="rkpcHkdjSwwxBz" column="RKPC_HKDJ_SWWX_BZ" />
+		<property name="rkpcHkdjHkbgxms" column="RKPC_HKDJ_HKBGXMS" />
+		<property name="rkpcHkdjHkbgxmsBz" column="RKPC_HKDJ_HKBGXMS_BZ" />
+		<property name="rkpcCreateDate" type="java.util.Date" column="RKPC_CREATE_DATE"/>
+		<property name="rkpcUpdateDate" type="java.util.Date" column="RKPC_UPDATE_DATE"/>
+		<property name="gsdw" column="RKPC_GSDW" />
+		<property name="rkpcPaxs" column="RKPC_PAXS" />
+		<property name="rkpcPaxsBz" column="RKPC_PAXS_BZ" />
+		<property name="rkpcXsaj" column="RKPC_XSAJ" />
+		<property name="rkpcXsajBz" column="RKPC_XSAJ_BZ" />
+		<property name="rkpcZaaj" column="RKPC_ZAAJ" />
+		<property name="rkpcZaajBz" column="RKPC_ZAAJ_BZ" />
+		<property name="rkpcZhtf" column="RKPC_ZHTF" />
+		<property name="rkpcZhtfBz" column="RKPC_ZHTF_BZ" />
+		<property name="rkpcBgmfnet" column="RKPC_BGMFNET" />
+		<property name="rkpcBgmfnetBz" column="RKPC_BGMFNET_BZ" />
+		<property name="rkpcJzgmsfzhmcch" column="RKPC_JZGMSFZHMCCH" />
+		<property name="rkpcZdmlp" column="RKPC_ZDMLP" />
+		<property name="rkpcQlfqdz" column="RKPC_QLFQDZ" />
+		<property name="rkpcCdry" column="RKPC_CDRY" />
+		<property name="rkpcCdmj" column="RKPC_CDMJ" />
+		<property name="rkpcGzhypx" column="RKPC_GZHYPX" />
+		<property name="rkpcCcjf" column="RKPC_CCJF" />
+
+	</class>
+</hibernate-mapping>

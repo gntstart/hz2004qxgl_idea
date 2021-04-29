@@ -1,0 +1,23 @@
+用户冻结和恢复接口补丁：
+
+1、更新一个ChangeJyzt.class文件到hz2004qxgl/com/gnt/qxgl/service/impl/ChangeJyzt.class
+
+
+2、更新2个jar文件到hz2004qxgl/WEB-INF/lib/下
+
+
+
+3、更新hz2004qxgl/WEB-INF/web.xml增加
+
+	<!-- 接口 -->
+<servlet>
+    <servlet-name>yhtb</servlet-name>
+    <servlet-class>com.gnt.qxgl.service.impl.ChangeJyzt</servlet-class>
+    <load-on-startup>4</load-on-startup>
+   </servlet>
+  
+   <servlet-mapping>
+	    <servlet-name>yhtb</servlet-name>
+	    <url-pattern>*.receivePortraitCollect</url-pattern>
+   </servlet-mapping>
+   <!-- 接口 -->

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoHZSMK_DKRZ"
+        table="HZSMK_DKRZ"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="dkrzid"  column="DKRZID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="kdsbm" column="KDSBM"/>
+        <property name="kdlb" column="KDLB"/>
+        <property name="gfbb" column="GFBB"/>
+        <property name="cshjgdm" column="CSHJGDM"/>
+        <property name="fkrq" column="FKRQ" />
+        <property name="kyxq" column="KYXQ"/>
+        <property name="kh" column="KH"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="xb" column="XB"/>
+        <property name="mz" column="MZ"/>
+        <property name="csrq" column="CSRQ"/>
+        <property name="csdssxq" column="CSDSSXQ"/>
+        <property name="szcsdm" column="SZCSDM"/>
+	<property name="hb" column="HB"/>
+	<property name="czhkszd" column="CZHKSZD"/>
+	<property name="yzbm" column="YZBM"/>
+	<property name="txdz" column="TXDZ"/>
+	<property name="lxdh" column="LXDH"/>
+	<property name="whcd" column="WHCD"/>
+	<property name="hyzk" column="HYZK"/>
+	<property name="czyid" column="CZYID"/>
+	<property name="dkjqipdz" column="DKJQIPDZ"/>
+	<property name="dksj" column="DKSJ"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoXT_XTRZB"
+        table="XT_XTRZB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="rzid"  column="RZID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="czkssj" column="CZKSSJ"/>
+        <property name="czjssj" column="CZJSSJ"/>
+        <property name="zxsj" column="ZXSJ"/>
+        <property name="czyid" column="CZYID"/>
+        <property name="khdip" column="KHDIP"/>
+        <property name="rzlx" column="RZLX"/>
+        <property name="rznr" column="RZNR"/>
+        <property name="ywbz" column="YWBZ"/>
+
+        <property name="organization" column="ORGANIZATION"/>
+        <property name="organizationId" column="ORGANIZATION_ID"/>
+        <property name="operateType" column="OPERATE_TYPE"/>
+        <property name="operateResult" column="OPERATE_RESULT"/>
+        <property name="errorCode" column="ERROR_CODE"/>
+        <property name="operateName" column="OPERATE_NAME"/>
+        <property name="resourceType" column="RESOURCE_TYPE"/>
+        <property name="resourceName" column="RESOURCE_NAME"/>
+        <property name="czyxm" column="CZYXM"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+            name="com.gnt.qxgl.hz2004.entity.zjyw.ZjywQyzxx"
+            table="ZJYW_QYZXX"
+            dynamic-insert="true"
+            dynamic-update="true"
+    >
+
+        <id name="qyzbh" column="QYZBH">
+        </id>
+        <property name="czr_gmsfhm" column="CZR_GMSFHM"/>
+        <property name="czr_xm" column="CZR_XM"/>
+        <property name="yzz_ssxqdm" column="YZZ_SSXQDM"/>
+        <property name="yzz_qhnxxdz" column="YZZ_QHNXXDZ"/>
+        <property name="yzz_cxfldm" column="YZZ_CXFLDM"/>
+        <property name="qwd_ssxqdm" column="QWD_SSXQDM"/>
+        <property name="qwd_qhnxxdz" column="QWD_QHNXXDZ"/>
+        <property name="qfjg_gajgjgdm" column="QFJG_GAJGJGDM"/>
+        <property name="qfjg_gajgmc" column="QFJG_GAJGMC"/>
+        <property name="qfrq" column="QFRQ"/>
+        <property name="yxqjzrq" column="YXQJZRQ"/>
+        <property name="cbr_xm" column="CBR_XM"/>
+        <property name="bz" column="BZ"/>
+        <property name="zqzbh" column="ZQZBH"/>
+        <property name="qyfwdm" column="QYFWDM"/>
+        <property name="sldw_gajgjgdm" column="SLDW_GAJGJGDM"/>
+        <property name="sldw_gajgmc" column="SLDW_GAJGMC"/>
+        <property name="slr_xm" column="SLR_XM"/>
+        <property name="slsj" column="SLSJ"/>
+        <property name="sjgsdwdm" column="SJGSDWDM"/>
+        <property name="sjgsdwmc" column="SJGSDWMC"/>
+        <property name="ywlsh" column="YWLSH"/>
+        <property name="isstatus" column="ISSTATUS"/>
+        <property name="hkdjpcs" column="HKDJPCS"/>
+        <property name="sfbj" column="SFBJ"/>
+        <property name="cjsj" type="java.util.Date" column="CJSJ"/>
+    </class>
+
+</hibernate-mapping>

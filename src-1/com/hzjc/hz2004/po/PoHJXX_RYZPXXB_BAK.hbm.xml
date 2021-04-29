@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoHJXX_RYZPXXB_BAK"
+        table="HJXX_RYZPXXB_BAK"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id name="logid" type="java.lang.String">
+         <column name="LOGID" length="32" />
+         <generator class="uuid.hex"></generator>
+        </id>
+
+        <property name="scsj" column="SCSJ"/>
+        <property name="yhid" column="YHID"/>
+        <property name="zpid" column="ZPID"/>
+        <property name="ryid" column="RYID"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="zp" column="ZP" type="com.hzjc.wsstruts.hibernate.usertype.BinaryBlobType"/>
+        <property name="lrrq" column="LRRQ"/>
+    </class>
+
+</hibernate-mapping>

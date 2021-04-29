@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XX_CZRK" table="XX_CZRK" dynamic-insert="true">
+		<id name="czrkrkid" type="java.lang.Long">
+			<column name="czrkrkid" length="19" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="czrkgmsfhm" type="java.lang.String">
+			<column name="czrkgmsfhm"  />
+		</property>
+		<property name="czrkzxbs" type="java.lang.String">
+			<column name="czrkzxbs"  />
+		</property>
+		<property name="czrkssssxq" type="java.lang.String">
+			<column name="czrkssssxq"  />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="extCommonForm"
+			type="com.gnt.qxgl.common.struts.form.ExtCommonForm" />
+	</form-beans>
+	
+	<!-- 全局转发 -->
+	<global-forwards>
+		<!--出错提示-->
+		<forward name="error" path="/common/error.jsp"></forward>
+		<forward name="gson" path="/common/gson.jsp"></forward>
+	</global-forwards>
+	
+	<action-mappings>
+	    <!-- 登录动作 -->
+	    <action name="extCommonForm" path="/login" validate="false"
+	    	type="com.gnt.qxgl.struts.action.LoginAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 组织警员管理 -->
+	    <action name="extCommonForm" path="/zzjy" validate="false"
+	    	type="com.gnt.qxgl.struts.action.ZzjyManagerAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 授权管理 -->
+	    <action name="extCommonForm" path="/sq" validate="false"
+	    	type="com.gnt.qxgl.struts.action.SqAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 地区字典服务 -->
+		<action name="extCommonForm" path="/yw/dqdict" validate="false"
+	    	type="com.gnt.qxgl.struts.action.yw.DQDictAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 跨地区迁移服务 -->
+		<action name="extCommonForm" path="/yw/kdqqy" validate="false"
+	    	type="com.gnt.qxgl.struts.action.yw.KdqqyAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 人口统计服务 -->
+		<action name="extCommonForm" path="/tj/rktj" validate="false"
+	    	type="com.gnt.qxgl.struts.action.tj.RktjAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 户政窗口服务 -->
+		<action name="extCommonForm" path="/hzck" validate="false"
+	    	type="com.gnt.qxgl.struts.action.HzckAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 业务排名服务 -->
+		<action name="extCommonForm" path="/ywpm" validate="false"
+				type="com.gnt.qxgl.struts.action.YwpmAction"
+				attribute="form" scope="request" parameter="method">
+		</action>
+
+		<!-- 准迁证查询服务 -->
+		<action name="extCommonForm" path="/yw/zqz" validate="false"
+				type="com.gnt.qxgl.struts.action.ZjywZqzAction"
+				attribute="form" scope="request" parameter="method">
+		</action>
+
+		<!-- 迁移证查询服务 -->
+		<action name="extCommonForm" path="/yw/qyz" validate="false"
+				type="com.gnt.qxgl.struts.action.ZjywQyzAction"
+				attribute="form" scope="request" parameter="method">
+		</action>
+
+		<!-- 一网通办 -->
+		<action name="extCommonForm" path="/yw/ywtb" validate="false"
+				type="com.gnt.qxgl.struts.action.YwtbXxAction"
+				attribute="form" scope="request" parameter="method">
+		</action>
+		<!-- 全国人口普查 -->
+		<action name="extCommonForm" path="/rkpc" validate="false"
+				type="com.gnt.qxgl.struts.action.QgRkpcAction"
+				attribute="form" scope="request" parameter="method">
+		</action>
+
+		<!-- 业务报表 -->
+		<action name="extCommonForm" path="/ywbb" validate="false"
+				type="com.gnt.qxgl.struts.action.XtYwbbmbxxbAction"
+				attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 安徽长三角户口跨省网上迁移情况 -->
+		<action name="extCommonForm" path="/yw/csjhkkswsqy" validate="false"
+				type="com.gnt.qxgl.struts.action.CsjHkKsWsQyAction"
+				attribute="form" scope="request" parameter="method">
+		</action>
+	</action-mappings>
+	
+	<controller
+		processorClass="org.springframework.web.struts.AutowiringRequestProcessor" />
+		
+	<!-- 资源文件 -->
+	<message-resources
+		parameter="conf.resources" />
+</struts-config>

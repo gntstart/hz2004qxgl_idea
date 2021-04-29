@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.HZ_ZJ_SB" table="HZ_ZJ_SB" dynamic-insert="true">
+		<id name="id" type="com.gnt.qxgl.common.LongToString">
+			<column name="id"  />
+			<generator class="uuid" />
+		</id>
+		<property name="sqrxm" column="sqrxm" />
+		<property name="sqrsfz" column="sqrsfz" />
+		<property name="sqrlxdh" column="sqrlxdh" />
+		<property name="sqrlxdz" column="sqrlxdz" />
+		<property name="ywlb" column="ywlb" />
+		<property name="bsqrxm" column="bsqrxm" />
+		<property name="bsqrsfz" column="bsqrsfz" />
+		<property name="czdw" column="czdw" />
+		<property name="czyh" column="czyh" />
+		<property name="czsj" column="czsj" />
+		<property name="lhbs" column="lhbs" />
+		<property name="lhsfz" column="lhsfz" />
+		<property name="lhdz" column="lhdz" />
+		<property name="sbzt" column="sbzt" />
+		<property name="clbs" column="clbs" />
+		<property name="clsj" column="clsj" />
+		<property name="pch" column="pch" />
+		<property name="ywlbm" column="ywlbm" />
+		<property name="nbgxm" column="nbgxm" />
+		<property name="cym" column="cym" />
+		<property name="csyxzmbh" column="csyxzmbh" />
+		<property name="bsqrxb" column="bsqrxb" />
+		<property name="bsqrmz" column="bsqrmz" />
+		<property name="bsqrcsrq" column="bsqrcsrq" />
+		<property name="btkrgx" column="btkrgx" />
+		<property name="bsqrsjhm" column="bsqrsjhm" />
+		<property name="zxyy" column="zxyy" />
+		<property name="qcdbm" column="qcdbm" />
+	</class>
+</hibernate-mapping>

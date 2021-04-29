@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+    <!-- 此配置文件只能加载1次,防止定时任务重复执行 , 别用spring-*-config名称-->
+    <!-- spring mvc quartz定时任务配置 -->
+
+    <!--定时任务-->
+    <!-- 使用 MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法-->
+    <!-- 定义目标bean和bean中的方法 -->
+    <bean id="SpringQtzJob" class="com.gnt.qxgl.job.JobTaskPush"/>
+
+    <bean id="SpringQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="SpringQtzJob"/>
+        </property>
+        <property name="targetMethod">  <!-- 要执行的方法名称 -->
+            <value>taskPush</value>
+        </property>
+        <property name="concurrent">  <!--非并发-->
+            <value>false</value>
+        </property>
+    </bean>
+
+    <!--  调度触发器  -->
+    <bean id="CronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="SpringQtzJobMethod"></property>
+        <property name="cronExpression" value="0 0/2 * * * ? *"></property>
+    </bean>
+
+
+
+    <bean id="JobTaskGetYwtbxx" class="com.gnt.qxgl.job.JobTaskGetYwtbxx"/>
+
+    <bean id="SpringJobTaskGetYwtbxx" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="JobTaskGetYwtbxx"/>
+        </property>
+        <property name="targetMethod">  <!-- 要执行的方法名称 -->
+            <value>taskGetYwtbxx</value>
+        </property>
+        <property name="concurrent">  <!--非并发-->
+            <value>false</value>
+        </property>
+    </bean>
+
+    <!--  调度触发器  -->
+    <bean id="CronTriggerBeanJobTaskGetYwtbxx" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="SpringJobTaskGetYwtbxx"></property>
+        <property name="cronExpression" value="0 0/3 * * * ? *"></property>
+    </bean>
+
+    <bean id="JobTaskPustYwtbxx" class="com.gnt.qxgl.job.JobTaskPushYwtbxx"/>
+
+    <bean id="SpringJobTaskPushYwtbxx" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="JobTaskPustYwtbxx"/>
+        </property>
+        <property name="targetMethod">  <!-- 要执行的方法名称 -->
+            <value>taskPushYwtbxx</value>
+        </property>
+        <property name="concurrent">  <!--非并发-->
+            <value>false</value>
+        </property>
+    </bean>
+
+    <!--  0/30 * * * * ? 调度触发器  0 0/8 * * * ? *-->
+    <bean id="CronTriggerBeanJobTaskPushYwtbxx" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="SpringJobTaskPushYwtbxx"></property>
+        <property name="cronExpression" value="0 0/2 * * * ? *"></property>
+    </bean>
+
+    <!-- 准迁证定时器 -->
+    <bean id="JobTaskZqzqyz" class="com.gnt.qxgl.jobZjyw.JobTaskZqz"/>
+
+    <bean id="SpringJobTaskZqzqyz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="JobTaskZqzqyz"/>
+        </property>
+        <property name="targetMethod">  <!-- 要执行的方法名称 -->
+            <value>TackJobZqz</value>
+        </property>
+        <property name="concurrent">  <!--非并发-->
+            <value>false</value>
+        </property>
+    </bean>
+
+    <!--  0/30 * * * * ? 调度触发器  0 0/8 * * * ? *-->
+    <bean id="CronTriggerBeanJobTaskZqzqyz" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="SpringJobTaskZqzqyz"></property>
+        <property name="cronExpression" value="0/30 * * * * ? *"></property>
+    </bean>
+
+
+
+    <!-- 迁移证定时器 -->
+    <bean id="JobTaskQyzZqz" class="com.gnt.qxgl.jobZjyw.JobTaskQyz"/>
+
+    <bean id="SpringJobTaskQyzZqz" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="JobTaskQyzZqz"/>
+        </property>
+        <property name="targetMethod">  <!-- 要执行的方法名称 -->
+            <value>TackJobQyz</value>
+        </property>
+        <property name="concurrent">  <!--非并发-->
+            <value>false</value>
+        </property>
+    </bean>
+
+    <!--  0/30 * * * * ? 调度触发器  0 0/8 * * * ? *-->
+    <bean id="CronTriggerBeanJobTaskQyzZqz" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="SpringJobTaskQyzZqz"></property>
+        <property name="cronExpression" value="0/20 * * * * ? *"></property>
+    </bean>
+
+    <!--  调度工厂  -->
+    <bean id="SpringJobSchedulerFactoryBean" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="CronTriggerBean"/>
+                <ref bean="CronTriggerBeanJobTaskGetYwtbxx"/>
+                <ref bean="CronTriggerBeanJobTaskPushYwtbxx"/>
+                <ref bean="CronTriggerBeanJobTaskZqzqyz"/>
+                <ref bean="CronTriggerBeanJobTaskQyzZqz"/>
+            </list>
+        </property>
+    </bean>
+</beans>  

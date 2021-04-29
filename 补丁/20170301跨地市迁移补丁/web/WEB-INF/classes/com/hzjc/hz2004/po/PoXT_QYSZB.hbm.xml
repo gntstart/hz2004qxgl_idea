@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoXT_QYSZB"
+        table="XT_QYSZB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="qyid"  column="QYID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="qhdma" column="QHDMA"/>
+        <property name="qhdmb" column="QHDMB"/>
+        <property name="cjsj" column="CJSJ"/>
+        <property name="cjrid" column="CJRID"/>
+        <property name="xgsj" column="XGSJ"/>
+        <property name="xgrid" column="XGRID"/>
+        <property name="qybz" column="QYBZ"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoOLD_HJXX_CZRKJBXXB"
+        table="OLD_HJXX_CZRKJBXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="rynbid"  column="RYNBID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="nbsfzid" column="NBSFZID"/>
+        <property name="qfjg" column="QFJG"/>
+        <property name="yxqxqsrq" column="YXQXQSRQ"/>
+        <property name="yxqxjzrq" column="YXQXJZRQ"/>
+        <property name="swzxrq" column="SWZXRQ"/>
+        <property name="fqxm" column="FQXM"/>
+        <property name="fqgmsfhm" column="FQGMSFHM"/>
+        <property name="mqxm" column="MQXM"/>
+        <property name="mqgmsfhm" column="MQGMSFHM"/>
+        <property name="poxm" column="POXM"/>
+        <property name="pogmsfhm" column="POGMSFHM"/>
+        <property name="jggjdq" column="JGGJDQ"/>
+        <property name="jgssxq" column="JGSSXQ"/>
+        <property name="zjxy" column="ZJXY"/>
+        <property name="whcd" column="WHCD"/>
+        <property name="hyzk" column="HYZK"/>
+        <property name="byzk" column="BYZK"/>
+        <property name="sg" column="SG"/>
+        <property name="xx" column="XX"/>
+        <property name="zy" column="ZY"/>
+        <property name="zylb" column="ZYLB"/>
+        <property name="fwcs" column="FWCS"/>
+        <property name="xxjb" column="XXJB"/>
+        <property name="hsql" column="HSQL"/>
+        <property name="hyql" column="HYQL"/>
+        <property name="hgjdqql" column="HGJDQQL"/>
+        <property name="hssxqql" column="HSSXQQL"/>
+        <property name="hxzql" column="HXZQL"/>
+        <property name="hslbz" column="HSLBZ"/>
+        <property name="hylbz" column="HYLBZ"/>
+        <property name="hgjdqlbz" column="HGJDQLBZ"/>
+        <property name="hsssqlbz" column="HSSSQLBZ"/>
+        <property name="hxzlbz" column="HXZLBZ"/>
+        <property name="swrq" column="SWRQ"/>
+        <property name="swzxlb" column="SWZXLB"/>
+        <property name="qcrq" column="QCRQ"/>
+        <property name="qczxlb" column="QCZXLB"/>
+        <property name="qwdgjdq" column="QWDGJDQ"/>
+        <property name="qwdssxq" column="QWDSSXQ"/>
+        <property name="qwdxz" column="QWDXZ"/>
+        <property name="cszmbh" column="CSZMBH"/>
+        <property name="cszqfrq" column="CSZQFRQ"/>
+        <property name="hylb" column="HYLB"/>
+        <property name="qtssxq" column="QTSSXQ"/>
+        <property name="qtzz" column="QTZZ"/>
+        <property name="rylb" column="RYLB"/>
+        <property name="hb" column="HB"/>
+        <property name="yhzgx" column="YHZGX"/>
+        <property name="ryzt" column="RYZT"/>
+        <property name="rysdzt" column="RYSDZT"/>
+        <property name="lxdbid" column="LXDBID"/>
+        <property name="bz" column="BZ"/>
+        <property name="jlbz" column="JLBZ"/>
+        <property name="ywnr" column="YWNR"/>
+        <property name="cjhjywid" column="CJHJYWID"/>
+        <property name="cchjywid" column="CCHJYWID"/>
+        <property name="qysj" column="QYSJ"/>
+        <property name="jssj" column="JSSJ"/>
+        <property name="cxbz" column="CXBZ"/>
+        <property name="ryid" column="RYID"/>
+        <property name="hhnbid" column="HHNBID"/>
+        <property name="mlpnbid" column="MLPNBID"/>
+        <property name="zpid" column="ZPID"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="cym" column="CYM"/>
+        <property name="xmpy" column="XMPY"/>
+        <property name="cympy" column="CYMPY"/>
+        <property name="xb" column="XB"/>
+        <property name="mz" column="MZ"/>
+        <property name="csrq" column="CSRQ"/>
+        <property name="cssj" column="CSSJ"/>
+        <property name="csdgjdq" column="CSDGJDQ"/>
+        <property name="csdssxq" column="CSDSSXQ"/>
+        <property name="csdxz" column="CSDXZ"/>
+        <property name="dhhm" column="DHHM"/>
+        <property name="jhryxm" column="JHRYXM"/>
+        <property name="jhrygmsfhm" column="JHRYGMSFHM"/>
+        <property name="jhryjhgx" column="JHRYJHGX"/>
+        <property name="jhrexm" column="JHREXM"/>
+        <property name="jhregmsfhm" column="JHREGMSFHM"/>
+        <property name="jhrejhgx" column="JHREJHGX"/>
+	<property name="zjlb" column="ZJLB"/>
+	<property name="ssxq" column="SSXQ"/>
+	<property name="jlx" column="JLX"/>
+	<property name="mlph" column="MLPH"/>
+	<property name="mlxz" column="MLXZ"/>
+	<property name="pcs" column="PCS"/>
+	<property name="zrq" column="ZRQ"/>
+	<property name="xzjd" column="XZJD"/>
+	<property name="jcwh" column="JCWH"/>
+	<property name="pxh" column="PXH"/>
+	<property name="hh" column="HH"/>
+	<property name="hlx" column="HLX"/>
+	<property name="bdfw" column="BDFW"/>
+	<property name="hhid" column="HHID"/>
+	<property name="mlpid" column="MLPID"/>
+       	<property name="xxqysj" column="XXQYSJ"/>
+    </class>
+
+</hibernate-mapping>

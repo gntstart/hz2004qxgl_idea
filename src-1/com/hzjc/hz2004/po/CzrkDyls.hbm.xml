@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.CzrkDyls"
+        table="HJXX_CZRKJBXXB_DYLS"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="lsid"  column="LSID"  >
+          <generator class="uuid.hex">
+         </generator>
+        </id>
+
+        <property name="dysj" column="DYSJ"/>
+        <property name="dyyh" column="DYYH"/>
+        <property name="hhnbid" column="HHNBID"/>
+    </class>
+</hibernate-mapping>

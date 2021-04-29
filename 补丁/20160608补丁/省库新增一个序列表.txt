@@ -1,0 +1,38 @@
+-- Create table
+create table XT_YH_SEQ
+(
+  SEQID NUMBER(19) not null,
+  DQBM  VARCHAR2(4)
+)
+tablespace HZ2004_SYS
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table XT_YH_SEQ
+  is '用于用户的主键生成';
+-- Add comments to the columns 
+comment on column XT_YH_SEQ.SEQID
+  is 'id主键';
+comment on column XT_YH_SEQ.DQBM
+  is '地区编码';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table XT_YH_SEQ
+  add constraint XY_YH_SEQ_ID primary key (SEQID)
+  using index 
+  tablespace PRO_BUS3401
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );

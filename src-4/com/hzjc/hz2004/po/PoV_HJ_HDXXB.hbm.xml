@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoV_HJ_HDXXB"
+        table="V_HJ_HDXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+       <id  name="hhnbid"  column="HHNBID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+<!--
+        <property name="hhnbid" column="HHNBID"/>
+-->
+        <property name="hhid" column="HHID"/>
+        <property name="hh" column="HH"/>
+        <property name="hlx" column="HLX"/>
+        <property name="jhlb" column="JHLB"/>
+        <property name="chlb" column="CHLB"/>
+        <property name="jhsj" column="JHSJ"/>
+        <property name="chsj" column="CHSJ"/>
+        <property name="hcjhjywid" column="HCJHJYWID"/>
+        <property name="hcchjywid" column="HCCHJYWID"/>
+        <property name="hhzt" column="HHZT"/>
+        <property name="hlxdbid" column="HLXDBID"/>
+        <property name="hjlbz" column="HJLBZ"/>
+        <property name="hqysj" column="HQYSJ"/>
+        <property name="hjssj" column="HJSSJ"/>
+        <property name="hcxbz" column="HCXBZ"/>
+        <property name="mlpnbid" column="MLPNBID"/>
+        <property name="mlpid" column="MLPID"/>
+        <property name="ssxq" column="SSXQ"/>
+        <property name="jlx" column="JLX"/>
+        <property name="mlph" column="MLPH"/>
+        <property name="mlxz" column="MLXZ"/>
+        <property name="pcs" column="PCS"/>
+        <property name="zrq" column="ZRQ"/>
+        <property name="xzjd" column="XZJD"/>
+        <property name="jcwh" column="JCWH"/>
+        <property name="jdlb" column="JDLB"/>
+        <property name="cdlb" column="CDLB"/>
+        <property name="jdsj" column="JDSJ"/>
+        <property name="cdsj" column="CDSJ"/>
+        <property name="dcjhjywid" column="DCJHJYWID"/>
+        <property name="dcchjywid" column="DCCHJYWID"/>
+        <property name="mlpzt" column="MLPZT"/>
+        <property name="dlxdbid" column="DLXDBID"/>
+        <property name="djlbz" column="DJLBZ"/>
+        <property name="dqysj" column="DQYSJ"/>
+        <property name="djssj" column="DJSSJ"/>
+        <property name="pxh" column="PXH"/>
+    </class>
+
+</hibernate-mapping>

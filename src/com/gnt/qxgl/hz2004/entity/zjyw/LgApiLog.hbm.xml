@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+            name="com.gnt.qxgl.hz2004.entity.zjyw.LgApiLog"
+            table="ZZJ_API_LOG"
+            dynamic-insert="true"
+            dynamic-update="true"
+    >
+
+        <id name="logid" type="java.lang.String">
+            <column name="LOGID" length="32" />
+            <generator class="uuid.hex"></generator>
+        </id>
+        <property name="lgbm" type="java.lang.String">
+            <column name="LGBM" length="20" />
+        </property>
+        <property name="logsj" type="java.util.Date">
+            <column name="LOGSJ" length="7" />
+        </property>
+        <property name="apiname" type="java.lang.String">
+            <column name="APINAME" length="100" />
+        </property>
+        <property name="jls" type="java.lang.Long">
+            <column name="JLS" length="10" />
+        </property>
+        <property name="bz" type="java.lang.String">
+            <column name="BZ" length="2000" />
+        </property>
+        <property name="hs" type="java.lang.Long">
+            <column name="HS" length="10" />
+        </property>
+        <property name="sfcg" type="java.lang.String">
+            <column name="SFCG" length="20" />
+        </property>
+        <property name="ip" type="java.lang.String">
+            <column name="IP" length="20" />
+        </property>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtDsDwxxb" table="XT_DS_DWXXB" dynamic-insert="true">
+		<id name="dm" type="com.gnt.qxgl.common.LongToString">
+			<column name="DM" length="9" />
+			<generator class="assigned"></generator>
+		</id>
+		
+		<property name="mc" type="java.lang.String">
+			<column name="MC" length="100" />
+		</property>
+		<property name="zwpy" type="java.lang.String">
+			<column name="ZWPY" length="50" />
+		</property>
+		<property name="wbpy" type="java.lang.String">
+			<column name="WBPY" length="20" />
+		</property>
+		<property name="dwjgdm" type="com.gnt.qxgl.common.LongToString">
+			<column name="DWJGDM" length="12" />
+		</property>
+		<property name="qhdm" type="com.gnt.qxgl.common.LongToString">
+			<column name="QHDM" length="6" />
+		</property>
+		<property name="dwjb" type="com.gnt.qxgl.common.LongToString">
+			<column name="DWJB" length="1" />
+		</property>
+		<property name="bz" type="java.lang.String">
+			<column name="BZ" length="100" />
+		</property>
+		<property name="qybz" type="com.gnt.qxgl.common.LongToString">
+			<column name="QYBZ" length="1" />
+		</property>
+		<property name="bdlx" type="java.lang.String">
+			<column name="BDLX" length="1" />
+		</property>
+		<property name="bdsj" type="com.gnt.qxgl.common.LongToString">
+			<column name="BDSJ" length="14" />
+		</property>
+		<property name="fjjgdm" type="com.gnt.qxgl.common.LongToString">
+			<column name="FJJGDM" length="12" />
+		</property>
+		<property name="fjjgmc" type="java.lang.String">
+			<column name="FJJGMC" length="100" />
+		</property>
+		<property name="stId" type="com.gnt.qxgl.common.LongToString">
+			<column name="STID" length="32" />
+		</property>
+		<property name="stdsbm" type="com.gnt.qxgl.common.LongToString">
+			<column name="STDSBM" length="20" />
+		</property>
+		<property name="stdsmc" type="java.lang.String">
+			<column name="STDSMC" length="40" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+            name="com.gnt.qxgl.hz2004.entity.zjyw.ZjywZqzQyrxx"
+            table="ZJYW_ZQZQYRXX"
+            dynamic-insert="true"
+            dynamic-update="true"
+    >
+
+        <id name="id" column="ID">
+            <generator class="uuid.hex"></generator>
+        </id>
+        <property name="ywlsh" column="YWLSH"/>
+        <property name="zqzbh" column="ZQZBH"/>
+        <property name="ysqrgx_jtgxdm" column="YSQRGX_JTGXDM"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="xbdm" column="XBDM"/>
+        <property name="csrq" column="CSRQ"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoPOST_KDQCFKB"
+        table="POST_KDQCFKB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+        <id  name="kdsid"  column="KDSID"  >
+          <generator class="uuid.hex">
+         </generator>
+        </id>
+
+	<property name="qrdq" column="QRDQ"/>
+        <property name="spywid" column="SPYWID"/>
+        <property name="fkbz" column="FKBZ"/>
+        <property name="qyzbh" column="QYZBH"/>
+        <property name="cxfldm" column="CXFLDM"/>
+    </class>
+</hibernate-mapping>

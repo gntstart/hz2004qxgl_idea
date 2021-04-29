@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XT_JWHXXB" table="XT_JWHXXB" dynamic-insert="true">
+		<id name="dm">
+			<column name="dm"  />
+			<generator class="assigned" />
+		</id>
+		<property name="mc" column="mc" />
+		<property name="zwpy" column="zwpy" />
+		<property name="wbpy" column="wbpy" />
+		<property name="dwdm" column="dwdm" />
+		<property name="xzjddm" column="xzjddm" />
+		<property name="bz" column="bz" />
+		<property name="qybz" column="qybz" />
+		<property name="bdlx" column="bdlx" />
+		<property name="bdsj" column="bdsj" />
+		<property name="cxfldm" column="cxfldm" />
+		<property name="cxflmc" column="cxflmc" />
+		<property name="tjdm" column="tjdm" />
+		<property name="tjmc" column="tjmc" />
+	</class>
+</hibernate-mapping>

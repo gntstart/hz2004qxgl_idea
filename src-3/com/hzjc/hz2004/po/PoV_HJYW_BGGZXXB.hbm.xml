@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoV_HJYW_BGGZXXB"
+        table="V_HJYW_BGGZXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="bggzid"  column="BGGZID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+<!--
+        <property name="bggzid" column="BGGZID"/>
+-->
+
+        <property name="rynbid" column="RYNBID"/>
+        <property name="bggzxm" column="BGGZXM"/>
+        <property name="bggzlb" column="BGGZLB"/>
+        <property name="bggzrq" column="BGGZRQ"/>
+        <property name="bggzqnr" column="BGGZQNR"/>
+        <property name="bggzhnr" column="BGGZHNR"/>
+        <property name="dybz" column="DYBZ"/>
+        <property name="hjywid" column="HJYWID"/>
+        <property name="tbbz" column="TBBZ"/>
+        <property name="bwbh" column="BWBH"/>
+        <property name="sbryxm" column="SBRYXM"/>
+        <property name="sbrgmsfhm" column="SBRGMSFHM"/>
+        <property name="slsj" column="SLSJ"/>
+        <property name="sldw" column="SLDW"/>
+        <property name="slrid" column="SLRID"/>
+        <property name="ryid" column="RYID"/>
+        <property name="sbsj" column="SBSJ"/>
+        <property name="bgqxm" column="BGQXM"/>
+        <property name="bgqgmsfhm" column="BGQGMSFHM"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="xb" column="XB"/>
+        <property name="mz" column="MZ"/>
+        <property name="csrq" column="CSRQ"/>
+        <property name="csdssxq" column="CSDSSXQ"/>
+        <property name="mlpnbid" column="MLPNBID"/>
+        <property name="ssxq" column="SSXQ"/>
+        <property name="jlx" column="JLX"/>
+        <property name="mlph" column="MLPH"/>
+        <property name="mlxz" column="MLXZ"/>
+        <property name="pcs" column="PCS"/>
+        <property name="zrq" column="ZRQ"/>
+        <property name="xzjd" column="XZJD"/>
+        <property name="jcwh" column="JCWH"/>
+        <property name="pxh" column="PXH"/>
+        <property name="cssj" column="CSSJ"/>
+        <property name="hhnbid" column="HHNBID"/>
+        <property name="ryzt" column="RYZT"/>
+        <property name="bggzqdm" column="BGGZQDM"/>
+        <property name="bggzhdm" column="BGGZHDM"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.gnt.qxgl.hz2004.entity.SJ_HJSP_ZQZXXB"
+        table="SJ_HJSP_ZQZXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+		<id  name="zqid"  type="com.gnt.qxgl.common.LongToString" column="ZQID"  >
+			<generator class="assigned"></generator>
+		</id>
+
+        <property name="spywid" type="com.gnt.qxgl.common.LongToString" column="SPYWID"/>
+        <property name="zqzjlx" column="ZQZJLX"/>
+        <property name="zjbh" column="ZJBH"/>
+        <property name="sqrgmsfhm" column="SQRGMSFHM"/>
+        <property name="sqrxm" column="SQRXM"/>
+        <property name="sqrzzssxq" column="SQRZZSSXQ"/>
+        <property name="sqrzzxz" column="SQRZZXZ"/>
+        <property name="sqrhkdjjg" column="SQRHKDJJG"/>
+        <!-- 迁移人员1 -->
+        <property name="qyrysqrgx1" column="QYRYSQRGX1"/>
+        <property name="qyrxm1" column="QYRXM1"/>
+        <property name="qyrxb1" column="QYRXB1"/>
+        <property name="qyrcsrq1" column="QYRCSRQ1"/>
+        <property name="qyrgmsfhm1" column="QYRGMSFHM1"/>
+        <!-- 迁移人员2 -->
+        <property name="qyrysqrgx2" column="QYRYSQRGX2"/>
+        <property name="qyrxm2" column="QYRXM2"/>
+        <property name="qyrxb2" column="QYRXB2"/>
+        <property name="qyrcsrq2" column="QYRCSRQ2"/>
+        <property name="qyrgmsfhm2" column="QYRGMSFHM2"/>
+        <!-- 迁移人员3 -->
+        <property name="qyrysqrgx3" column="QYRYSQRGX3"/>
+        <property name="qyrxm3" column="QYRXM3"/>
+        <property name="qyrxb3" column="QYRXB3"/>
+        <property name="qyrcsrq3" column="QYRCSRQ3"/>
+        <property name="qyrgmsfhm3" column="QYRGMSFHM3"/>
+        <!-- 迁移人员4 -->
+        <property name="qyrysqrgx4" column="QYRYSQRGX4"/>
+        <property name="qyrxm4" column="QYRXM4"/>
+        <property name="qyrxb4" column="QYRXB4"/>
+        <property name="qyrcsrq4" column="QYRCSRQ4"/>
+        <property name="qyrgmsfhm4" column="QYRGMSFHM4"/>
+
+        <property name="qyrhkdjjg" column="QYRHKDJJG"/>
+        <property name="qyrzzssxq" column="QYRZZSSXQ"/>
+        <property name="qyrzzxz" column="QYRZZXZ"/>
+        <property name="qrdssxq" column="QRDSSXQ"/>
+        <property name="qrdxz" column="QRDXZ"/>
+        <property name="qrdhkdjjg" column="QRDHKDJJG"/>
+        <property name="zqyy" column="ZQYY"/>
+        <property name="pzjg" column="PZJG"/>
+        <property name="cbr" column="CBR"/>
+        <property name="qfrq" column="QFRQ"/>
+        <property name="bz" column="BZ"/>
+        <property name="qyrs" column="QYRS"/>
+
+        <property name="qcbldw" column="QCBLDW"/>
+        <property name="qcbldwdm" column="QCBLDWDM"/>
+        <property name="qcblsj" column="QCBLSJ"/>
+        <property name="qcblr" column="QCBLR"/>
+        <property name="qyfw" column="QYFW"/>
+        <property name="yxqjzrq" column="YXQJZRQ"/>
+        <property name="isstatus" column="ISSTATUS"/>
+        <property name="qyyy" column="QYYY"/>
+        <property name="sfcsjtb" column="SFCSJTB"/>
+        <property name="dsgxsj" column="DSGXSJ"/>
+        <property name="sfqyz" column="SFQYZ"/>
+        <property name="ywlsh" column="YWLSH"/>
+        <property name="qyzbh" column="QYZBH"/>
+        <property name="sfbj" column="SFBJ"/>
+    </class>
+
+</hibernate-mapping>

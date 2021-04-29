@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoXT_SPMBXXB"
+        table="XT_SPMBXXB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="spmbid"  column="SPMBID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="mbmc" column="MBMC"/>
+        <property name="mbdj" column="MBDJ"/>
+        <property name="cjrid" column="CJRID"/>
+        <property name="cjsj" column="CJSJ"/>
+        <property name="xgrid" column="XGRID"/>
+        <property name="xgsj" column="XGSJ"/>
+        <property name="qybz" column="QYBZ"/>
+        <property name="dqsys" column="DQSYS"/>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+            name="com.gnt.qxgl.hz2004.entity.ywtb.YwtbFjcl"
+            table="YWTB_FJCL"
+            dynamic-insert="true"
+            dynamic-update="true"
+    >
+
+        <id name="id" column="ID">
+            <generator class="uuid.hex"></generator>
+        </id>
+        <property name="applyno" column="APPLYNO"/>
+        <property name="filename" column="FILENAME"/>
+        <property name="needflag" column="NEEDFLAG"/>
+        <property name="stuffname" column="STUFFNAME"/>
+        <property name="stuffcode" column="STUFFCODE"/>
+        <property name="stuffid" column="STUFFID"/>
+        <property name="stufffile" column="STUFFFILE"/>
+        <property name="cjsj" type="java.util.Date" column="CJSJ"/>
+        <property name="filetype" column="FILETYPE"/>
+        
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtYh" table="XT_YH" dynamic-insert="true">
+		<id name="yhid" type="com.gnt.qxgl.common.LongToString">
+			<column name="YHID" length="19" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="dlm" type="java.lang.String">
+			<column name="dlm" length="40" not-null="true" />
+		</property>
+		<property name="jyh" type="java.lang.String">
+			<column name="JYH" length="8" />
+		</property>
+		<property name="ssdwjgdm" type="java.lang.String">
+			<column name="ssdwjgdm" length="9" not-null="true" />
+		</property>
+		<property name="xm" type="java.lang.String">
+			<column name="xm" length="40" />
+		</property>
+		<property name="xb" type="java.lang.String">
+			<column name="xb" length="1" />
+		</property>
+		<property name="xxjb" type="java.lang.String">
+			<column name="xxjb" length="20" />
+		</property>
+		<property name="dlkl" type="java.lang.String">
+			<column name="DLKL" length="32" />
+		</property>
+		<property name="zt" type="java.lang.String">
+			<column name="zt" length="20" />
+		</property>
+		<property name="gmsfhm" type="java.lang.String">
+			<column name="GMSFHM" length="18" />
+		</property>
+		<property name="dlsid"  type="java.lang.String">
+			<column name="dlsid" length="32" />
+		</property>
+		<property name="dlsidsj" type="java.util.Date">
+	            <column name="dlsidsj" ></column>
+	        </property>
+	</class>
+</hibernate-mapping>

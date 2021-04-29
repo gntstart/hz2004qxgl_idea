@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtSpdzb" table="XT_SPDZB" dynamic-insert="true">
+		<id name="dzid" type="com.gnt.qxgl.common.LongToString">
+			<column name="DZID" length="19" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="dzmc" type="java.lang.String">
+			<column name="DZMC" length="40" not-null="true" />
+		</property>
+		<property name="ms" type="java.lang.String">
+			<column name="MS" length="200" />
+		</property>
+		<property name="fwjb" type="java.lang.String">
+			<column name="FWJB" length="2" />
+		</property>
+		<property name="qybz" type="java.lang.String">
+			<column name="QYBZ" length="1" not-null="true" />
+		</property>
+		<property name="dqbm" type="java.lang.String">
+			<column name="DQBM" length="4" />
+		</property>
+	</class>
+</hibernate-mapping>

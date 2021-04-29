@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoXT_XXBGLSB"
+        table="XT_XXBGLSB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="xxbgid"  column="XXBGID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="bgbm" column="BGBM"/>
+        <property name="bgid" column="BGID"/>
+        <property name="yczrid" column="YCZRID"/>
+        <property name="bgrq" column="BGRQ"/>
+        <property name="bgrid" column="BGRID"/>
+        <property name="bgxm" column="BGXM"/>
+        <property name="bgqnr" column="BGQNR"/>
+        <property name="bghnr" column="BGHNR"/>
+    </class>
+
+</hibernate-mapping>

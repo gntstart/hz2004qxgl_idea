@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoLSSFZ_SLXXB"
+        table="LSSFZ_SLXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="lsslid"  column="LSSLID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="ryid" column="RYID"/>
+        <property name="rynbid" column="RYNBID"/>
+        <property name="zpid" column="ZPID"/>
+        <property name="qfjg" column="QFJG"/>
+        <property name="yxqxqsrq" column="YXQXQSRQ"/>
+        <property name="yxqxjzrq" column="YXQXJZRQ"/>
+        <property name="lsjmsfzkh" column="LSJMSFZKH"/>
+        <property name="zz" column="ZZ"/>
+        <property name="xm" column="XM"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="nbsfzid" column="NBSFZID"/>
+        <property name="xb" column="XB"/>
+        <property name="mz" column="MZ"/>
+        <property name="csrq" column="CSRQ"/>
+        <property name="csdssxq" column="CSDSSXQ"/>
+        <property name="mlpnbid" column="MLPNBID"/>
+        <property name="ssxq" column="SSXQ"/>
+        <property name="jlx" column="JLX"/>
+        <property name="mlph" column="MLPH"/>
+        <property name="mlxz" column="MLXZ"/>
+        <property name="pcs" column="PCS"/>
+        <property name="zrq" column="ZRQ"/>
+        <property name="xzjd" column="XZJD"/>
+        <property name="jcwh" column="JCWH"/>
+        <property name="pxh" column="PXH"/>
+        <property name="czyid" column="CZYID"/>
+        <property name="czsj" column="CZSJ"/>
+        <property name="czyip" column="CZYIP"/>
+        <property name="dybz" column="DYBZ"/>
+        <property name="dyrid" column="DYRID"/>
+        <property name="dysj" column="DYSJ"/>
+        <property name="dyrip" column="DYRIP"/>
+    </class>
+
+</hibernate-mapping>

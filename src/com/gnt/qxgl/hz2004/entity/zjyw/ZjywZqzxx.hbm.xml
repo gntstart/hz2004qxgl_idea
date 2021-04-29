@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+            name="com.gnt.qxgl.hz2004.entity.zjyw.ZjywZqzxx"
+            table="ZJYW_ZQZXX"
+            dynamic-insert="true"
+            dynamic-update="true"
+    >
+
+        <id name="ywlsh" column="YWLSH">
+        </id>
+        <property name="postid" column="POSTID"/>
+        <property name="zqzbh" column="ZQZBH"/>
+        <property name="sqr_gmsfhm" column="SQR_GMSFHM"/>
+        <property name="sqr_xm" column="SQR_XM"/>
+        <property name="sqr_lxdh" column="SQR_LXDH"/>
+        <property name="sqr_zz_ssxqdm" column="SQR_ZZ_SSXQDM"/>
+        <property name="sqr_zz_qhnxxdz" column="SQR_ZZ_QHNXXDZ"/>
+        <property name="sqr_hkdjjg_gajgjgdm" column="SQR_HKDJJG_GAJGJGDM"/>
+        <property name="sqr_hkdjjg_gajgmc" column="SQR_HKDJJG_GAJGMC"/>
+        <property name="qcd_ssxqdm" column="QCD_SSXQDM"/>
+        <property name="qcd_qhnxxdz" column="QCD_QHNXXDZ"/>
+        <property name="qcd_hkdjjg_gajgjgdm" column="QCD_HKDJJG_GAJGJGDM"/>
+        <property name="qcd_hkdjjg_gajgmc" column="QCD_HKDJJG_GAJGMC"/>
+        <property name="qrd_ssxqdm" column="QRD_SSXQDM"/>
+        <property name="qrd_qhnxxdz" column="QRD_QHNXXDZ"/>
+        <property name="qrd_hkdjjg_gajgjgdm" column="QRD_HKDJJG_GAJGJGDM"/>
+        <property name="qrd_hkdjjg_gajgmc" column="QRD_HKDJJG_GAJGMC"/>
+        <property name="qfjg_gajgjgdm" column="QFJG_GAJGJGDM"/>
+        <property name="qfjg_gajgmc" column="QFJG_GAJGMC"/>
+        <property name="cbr_xm" column="CBR_XM"/>
+        <property name="qfrq" column="QFRQ"/>
+        <property name="bz" column="BZ"/>
+        <property name="qyldyydm" column="QYLDYYDM"/>
+        <property name="qyldyymc_nb" column="QYLDYYMC_NB"/>
+        <property name="yxqjzrq" column="YXQJZRQ"/>
+        <property name="qyfwdm" column="QYFWDM"/>
+        <property name="sldw_gajgjgdm" column="SLDW_GAJGJGDM"/>
+        <property name="sldw_gajgmc" column="SLDW_GAJGMC"/>
+        <property name="sldw_lxdh" column="SLDW_LXDH"/>
+        <property name="slr_xm" column="SLR_XM"/>
+        <property name="slsj" column="SLSJ"/>
+        <property name="sjgsdwdm" column="SJGSDWDM"/>
+        <property name="sjgsdwmc" column="SJGSDWMC"/>
+        <property name="isstatus" column="ISSTATUS"/>
+        <property name="sfbj" column="SFBJ"/>
+        <property name="zxyy" column="ZXYY"/>
+        <property name="gxsj" type="java.util.Date" column="GXSJ"/>
+        <property name="cjsj" type="java.util.Date" column="CJSJ"/>
+    </class>
+
+</hibernate-mapping>

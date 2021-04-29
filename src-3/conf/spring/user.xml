@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 登录服务 -->
+	<bean id="loginService"
+		class="com.gnt.qxgl.service.impl.LoginServiceImpl" autowire="byName" />	
+		
+	<!-- 警员管理 -->
+	<bean id="zzjyManagerService"
+		class="com.gnt.qxgl.service.impl.ZzjyManagerServiceImpl" autowire="byName" />
+		
+	<!-- 授权管理 -->
+	<bean id="sqService"
+		class="com.gnt.qxgl.service.impl.SqServiceImpl" autowire="byName" />
+		
+	<!-- 地区字典加载 -->
+	<bean id="dQDictService"
+		class="com.gnt.qxgl.service.yw.impl.DQDictServiceImpl" autowire="byName" />
+		
+	<!-- 跨地区迁移-->
+	<bean id="kdqqyService"
+		class="com.gnt.qxgl.service.yw.impl.KdqqyServiceImpl" autowire="byName" />
+		
+	<!-- 户政窗口-->
+	<bean id="hzckAction"
+		class="com.gnt.qxgl.struts.action.HzckAction" autowire="byName" />
+		
+	<bean id="hzckService"
+		class="com.gnt.qxgl.service.impl.HzckServiceImpl" autowire="byName" />
+	
+</beans>

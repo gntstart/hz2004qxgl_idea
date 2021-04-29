@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoDZZJ_CZYXXB"
+        table="DZZJ_CZYXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="czyid"  column="CZYID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="czydlm" column="CZYDLM"/>
+        <property name="czyxm" column="CZYXM"/>
+        <property name="czymm" column="CZYMM"/>
+        <property name="czydwdm" column="CZYDWDM"/>
+        <property name="czysfhm" column="CZYSFHM"/>
+        <property name="czysfzglh" column="CZYSFZGLH"/>
+        <property name="sbglh" column="SBGLH"/>
+        <property name="czyzw1" column="CZYZW1"/>
+        <property name="czyzw2" column="CZYZW2"/>
+        <property name="zcsj" column="ZCSJ"/>
+        <property name="zxsj" column="ZXSJ"/>
+        <property name="czyzt" column="CZYZT"/>
+        <property name="ktglhdn" column="KTGLHDN"/>
+    </class>
+
+</hibernate-mapping>

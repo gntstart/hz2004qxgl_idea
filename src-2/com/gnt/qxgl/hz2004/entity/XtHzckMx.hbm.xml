@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtHzckMx" table="V_XT_HZCK_Mx" dynamic-insert="false">
+		<id name="yhId" type="com.gnt.qxgl.common.LongToString">
+			<column name="YHID" length="19" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="yhxm" type="java.lang.String">
+			<column name="YHXM" />
+		</property>
+		<property name="yhdlm" type="java.lang.String">
+			<column name="YHDLM" />
+		</property>
+		<property name="jyh" type="java.lang.String">
+			<column name="JYH" />
+		</property>
+		<property name="gmsfhm" type="java.lang.String">
+			<column name="GMSFHM" />
+		</property>
+		<property name="yhlx" type="java.lang.String">
+			<column name="YHLX" />
+		</property>
+		<property name="yhIP" type="java.lang.String">
+			<column name="YHIP" />
+		</property>
+		<property name="dwdm" type="java.lang.String">
+			<column name="DWDM" />
+		</property>
+		<property name="dwmc" type="java.lang.String">
+			<column name="DWMC" />
+		</property>
+		<property name="qhdm" type="java.lang.String">
+			<column name="QHDM" />
+		</property>
+		<property name="szqx" type="java.lang.String">
+			<column name="SZQX" />
+		</property>
+		<property name="dqbm" type="java.lang.String">
+			<column name="DQBM" />
+		</property>
+		<property name="dlsj" type="java.util.Date">
+			<column name="GXSJ" />
+		</property>
+	</class>
+</hibernate-mapping>

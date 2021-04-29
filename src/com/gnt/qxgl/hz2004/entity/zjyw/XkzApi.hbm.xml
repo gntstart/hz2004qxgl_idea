@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+            name="com.gnt.qxgl.hz2004.entity.zjyw.XkzApi"
+            table="ZZJ_XKZ_API"
+            dynamic-insert="true"
+            dynamic-update="true"
+    >
+
+        <id name="lgbm" column="LGBM">
+            <generator class="uuid.hex"></generator>
+        </id>
+        <property name="lgmc" column="LGMC"/>
+        <property name="kssj" type="java.util.Date" column="KSSJ"/>
+        <property name="jzsj" type="java.util.Date" column="JZSJ"/>
+        <property name="ip" column="IP"/>
+        <property name="pl" type="com.gnt.qxgl.common.LongToString" column="PL"/>
+        <property name="XKZID" column="XKZID"/>
+        <property name="sbh" column="SBH"/>
+        <property name="bz" column="BZ"/>
+        <property name="xkz" column="XKZ"/>
+        <property name="pwd" column="PWD"/>
+    </class>
+
+</hibernate-mapping>

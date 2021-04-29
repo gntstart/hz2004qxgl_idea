@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoV_HJ_RDXXB"
+        table="V_HJ_RDXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+       <id  name="rynbid"  column="RYNBID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+<!--
+        <property name="rynbid" column="RYNBID"/>
+-->
+        <property name="ryid" column="RYID"/>
+        <property name="zpid" column="ZPID"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="cym" column="CYM"/>
+        <property name="xb" column="XB"/>
+        <property name="mz" column="MZ"/>
+        <property name="csrq" column="CSRQ"/>
+        <property name="cssj" column="CSSJ"/>
+        <property name="csdgjdq" column="CSDGJDQ"/>
+        <property name="csdssxq" column="CSDSSXQ"/>
+        <property name="csdxz" column="CSDXZ"/>
+        <property name="dhhm" column="DHHM"/>
+        <property name="jhrygmsfhm" column="JHRYGMSFHM"/>
+        <property name="jhryxm" column="JHRYXM"/>
+        <property name="jhryjhgx" column="JHRYJHGX"/>
+        <property name="jhregmsfhm" column="JHREGMSFHM"/>
+        <property name="jhrexm" column="JHREXM"/>
+        <property name="jhrejhgx" column="JHREJHGX"/>
+        <property name="fqgmsfhm" column="FQGMSFHM"/>
+        <property name="fqxm" column="FQXM"/>
+        <property name="mqgmsfhm" column="MQGMSFHM"/>
+        <property name="mqxm" column="MQXM"/>
+        <property name="pogmsfhm" column="POGMSFHM"/>
+        <property name="poxm" column="POXM"/>
+        <property name="jggjdq" column="JGGJDQ"/>
+        <property name="jgssxq" column="JGSSXQ"/>
+        <property name="zjxy" column="ZJXY"/>
+        <property name="whcd" column="WHCD"/>
+        <property name="hyzk" column="HYZK"/>
+        <property name="byzk" column="BYZK"/>
+        <property name="sg" column="SG"/>
+        <property name="xx" column="XX"/>
+        <property name="zy" column="ZY"/>
+        <property name="zylb" column="ZYLB"/>
+        <property name="fwcs" column="FWCS"/>
+        <property name="xxjb" column="XXJB"/>
+        <property name="rylb" column="RYLB"/>
+        <property name="hb" column="HB"/>
+        <property name="yhzgx" column="YHZGX"/>
+        <property name="ryzt" column="RYZT"/>
+        <property name="rysdzt" column="RYSDZT"/>
+        <property name="rlxdbid" column="RLXDBID"/>
+        <property name="bz" column="BZ"/>
+        <property name="rjlbz" column="RJLBZ"/>
+        <property name="ywnr" column="YWNR"/>
+        <property name="cjhjywid" column="CJHJYWID"/>
+        <property name="cchjywid" column="CCHJYWID"/>
+        <property name="rqysj" column="RQYSJ"/>
+        <property name="rjssj" column="RJSSJ"/>
+        <property name="rcxbz" column="RCXBZ"/>
+        <property name="mlpnbid" column="MLPNBID"/>
+        <property name="mlpid" column="MLPID"/>
+        <property name="ssxq" column="SSXQ"/>
+        <property name="jlx" column="JLX"/>
+        <property name="mlph" column="MLPH"/>
+        <property name="mlxz" column="MLXZ"/>
+        <property name="pcs" column="PCS"/>
+        <property name="zrq" column="ZRQ"/>
+        <property name="xzjd" column="XZJD"/>
+        <property name="jcwh" column="JCWH"/>
+        <property name="jdlb" column="JDLB"/>
+        <property name="cdlb" column="CDLB"/>
+        <property name="jdsj" column="JDSJ"/>
+        <property name="cdsj" column="CDSJ"/>
+        <property name="dcjhjywid" column="DCJHJYWID"/>
+        <property name="dcchjywid" column="DCCHJYWID"/>
+        <property name="mlpzt" column="MLPZT"/>
+        <property name="dlxdbid" column="DLXDBID"/>
+        <property name="djlbz" column="DJLBZ"/>
+        <property name="dqysj" column="DQYSJ"/>
+        <property name="djssj" column="DJSSJ"/>
+        <property name="pxh" column="PXH"/>
+    </class>
+
+</hibernate-mapping>

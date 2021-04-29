@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="extCommonForm"
+			type="com.gnt.qxgl.common.struts.form.ExtCommonForm" />
+	</form-beans>
+	
+	<!-- 全局转发 -->
+	<global-forwards>
+		<!--出错提示-->
+		<forward name="error" path="/common/error.jsp"></forward>
+		<forward name="gson" path="/common/gson.jsp"></forward>
+	</global-forwards>
+	
+	<action-mappings>
+	    <!-- 登录动作 -->
+	    <action name="extCommonForm" path="/login" validate="false"
+	    	type="com.gnt.qxgl.struts.action.LoginAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 组织警员管理 -->
+	    <action name="extCommonForm" path="/zzjy" validate="false"
+	    	type="com.gnt.qxgl.struts.action.ZzjyManagerAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+		
+		<!-- 授权管理 -->
+	    	<action name="extCommonForm" path="/sq" validate="false"
+	    	type="com.gnt.qxgl.struts.action.SqAction"
+			attribute="form" scope="request" parameter="method">
+		</action>
+	</action-mappings>
+	
+	<controller
+		processorClass="org.springframework.web.struts.AutowiringRequestProcessor" />
+		
+	<!-- 资源文件 -->
+	<message-resources
+		parameter="conf.resources" />
+</struts-config>

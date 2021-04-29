@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoHJXX_DYXXB"
+        table="HJXX_DYXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="dyid"  column="DYID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="ryid" column="RYID"/>
+        <property name="rynbid" column="RYNBID"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+        <property name="pcs" column="PCS"/>
+        <property name="ssxq" column="SSXQ"/>
+        <property name="dylb" column="DYLB"/>
+        <property name="zjbh" column="ZJBH"/>
+        <property name="yznf" column="YZNF"/>
+        <property name="slsj" column="SLSJ"/>
+        <property name="sldw" column="SLDW"/>
+        <property name="slrid" column="SLRID"/>
+        <property name="czip" column="CZIP"/>
+        <property name="mlpnbid" column="MLPNBID"/>
+        <property name="jlx" column="JLX"/>
+        <property name="mlph" column="MLPH"/>
+        <property name="mlxz" column="MLXZ"/>
+        <property name="zrq" column="ZRQ"/>
+        <property name="xzjd" column="XZJD"/>
+        <property name="jcwh" column="JCWH"/>
+
+    </class>
+
+</hibernate-mapping>

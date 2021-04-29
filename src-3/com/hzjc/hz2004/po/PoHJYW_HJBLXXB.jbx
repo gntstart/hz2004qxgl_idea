@@ -1,0 +1,50 @@
+[PropertyInfo]
+csdssxq,String,false,false, , ,true,<default>
+csrq,String,false,false, , ,true,<default>
+cssj,String,false,false, , ,true,<default>
+cxbz,String,false,false, , ,true,<default>
+cxfldm,String,false,false, , ,false,<default>
+cxhjywid,Long,false,false, , ,true,<default>
+cxrid,Long,false,false, , ,true,<default>
+cxsj,String,false,false, , ,true,<default>
+czsm,Long,false,false, , ,true,<default>
+gmsfhm,String,false,false, , ,true,<default>
+hb,String,false,false, , ,true,<default>
+hhid,Long,false,false, , ,true,<default>
+hhnbid,Long,false,false, , ,true,<default>
+hjblid,Long,false,false, , ,true,<default>
+hjbllb,String,false,false, , ,true,<default>
+hjywid,Long,false,false, , ,true,<default>
+hzgmsfhm,String,false,false, , ,true,<default>
+hzxm,String,false,false, , ,true,<default>
+jcwh,String,false,false, , ,true,<default>
+jlx,String,false,false, , ,true,<default>
+mlph,String,false,false, , ,true,<default>
+mlpid,Long,false,false, , ,true,<default>
+mlpnbid,Long,false,false, , ,true,<default>
+mlxz,String,false,false, , ,true,<default>
+mz,String,false,false, , ,true,<default>
+nbsfzid,Long,false,false, , ,true,<default>
+pcs,String,false,false, , ,true,<default>
+pxh,String,false,false, , ,true,<default>
+ryid,Long,false,false, , ,true,<default>
+rynbid,Long,false,false, , ,true,<default>
+sbrgmsfhm,String,false,false, , ,true,<default>
+sbrjtgx,String,false,false, , ,true,<default>
+sbryxm,String,false,false, , ,true,<default>
+sbsj,String,false,false, , ,true,<default>
+sldw,String,false,false, , ,true,<default>
+slrid,Long,false,false, , ,true,<default>
+slsj,String,false,false, , ,true,<default>
+ssxq,String,false,false, , ,true,<default>
+xb,String,false,false, , ,true,<default>
+xm,String,false,false, , ,true,<default>
+xzjd,String,false,false, , ,true,<default>
+yhzgx,String,false,false, , ,true,<default>
+ywlx,String,false,false, , ,true,<default>
+zrq,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

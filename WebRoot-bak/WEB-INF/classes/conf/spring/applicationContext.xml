@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/classes/conf/jdbc.properties</value>
+				<value>/WEB-INF/classes/conf/system-conf.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName">
+			<value>${qxgl.jdbc.driverClass}</value>
+		</property>
+		<property name="url">
+			<value>${qxgl.jdbc.url}</value>
+		</property>
+		<property name="username">
+			<value>${qxgl.jdbc.user}</value>
+		</property>
+		<property name="password">
+			<value>${qxgl.jdbc.password}</value>
+		</property>
+		<property name="maxActive">
+			<value>150</value>
+		</property>
+		<property name="maxIdle">
+			<value>20</value>
+		</property>
+		<property name="minIdle">
+			<value>20</value>
+		</property>
+		<property name="maxWait">
+			<value>1200</value>
+		</property>
+		<property name="initialSize">
+			<value>10</value>
+		</property>
+
+		<!-- 泄露的连接可以被删除的超时值, 单位秒 -->
+		<property name="removeAbandonedTimeout">
+			<value>10</value>
+		</property>
+
+		<!-- 标记是否删除泄露的连接,如果他们超过了removeAbandonedTimout的限制.如果设置为true, 连接被认为是被
+		泄露并且可以被删除,如果空闲时间超过removeAbandonedTimeout. 设置为true可以为写法糟糕的没有关闭连接的
+		程序修复数据库连接. -->
+		<property name="removeAbandoned">
+			<value>true</value>
+		</property>
+
+		<!-- 标记当Statement或连接被泄露时是否打印程序的stack traces日志。被泄露的Statements和连接的日志添加在
+		每个连接打开或者生成新的Statement,因为需要生成stack trace。 -->
+		<property name="logAbandoned">
+			<value>true</value>
+		</property>
+	</bean>
+
+	<!--定义了Hibernate的SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle9Dialect
+				</prop><!-- 
+				<prop key="hibernate.query.factory_class">
+					org.hibernate.hql.classic.ClassicQueryTranslatorFactory
+				</prop> -->
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.use_outer_join">false</prop>
+				<prop key="hibernate.cglib.use_reflection_optimizer">
+					false
+				</prop>
+				<prop key="hibernate.jdbc.batch_size">50</prop>
+
+   				<!-- 连接池的最大活动个数-->    
+    				<prop key="hibernate.dbcp.maxActive">100</prop>  
+   				<!-- 当连接池中的连接已经被耗尽的时候，DBCP将怎样处理(0=失败,1=等待,2=增长) -->    
+    				<prop key="hibernate.dbcp.whenExhaustedAction">1</prop>  
+    				<!-- 最大等待时间 -->   
+    				<prop key="hibernate.dbcp.maxWait">1200</prop>  
+    				<!-- 没有人用连接的时候，最大闲置的连接个数 -->   
+    				<prop key="hibernate.dbcp.maxIdle">20</prop>  
+			</props>
+		</property>
+		<property name="lobHandler">
+			<ref bean="gntLobHandler" />
+		</property>
+		<property name="mappingDirectoryLocations">
+			<list>
+				<value>classpath:/com/gnt/qxgl/hz2004/entity</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="find*" read-only="true" />
+			<tx:method name="get*" read-only="true" />
+			<tx:method name="search*" read-only="true" />
+			<tx:method name="load*" read-only="true" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="list*" read-only="true" />
+			<tx:method name="*" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>				
+		<aop:pointcut id="businessOper"
+			expression="execution(* com.gnt.qxgl.service.*.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="businessOper" />
+	</aop:config>
+	<!-- 使用JDBC操作数据-->
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource">
+			<ref local="dataSource" />
+		</property>
+	</bean>
+	
+	<!--  lob类型配置   -->
+	<bean id="gntLobHandler"
+		class="com.gnt.qxgl.common.util.GntLobHandler">
+		<property name="oracleLobHandler">
+			<ref local="oracleLobHandler" />
+		</property>
+		<property name="defaultLobHandler">
+			<ref local="defaultLobHandler" />
+		</property>
+		<!-- 数据库类oracle9i使用oracleLobHandler单独处理，其余数据库使用defaultLobHandler -->
+		<property name="dataBaseType">
+			<value>oracle9i</value>
+		</property>
+	</bean>
+	
+	<bean id="defaultLobHandler"
+		class="org.springframework.jdbc.support.lob.DefaultLobHandler">
+	</bean>
+	
+	<bean id="oracleLobHandler"
+		class="org.springframework.jdbc.support.lob.OracleLobHandler">
+		<property name="nativeJdbcExtractor">
+			<ref local="nativeJdbcExtractor" />
+		</property>
+	</bean>
+	
+	<!--
+		必须定义一个能够从连接池中抽取出本地数据库JDBC对象（如OracleConnection，OracleResultSet等）的抽取器：nativeJdbcExtractor
+		这样才可以执行一些特定数据库的操作。对于那些仅封装了Connection而未包括Statement的简单数据连接池，SimpleNativeJdbcExtractor
+		效率最高的抽取器实现类，但具体到apache的BasicDataSource连接池，它封装了所有JDBC的对象，这时就需要
+		CommonsDbcpNativeJdbcExtractor了。Spring针对几个著名的Web服务器的数据源提供了相应的JDBC抽取器：
+	　　·WebLogic：WebLogicNativeJdbcExtractor
+	　　·WebSphere：WebSphereNativeJdbcExtractor
+	　　·JBoss：JBossNativeJdbcExtractor
+	-->
+	<bean id="nativeJdbcExtractor"
+		class="org.springframework.jdbc.support.nativejdbc.CommonsDbcpNativeJdbcExtractor">
+	</bean>
+	<!-- lob配置结束   -->
+</beans>

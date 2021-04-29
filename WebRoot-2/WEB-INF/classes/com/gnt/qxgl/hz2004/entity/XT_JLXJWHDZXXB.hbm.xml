@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XT_JLXJWHDZXXB" table="XT_JLXJWHDZXXB" dynamic-insert="true">
+		<id name="czid" type="com.gnt.qxgl.common.LongToString">
+			<column name="czid"  />
+			<generator class="uuid" />
+		</id>
+		<property name="jlxdm" column="jlxdm" />
+		<property name="jwhdm" column="jwhdm" />
+		<property name="jlxhlx" column="jlxhlx" />
+		<property name="jlxh" column="jlxh" />
+		<property name="qybz" column="qybz" />
+		<property name="bdlx" column="bdlx" />
+		<property name="bdsj" column="bdsj" />
+	</class>
+</hibernate-mapping>

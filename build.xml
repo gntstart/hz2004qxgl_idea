@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<!-- name指定编译项目名，basedir指定编译的基本目录，default指定编译的入口target -->
+<project name="hz2004qxgl" basedir="." default="build-start">
+	<description>hz2004qxgl</description>
+	<property name="JavaVersion" value="1.6" />
+	<!-- 定义Java源代码目录 -->
+	<property name="src" location="${basedir}/src" />
+	<!-- 定义WEB目录 -->
+	<property name="web.dir" location="${basedir}/WebRoot" />
+	<!-- 定义build的目标目录 -->
+	<property name="build.dir" value="${basedir}/build_temp" />
+	<!-- 定义build的编译类目录 -->
+	<property name="build.classes" value="${build.dir}/classes" />
+	<!-- 定义JavaDoc输出目录 -->
+	<property name="build.doc" value="${build.dir}/doc" />
+	<!-- 所有配置文件输出目录 -->
+	<property name="build.conf" value="${build.dir}/config" />
+	<!-- 外部配置文件 -->
+	<property file="build.properties" />
+	<!-- 编译时候需要引用的外部jar包目录 -->
+	<property name="lib" location="${web.dir}/WEB-INF/lib" />
+	<!-- 字符集编码 -->
+	<property name="encoding" value="UTF-8" />
+	<!--系统JAR包 -->
+	<property name="jarFile" value="hz2004qxgl.jar" />
+	<!-- 定义WEB的WAR -->
+	<property name="warFile" location="${basedir}/hz2004qxgl.war" />
+	<property name="apiZip" location="${basedir}/hz2004qxgl.zip" />
+	<!-- 定义日志 -->
+	<property name="logDir" location="${web.dir}/WEB-INF/logs" />
+
+	<!-- 创建POJO对象的实体需要的参数(只自动创建网上作战使用的实体) -->
+	<property name="savePath" value="${src}/"/>						<!-- POJO对象保存路径 -->
+	<property name="package_name" value="com.gnt.qxgl.entity"/>		<!-- POJO对象包名 -->
+	<property name="interface_name" value="java.io.Serializable"/>	<!-- POJO对象要实现的接口（注意，只能实现不带方法的接口） -->
+	<property name="parent_name" value=""/>	<!-- POJO对象要继承的父类 -->
+	<property name="matches" value="CXNBPLFX,HZPYDZB"/>	<!-- 逗号分隔的要排除的表的正则表达式 -->
+	<property name="assigned" value="LG,LGYUSER,TZTG"/>	<!-- 通过程序指定主键的表名称列表 -->
+	<property name="schema" value="SSO2"/>									<!-- 要导出的数据据库用户，一般是UID -->
+	<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>		<!-- JDBC驱动程序 -->
+	<property name="dbconnection" value="jdbc:oracle:thin:@127.0.0.1:1521:ORCL"/>	<!-- JDBC链接 -->
+	<property name="uid" value="sso2"/>	<!-- 数据库用户名 -->
+	<property name="pwd" value="sso2"/>	<!-- 数据库用户口令 -->
+	
+	<!-- path定义编译需要引用到的所有外部jar包，通过fileset指定文件列表 -->
+	<path id="project.class.path">
+		<!-- fileset的dir指定一个目录，include通过通配符号应用.jar列表 -->
+		<fileset dir="${lib}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${basedir}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="makePojo">
+    	<echo message="------------ 准备创建POJO对象，请等待... --------------"/>
+    	<!-- 执行Java文件，classpath指定类的路径 -->
+		<java failonerror="true" classname="com.gnt.tools.HibernateTool">
+			<classpath refid="project.class.path" />
+			<arg value="${savePath}" />
+			<arg value="${package_name}" />
+			<arg value="${interface_name}" />
+			<arg value="${parent_name}" />
+			<arg value="${schema}" />
+			<arg value="${driver}" />
+			<arg value="${dbconnection}" />
+			<arg value="${uid}" />
+			<arg value="${pwd}" />
+			<arg value="${matches}" />
+			<arg value="${assigned}" />
+		</java>	
+	</target>
+	
+	<!-- 显示编译环境信息 -->
+	<target name="echoInfo">
+		<tstamp>
+			<format property="today" pattern="yyyy-MM-dd hh:mm:ss" />
+		</tstamp>
+
+		<echo message="----------------ANT基本信息----------------" />
+		<echo message="编译时间：${today}" />
+		<echo message="构建文件：${ant.file}" />
+		<echo message="Ant版本：${ant.version}" />
+		<echo message="Java版本：${ant.java.version}" />
+	</target>
+
+	<target name="clear">
+		<echo message="---------------整理临时目录-------------" />
+		<delete dir="${build.dir}"/>
+	</target>
+
+	<!-- 编译的入口的前置target，指定要先执行build date -->
+	<target name="init" depends="echoInfo,clear">
+		<!-- 删除2个输出文件 -->
+		<delete file="${warFile}" />
+		<delete file="${apiZip}" />
+
+		<echo message="--------------创建临时编译目录---------------" />
+		<!-- 创建要编译的临时目录 -->
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes}" />
+		<mkdir dir="${build.doc}" />
+		<mkdir dir="${build.conf}" />
+		<mkdir dir="${logDir}" />
+	</target>
+
+	<!-- 创建JavaDoc的target -->
+	<target name="makeHelp">
+		<echo message="--------------创建JavaDoc文档---------------" />
+		<javadoc packagenames="com.gnt.*" destdir="${build.doc}" classpathref="project.class.path" private="false" encoding="${encoding}">
+			<sourcepath>
+				<pathelement location="${src}/" />
+			</sourcepath>
+		</javadoc>
+
+		<echo message="------创建JavaDoc压缩文档：${apiZip}---------" />
+		<zip destfile="${apiZip}">
+			<fileset dir="${build.doc}">
+				<include name="**/*.*" />
+			</fileset>
+		</zip>
+	</target>
+
+	<!-- 拷贝配置文件的target -->
+	<target name="copyConfig">
+		<echo message="--------------拷贝系统配置文件--------------" />
+		<copy todir="${build.classes}">
+			<fileset dir="${src}">
+				<!-- 拷贝src目录下的所有配置文件到class目录下，conf和resource目录
+             	 除外，如果配置文件在运行时刻需要修改，那么不允许存放到发布包目录下，注
+             	 意的是排除目录必须是 conf/|conf/**，排除文件是**/conf/a.xml -->
+				<include name="**/*.properties" />
+				<include name="**/*.xml" />
+				<include name="com/gnt/**/*.txt" />
+				<exclude name="conf/**" />
+			</fileset>
+		</copy>
+		<!-- conf 目录下的文件将会被copy到/WEB-INF/classes目录 -->
+		<copy todir="${build.conf}">
+			<fileset dir="${src}">
+				<include name="conf/**/*.xml" />
+				<include name="conf/**/*.properties" />
+				<include name="conf/**/*.txt" />
+				<include name="conf/xls_template/*.*"/>
+				<include name="conf/*.xls"/>
+				<include name="conf/sso.cfg.xml" />
+				 <exclude  name="**/conf/spring/applicationContext.xml"/>
+			</fileset>
+		</copy>
+		
+		<copy todir="${build.conf}/conf/spring"> 
+             <fileset dir ="${basedir}/buildfile"> 
+                 <include name="**/applicationContext.xml"/>
+             </fileset> 
+        </copy>
+	</target>
+ 
+	<!-- 创建jar包 -->
+	<target name="makeJAR">
+		<echo message="------------ 创建临时JAR包---" />
+
+		<!-- jarfile指定JAR包的完整路径，basedir指定要压缩的class文件目录 -->
+		<jar jarfile="${build.dir}/${jarFile}">
+			<fileset dir="${build.classes}">
+				<include name="**/*.properties" />
+				<include name="**/*.xml" />
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+	</target>
+
+	<!-- 创建WAR包 -->
+	<target name="makeWAR">
+		<echo message="------------ 创建WAR包：${warFile}------------" />
+		<echo message="------------ ${basedir}/buildFile------------" />
+		<war warfile="${warFile}" webxml="${web.dir}/WEB-INF/web.xml" update="true">
+			<!-- classes指定要打包到WEB-INF/classes目录下的文件目录，这里用
+			     build.conf，表示将所有配置文件打包到该目录 -->
+			<classes dir="${build.conf}" />
+
+			<!-- fileset表示将指定目录下所有文件打包，但是exclude中指定的
+			     相对位置被排除。
+			-->
+			<fileset dir="${web.dir}">
+				<!-- 排除web.xml是因为前面已经通过webxml指定了 -->
+				<exclude name="WEB-INF/web.xml" />
+				<exclude name="WEB-INF/classes/" />
+				<!-- 排除WEB-INF/logs目录 -->
+				<exclude name="WEB-INF/logs/" />
+				<exclude name="WEB-INF/applicationContext.xml"/>
+			</fileset>
+         
+			<fileset dir="${basedir}/buildFile">
+				<include name="**/*" />
+				<exclude name="**/applicationContext.xml"/>
+			</fileset>
+			
+			<!-- 将其它指定JAR包打包到WEB-INF/lib -->
+			<lib dir="${build.dir}">
+				<include name="**/*.jar" />
+			</lib>
+		</war>
+	</target>
+
+	<target name="buildJava">
+		<echo message="------------ 开始编译 trs --------------" />
+		<javac srcdir="${basedir}/src" destdir="${build.classes}" failonerror="true" verbose="false" includeAntRuntime="no" source="${JavaVersion}" target="${JavaVersion}" deprecation="on" debug="on" encoding="${encoding}">
+			<classpath>
+				<!-- 通过path指定外部.jar文件，每个refid对前前面定义的path类型变量 -->
+				<path refid="project.class.path" />
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- 编译的入口target，depends指定先要执行init这个target -->
+	<target name="build-start" depends="init">
+		<antcall target="buildJava" />
+
+		<!-- 将所有配置文件拷贝到对应输出目录下-->
+		<antcall target="copyConfig" />
+
+		<!-- 创建.jar包-->
+		<antcall target="makeJAR" />
+
+		<!-- 创建.war包-->
+		<antcall target="makeWAR" />
+
+		<!-- 清除临时文件 -->
+		<antcall target="clear" />
+
+		<echo message="编译成功完成！" />
+	</target>
+</project>

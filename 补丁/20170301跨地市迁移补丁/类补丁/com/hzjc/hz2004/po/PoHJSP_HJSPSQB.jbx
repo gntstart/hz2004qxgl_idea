@@ -1,0 +1,71 @@
+[PropertyInfo]
+bysj,String,false,false, , ,true,<default>
+byxx,String,false,false, , ,true,<default>
+byzsh,String,false,false, , ,true,<default>
+bz,String,false,false, , ,true,<default>
+bzdz,String,false,false, , ,true,<default>
+bzdzid,String,false,false, , ,true,<default>
+bzdzst,String,false,false, , ,true,<default>
+bzdzx,String,false,false, , ,true,<default>
+bzdzy,String,false,false, , ,true,<default>
+csrq,String,false,false, , ,true,<default>
+cxfldm,String,false,false, , ,false,<default>
+djrid,Long,false,false, , ,true,<default>
+djsj,String,false,false, , ,true,<default>
+fmzlh,String,false,false, , ,true,<default>
+fmzlmc,String,false,false, , ,true,<default>
+gmsfhm,String,false,false, , ,true,<default>
+hb,String,false,false, , ,true,<default>
+hjywid,Long,false,false, , ,true,<default>
+hkszddjjg,String,false,false, , ,true,<default>
+jhny,String,false,false, , ,true,<default>
+jsfzjg,String,false,false, , ,true,<default>
+jszsh,String,false,false, , ,true,<default>
+lsbz,String,false,false, , ,true,<default>
+lxdh,String,false,false, , ,true,<default>
+mz,String,false,false, , ,true,<default>
+nyzyrklhczyydm,String,false,false, , ,false,<default>
+qrdhhid,Long,false,false, , ,true,<default>
+qrdhkdjjg,String,false,false, , ,true,<default>
+qrdhlx,String,false,false, , ,true,<default>
+qrdjlx,String,false,false, , ,true,<default>
+qrdjwh,String,false,false, , ,true,<default>
+qrdjwzrq,String,false,false, , ,true,<default>
+qrdmlph,String,false,false, , ,true,<default>
+qrdpcs,String,false,false, , ,true,<default>
+qrdqx,String,false,false, , ,true,<default>
+qrdxzjd,String,false,false, , ,true,<default>
+qrdz,String,false,false, , ,true,<default>
+qrhhb,String,false,false, , ,true,<default>
+rlhbz,String,false,false, , ,true,<default>
+ryid,Long,false,false, , ,true,<default>
+rynbid,Long,false,false, , ,true,<default>
+slrq,String,false,false, , ,true,<default>
+spjg,String,false,false, , ,true,<default>
+splx,String,false,false, , ,true,<default>
+spmbid,Long,false,false, , ,true,<default>
+spsm,String,false,false, , ,true,<default>
+spywid,Long,false,false, , ,true,<default>
+sqqrly,String,false,false, , ,true,<default>
+sqrgmsfhm,String,false,false, , ,true,<default>
+sqrhkdjjg,String,false,false, , ,true,<default>
+sqrxm,String,false,false, , ,true,<default>
+sqrzzssxq,String,false,false, , ,true,<default>
+sqrzzxz,String,false,false, , ,true,<default>
+whcd,String,false,false, , ,true,<default>
+xb,String,false,false, , ,true,<default>
+xm,String,false,false, , ,true,<default>
+xydzid,Long,false,false, , ,true,<default>
+yjrclx,String,false,false, , ,true,<default>
+yrdwjcyrysj,String,false,false, , ,true,<default>
+ysqrgx,String,false,false, , ,true,<default>
+zlfzjg,String,false,false, , ,true,<default>
+zyjszc,String,false,false, , ,true,<default>
+zyzl,String,false,false, , ,true,<default>
+zzssxq,String,false,false, , ,true,<default>
+zzxz,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

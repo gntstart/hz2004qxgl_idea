@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoHJYW_CHCLXXB"
+        table="HJYW_CHCLXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="chid"  column="CHID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="ryid" column="RYID"/>
+        <property name="chsfhm" column="CHSFHM"/>
+        <property name="bchryid" column="BCHRYID"/>
+        <property name="bchrxm" column="BCHRXM"/>
+        <property name="bchrszpcs" column="BCHRSZPCS"/>
+        <property name="bchrzz" column="BCHRZZ"/>
+        <property name="clfs" column="CLFS"/>
+        <property name="hjywid" column="HJYWID"/>
+        <property name="clhjywid" column="CLHJYWID"/>
+        <property name="cxbz" column="CXBZ"/>
+        <property name="cxsj" column="CXSJ"/>
+        <property name="cxrid" column="CXRID"/>
+        <property name="cxhjywid" column="CXHJYWID"/>
+
+        <property name="sbsj" column="SBSJ"/>
+        <property name="sbryxm" column="SBRYXM"/>
+        <property name="sbrgmsfhm" column="SBRGMSFHM"/>
+        <property name="slsj" column="SLSJ"/>
+        <property name="sldw" column="SLDW"/>
+        <property name="slrid" column="SLRID"/>
+    </class>
+
+</hibernate-mapping>

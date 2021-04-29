@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoZJYW_SJXXB"
+        table="ZJYW_SJXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="sjslid"  column="SJSLID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="nbsfzid" column="NBSFZID"/>
+        <property name="sjyy" column="SJYY"/>
+        <property name="zjywid" column="ZJYWID"/>
+        <property name="cxbz" column="CXBZ"/>
+        <property name="cxsj" column="CXSJ"/>
+        <property name="cxrid" column="CXRID"/>
+        <property name="cxzjywid" column="CXZJYWID"/>
+  	<property name="czrid" column="CZRID"/>
+	<property name="czsj" column="CZSJ"/>
+
+
+	<property name="gmsfhm" column="GMSFHM"/>
+	<property name="xm" column="XM"/>
+	<property name="xb" column="XB"/>
+	<property name="mz" column="MZ"/>
+	<property name="csrq" column="CSRQ"/>
+	<property name="cssj" column="CSSJ"/>
+	<property name="csdssxq" column="CSDSSXQ"/>
+	<property name="zpid" column="ZPID"/>
+	<property name="mlpnbid" column="MLPNBID"/>
+	<property name="ssxq" column="SSXQ"/>
+	<property name="jlx" column="JLX"/>
+	<property name="mlph" column="MLPH"/>
+	<property name="mlxz" column="MLXZ"/>
+	<property name="pcs" column="PCS"/>
+	<property name="zrq" column="ZRQ"/>
+	<property name="xzjd" column="XZJD"/>
+	<property name="jcwh" column="JCWH"/>
+	<property name="pxh" column="PXH"/>
+	<property name="ywbz" column="YWBZ"/>
+	<property name="czyid" column="CZYID"/>
+	<property name="ryid" column="RYID"/>
+	<property name="rynbid" column="RYNBID"/>
+	<property name="qfjg" column="QFJG"/>
+	<property name="yxqxqsrq" column="YXQXQSRQ"/>
+	<property name="yxqxjzrq" column="YXQXJZRQ"/>
+	<property name="slyy" column="SLYY"/>
+	<property name="bzyy" column="BZYY"/>
+	<property name="zz" column="ZZ"/>
+        <property name="zz1" column="ZZ1"/>
+	<property name="zz2" column="ZZ2"/>
+	<property name="zz3" column="ZZ3"/>
+	<property name="zz4" column="ZZ4"/>
+	<property name="ktglh" column="KTGLH"/>
+	<property name="zjlb" column="ZJLB"/>
+	<property name="zjzt" column="ZJZT"/>
+    </class>
+
+</hibernate-mapping>

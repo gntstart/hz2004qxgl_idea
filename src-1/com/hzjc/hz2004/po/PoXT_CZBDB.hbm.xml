@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoXT_CZBDB"
+        table="XT_CZBDB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="bdid"  column="BDID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="bdsj" column="BDSJ"/>
+        <property name="bdlx" column="BDLX"/>
+        <property name="bdbm" column="BDBM"/>
+        <property name="bdbzjm" column="BDBZJM"/>
+        <property name="bdbid" column="BDBID"/>
+        <property name="scsj" column="SCSJ"/>
+        <property name="scbz" column="SCBZ"/>
+    </class>
+
+</hibernate-mapping>

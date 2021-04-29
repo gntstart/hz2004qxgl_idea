@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoV_HJ_GZDXXXB"
+        table="V_HJ_GZDXXXB"
+    >
+       <id  name="rybh"  column="RYBH"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xm" column="XM"/>
+    </class>
+
+</hibernate-mapping>

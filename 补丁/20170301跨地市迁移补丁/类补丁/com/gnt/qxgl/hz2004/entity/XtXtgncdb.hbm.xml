@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtXtgncdb" table="XT_XTGNCDB" dynamic-insert="true">
+		<id name="gncdid" type="com.gnt.qxgl.common.LongToString">
+			<column name="GNCDID" length="6" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="cdcc" type="java.lang.String">
+			<column name="CDCC" length="1" not-null="true" />
+		</property>
+		<property name="cdbz" type="java.lang.String">
+			<column name="CDBZ" length="1" not-null="true" />
+		</property>
+		<property name="cdlx" type="java.lang.String">
+			<column name="CDLX" length="1" not-null="true" />
+		</property>
+		<property name="zdlb" type="java.lang.String">
+			<column name="ZDLB" length="1" not-null="true" />
+		</property>
+		<property name="cdmc" type="java.lang.String">
+			<column name="CDMC" length="40" not-null="true" />
+		</property>
+		<property name="dqbm" type="java.lang.String">
+			<column name="DQBM" length="4" />
+		</property>
+	</class>
+</hibernate-mapping>

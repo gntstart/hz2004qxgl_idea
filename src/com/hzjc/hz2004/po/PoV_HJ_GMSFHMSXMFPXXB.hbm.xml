@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoV_HJ_GMSFHMSXMFPXXB"
+        table="V_HJ_GMSFHMSXMFPXXB"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+       <id  name="fpid"  column="FPID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+<!--
+        <property name="fpid" column="FPID"/>
+-->
+        <property name="ryid" column="RYID"/>
+        <property name="xm" column="XM"/>
+        <property name="xb" column="XB"/>
+        <property name="csrq" column="CSRQ"/>
+        <property name="gmsfhm" column="GMSFHM"/>
+        <property name="xzqh" column="XZQH"/>
+        <property name="dwdm" column="DWDM"/>
+        <property name="sxh" column="SXH"/>
+        <property name="czlb" column="CZLB"/>
+        <property name="hjywid" column="HJYWID"/>
+        <property name="sbsj" column="SBSJ"/>
+        <property name="sbryxm" column="SBRYXM"/>
+        <property name="sbrgmsfhm" column="SBRGMSFHM"/>
+        <property name="slsj" column="SLSJ"/>
+        <property name="sldw" column="SLDW"/>
+        <property name="slrid" column="SLRID"/>
+    </class>
+
+</hibernate-mapping>

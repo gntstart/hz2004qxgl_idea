@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.gnt.qxgl.hz2004.entity.XtXtcsb" table="XT_XTCSB" dynamic-insert="true">
+		<id name="csid" type="java.lang.Long">
+			<column name="CSID" length="19" />
+			<generator class="assigned"></generator>
+		</id>
+		<property name="cslb" type="java.lang.String">
+			<column name="CSLB" length="20" not-null="true" />
+		</property>
+		<property name="dm" type="java.lang.String">
+			<column name="DM" length="20" not-null="true" />
+		</property>
+		<property name="mc" type="java.lang.String">
+			<column name="MC" length="200" not-null="true" />
+		</property>
+		<property name="zwpy" type="java.lang.String">
+			<column name="ZWPY" length="50" />
+		</property>
+		<property name="kzbzb" type="java.lang.String">
+			<column name="KZBZB" length="40" />
+		</property>
+		<property name="kzbzc" type="java.lang.String">
+			<column name="KZBZC" length="40" />
+		</property>
+		<property name="kzbzd" type="java.lang.String">
+			<column name="KZBZD" length="40" />
+		</property>
+		<property name="kzbze" type="java.lang.String">
+			<column name="KZBZE" length="40" />
+		</property>
+		<property name="kzbzf" type="java.lang.String">
+			<column name="KZBZF" length="40" />
+		</property>
+		<property name="kzbzg" type="java.lang.String">
+			<column name="KZBZG" length="40" />
+		</property>
+		<property name="xgbz" type="java.lang.String">
+			<column name="XGBZ" length="1" not-null="true" />
+		</property>
+		<property name="bdlx" type="java.lang.String">
+			<column name="BDLX" length="1" />
+		</property>
+		<property name="bdsj" type="java.lang.String">
+			<column name="BDSJ" length="14" />
+		</property>
+	</class>
+</hibernate-mapping>

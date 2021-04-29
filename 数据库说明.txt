@@ -1,0 +1,41 @@
+XT_DWXXB		单位信息表，需要新增DQBM字段
+XT_JSCDQXB		角色菜单权限表，需要新增DQBM字段
+XT_JSGNQXB		角色功能权限表，需要新增DQBM字段
+XT_JSXXB			角色信息表，需要新增DQBM字段
+XT_JSYWBBQXB	角色业务报表权限表，需要新增DQBM字段
+XT_JSZSBBQXB		角色制式报表权限表，需要新增DQBM字段
+XT_JWHXXB		居委会信息表
+XT_SPDZB			审批动作表，需要新增DQBM字段
+XT_SPMBXXB		审批模板信息表，需要新增DQBM字段
+XT_XTCSB			系统参数表
+XT_XTGNB		系统功能表，需要新增DQBM字段
+XT_XTGNCDB		系统功能菜单表，需要新增DQBM字段
+XT_XZQHB		行政区划表
+XT_YHDTQXB		用户等同权限表，需要新增DQBM字段
+XT_YHDZQXB		用户动作权限表，需要新增DQBM字段
+XT_YHIPYXXXB		用户IP允许信息表，需要新增DQBM字段
+XT_YHJSXXB		用户角色信息表，需要新增DQBM字段
+XT_YHSJFWB		用户数据范围表，需要新增DQBM字段
+XT_YHXXB			用户信息表
+XT_YWBBMBXXB	业务报表模板信息表
+XT_ZSBBMBXXB	制式报表模板信息表
+
+----------------------------2015-4-29-----------------------------------
+-- Add/modify columns 
+alter table XT_YHXXB add KHMSG varchar2(200);
+alter table XT_YHXXB add KHGXSJ date;
+-- Add comments to the columns 
+comment on column XT_YHXXB.KHMSG
+  is '考核未达标的错误提示（省厅同步的字段）';
+comment on column XT_YHXXB.KHGXSJ
+  is '考核更新时间（省厅同步的字段）';
+  
+----------------------------2015-5-7-----------------------------------
+  -- Add/modify columns 
+alter table XT_YHXXB add LXDH varchar2(40);
+-- Add comments to the columns 
+comment on column XT_YHXXB.LXDH
+  is '联系电话';
+-- Create/Recreate indexes 
+create index I_YH_LXDH on XT_YHXXB (lxdh);
+  

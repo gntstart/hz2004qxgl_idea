@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoXT_SJPZB"
+        table="XT_SJPZB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="sjpzid"  column="SJPZID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="pzlb" column="PZLB"/>
+        <property name="pzmc" column="PZMC"/>
+        <property name="id" column="ID"/>
+        <property name="fieldname" column="FIELDNAME"/>
+        <property name="displayname" column="DISPLAYNAME"/>
+        <property name="fieldtype" column="FIELDTYPE"/>
+        <property name="fieldtypename" column="FIELDTYPENAME"/>
+        <property name="dsname" column="DSNAME"/>
+        <property name="readonly" column="READONLY"/>
+        <property name="visibletype" column="VISIBLETYPE"/>
+        <property name="fieldlength" column="FIELDLENGTH"/>
+        <property name="displayfieldlength" column="DISPLAYFIELDLENGTH"/>
+        <property name="ischinese" column="ISCHINESE"/>
+        <property name="mbmod" column="MBMOD"/>
+        <property name="allowselfinput" column="ALLOWSELFINPUT"/>
+        <property name="codefield" column="CODEFIELD"/>
+        <property name="pyfield" column="PYFIELD"/>
+        <property name="namefield" column="NAMEFIELD"/>
+        <property name="partmask" column="PARTMASK"/>
+        <property name="lsfield" column="LSFIELD"/>
+        <property name="showls" column="SHOWLS"/>
+        <property name="enablecopy" column="ENABLECOPY"/>
+        <property name="enabledefaultfilter" column="ENABLEDEFAULTFILTER"/>
+        <property name="enterdropdown" column="ENTERDROPDOWN"/>
+        <property name="enteruniqueexit" column="ENTERUNIQUEEXIT"/>
+        <property name="usetablefiltered" column="USETABLEFILTERED"/>
+        <property name="useforsfz" column="USEFORSFZ"/>
+        <property name="conditionoperator" column="CONDITIONOPERATOR"/>
+        <property name="conditionfield" column="CONDITIONFIELD"/>
+        <property name="conditiontype" column="CONDITIONTYPE"/>
+        <property name="groups" column="GROUPS"/>
+        <property name="bdlx" column="BDLX"/>
+        <property name="bdsj" column="BDSJ"/>
+    </class>
+
+</hibernate-mapping>

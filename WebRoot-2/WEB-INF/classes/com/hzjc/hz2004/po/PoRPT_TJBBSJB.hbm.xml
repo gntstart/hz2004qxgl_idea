@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoRPT_TJBBSJB"
+        table="RPT_TJBBSJB"
+        dynamic-insert="true"     
+        dynamic-update="true"     
+    >
+
+       <id  name="tjbbid"  column="TJBBID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+        <property name="jcwh" column="JCWH"/>
+        <property name="tjny" column="TJNY"/>
+        <property name="hs" column="HS"/>
+        <property name="rs_nan" column="RS_NAN"/>
+        <property name="rs_nv" column="RS_NV"/>
+        <property name="fnyrks" column="FNYRKS"/>
+        <property name="wlczrs" column="WLCZRS"/>
+        <property name="ysbsyxrs" column="YSBSYXRS"/>
+        <property name="ysbdsswsrs" column="YSBDSSWSRS"/>
+        <property name="sswdlssrs" column="SSWDLSSRS"/>
+        <property name="lssysrs" column="LSSYSRS"/>
+        <property name="nldyybrs_nan" column="NLDYYBRS_NAN"/>
+        <property name="nldyybrs_nv" column="NLDYYBRS_NV"/>
+        <property name="czsj" column="CZSJ"/>
+        <property name="czyid" column="CZYID"/>
+        <property name="czyip" column="CZYIP"/>
+    </class>
+
+</hibernate-mapping>

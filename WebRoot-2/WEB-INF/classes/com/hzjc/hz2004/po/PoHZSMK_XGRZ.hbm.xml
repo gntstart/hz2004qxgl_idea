@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping>
+    <class
+        name="com.hzjc.hz2004.po.PoHZSMK_XGRZ"
+        table="HZSMK_XGRZ"
+        dynamic-insert="true"
+        dynamic-update="true"
+    >
+
+       <id  name="xgrzid"  column="XGRZID"  >
+          <generator class="assigned">
+         </generator>
+        </id>
+
+		<property name="xkrzid" column="XKRZID"/>
+		<property name="rynbid" column="RYNBID"/>
+		<property name="ryid" column="RYID"/>
+		<property name="gmsfhm" column="GMSFHM"/>
+		<property name="xm" column="XM"/>
+		<property name="ssxq" column="SSXQ"/>
+		<property name="jlx" column="JLX"/>
+		<property name="pcs" column="PCS"/>
+		<property name="zrq" column="ZRQ"/>
+		<property name="xzjd" column="XZJD"/>
+		<property name="jcwh" column="JCWH"/>
+		<property name="xgzdm" column="XGZDM"/>
+		<property name="xgqnr" column="XGQNR"/>
+		<property name="xghnr" column="XGHNR"/>
+
+    </class>
+
+</hibernate-mapping>
